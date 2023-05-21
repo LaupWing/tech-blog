@@ -1,6 +1,6 @@
 "use client"
 import "./globals.css"
-import { usePathname } from "next/navigation"
+import { useSelectedLayoutSegment } from "next/navigation"
 import { Inter } from "next/font/google"
 import clsx from "clsx"
 import { FC, useEffect, useState } from "react"
@@ -41,10 +41,8 @@ interface HeaderProps {
    large?: boolean
 }
 const Header:FC<HeaderProps> = () => {
-   const pathname = usePathname()
-   // const baseRoute = `/${pathname.split("/")[0]}`
    const [onTop, setOnTop] = useState<boolean>(false)
-   const [baseRoute, setBaseRoute] = useState<string>("")
+   const activeSegment = useSelectedLayoutSegment()
 
    useEffect(() => {
       const handleScroll = () => {
@@ -55,32 +53,33 @@ const Header:FC<HeaderProps> = () => {
          window.removeEventListener("scroll", handleScroll)
       }
    }, [])
-   useEffect(() => {
-      console.log(pathname.split("/"))
-      setBaseRoute(`/${pathname.split("/")[1]}`)
-   }, [pathname])
 
-   console.log(baseRoute)
    const links = [
       { 
          href: "/",
-         label: "Home"
+         label: "Home",
+         segement: "home"
       },
       { 
          href: "/blog",
-         label: "Blog"
+         label: "Blog",
+         segement: "blog"
       },
       { 
          href: "/projects",
-         label: "Projects"
+         label: "Projects",
+         segement: "projects"
       },
       { 
          href: "/library",
-         label: "Library"
+         label: "Library",
+         segement: "library"
       },
       { 
          href: "/about",
-         label: "About"
+         label: "About",
+         segement: "about"
+         
       },
    ]
 
@@ -91,13 +90,13 @@ const Header:FC<HeaderProps> = () => {
       )}>
          <nav className="layout py-4 flex items-center justify-between">
             <ul className="flex items-center justify-between gap-3 text-xs md:gap-6 md:text-base">
-               {links.map(({ href, label }) => (
+               {links.map(({ href, label, segement }) => (
                   <li key={`${href}-${label}`}>
                      <UnstyledLink
                         href={href}
                         className={clsx(
                            "border-b-[3px] pb-1", 
-                           baseRoute === href ? "border-black" : "border-transparent"
+                           activeSegment === segement ? "border-black" : "border-transparent"
                         )}
                      >
                         {label}
