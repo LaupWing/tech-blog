@@ -84,6 +84,10 @@ const Header:FC<HeaderProps> = () => {
                   <li key={`${href}-${label}`}>
                      <UnstyledLink
                         href={href}
+                        className={clsx(
+                           "border-b-[3px] pb-1", 
+                           baseRoute === href ? "border-black" : "border-transparent"
+                        )}
                      >
                         {label}
                      </UnstyledLink>
