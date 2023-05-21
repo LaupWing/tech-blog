@@ -20,12 +20,18 @@ export default function RootLayout({
    children: React.ReactNode
 }) {
    return (
-      <html lang="en">
+      <html 
+         lang="en"
+         style={{
+            colorScheme: "light",
+         }}
+         className={clsx(inter.className, "light")}
+      >
          <body className={inter.className}>
-            {/* <ThemeProvider> */}
+            <ThemeProvider attribute="class" defaultTheme="light">
                <Header />
                {children}
-            {/* </ThemeProvider> */}
+            </ThemeProvider>
          </body>
       </html>
    )
