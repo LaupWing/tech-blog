@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import { useWindowScroll } from "react-use"
 import clsx from "clsx"
 import { FC } from "react"
+import { UnstyledLink } from "@/components/links"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,7 +21,10 @@ export default function RootLayout({
 }) {
    return (
       <html lang="en">
-         <body className={inter.className}>{children}</body>
+         <body className={inter.className}>
+            <Header />
+            {children}
+         </body>
       </html>
    )
 }
@@ -65,7 +69,11 @@ const Header:FC<HeaderProps> = () => {
             <ul className="flex items-center justify-between gap-3 text-xs md:gap-4 md:text-base">
                {links.map(({ href, label }) => (
                   <li key={`${href}-${label}`}>
-                     
+                     <UnstyledLink
+                        href={href}
+                     >
+                        {label}
+                     </UnstyledLink>
                   </li>
                ))}
             </ul>
