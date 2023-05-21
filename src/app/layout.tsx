@@ -56,8 +56,6 @@ const Header:FC<HeaderProps> = () => {
       }
    }, [])
 
-   console.log(activeSegment)
-
    const links = [
       { 
          href: "/",
