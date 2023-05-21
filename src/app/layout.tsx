@@ -6,6 +6,7 @@ import { useWindowScroll } from "react-use"
 import clsx from "clsx"
 import { FC } from "react"
 import { UnstyledLink } from "@/components/links"
+import { ThemeProvider } from "next-themes"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,8 +23,10 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={inter.className}>
-            <Header />
-            {children}
+            <ThemeProvider>
+               <Header />
+               {children}
+            </ThemeProvider>
          </body>
       </html>
    )
