@@ -1,5 +1,6 @@
 "use client"
 import "./globals.css"
+import { usePathname } from "next/navigation"
 import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -22,8 +23,9 @@ export default function RootLayout({
 }
 
 interface HeaderProps {
-
+   large?: boolean
 }
 const Header = () => {
-
+   const pathname = usePathname()
+   const baseRoute = `/${pathname.split("/")[0]}`
 }
