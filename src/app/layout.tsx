@@ -30,7 +30,9 @@ export default function RootLayout({
          <body className={inter.className}>
             <ThemeProvider attribute="class" defaultTheme="light">
                <Header />
-               {children}
+               <div id="skip-nav">
+                  {children}
+               </div>
             </ThemeProvider>
          </body>
       </html>
