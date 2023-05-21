@@ -1,4 +1,4 @@
-import { LinkProps } from "next/link"
+import Link, { LinkProps } from "next/link"
 import { ComponentPropsWithRef, FC, ReactNode } from "react"
 
 export interface UnstyledLinkProps extends ComponentPropsWithRef<"a">, LinkProps {
@@ -18,6 +18,18 @@ export const UnstyledLink:FC<UnstyledLinkProps> = ({
    const isNewTab = openNewTab !== undefined
       ? openNewTab
       : href && !href.startsWith("/") && !href.startsWith("#")
+
+   if(!isNewTab) {
+      return (
+         <Link 
+            href={href}
+            className={className}
+            {...props}
+         >
+            {children}
+         </Link>
+      )
+   }
 
    return (
       <div>UnstyledLink</div>
