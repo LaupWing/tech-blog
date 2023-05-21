@@ -8,7 +8,17 @@ export interface UnstyledLinkProps extends ComponentPropsWithRef<"a">, LinkProps
    className?: string
 }
 
-export const UnstyledLink:FC<UnstyledLinkProps> = () => {
+export const UnstyledLink:FC<UnstyledLinkProps> = ({
+   children,
+   href,
+   openNewTab,
+   className,
+   ...props
+}) => {
+   const isNewTab = openNewTab !== undefined
+      ? openNewTab
+      : href && !href.startsWith("/") && !href.startsWith("#")
+
    return (
       <div>UnstyledLink</div>
    )
