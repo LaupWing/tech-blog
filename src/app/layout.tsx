@@ -61,8 +61,14 @@ const Header:FC<HeaderProps> = () => {
          "sticky top-0 z-50 transition-shadow",
          windowScroll.y > 0 && "shadow-sm"
       )}>
-         <div className="bg-white">
+         <div className="bg-primary">
+            <ul className="flex items-center justify-between gap-3 text-xs md:gap-4 md:text-base">
+               {links.map(({ href, label }) => (
+                  <li key={`${href}-${label}`}>
 
+                  </li>
+               ))}
+            </ul>
          </div>
       </header>
    )
