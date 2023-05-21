@@ -32,6 +32,14 @@ export const UnstyledLink:FC<UnstyledLinkProps> = ({
    }
 
    return (
-      <div>UnstyledLink</div>
+      <a
+         target="_blank"
+         rel="noopener noreferrer"
+         href={href}
+         {...props}
+         className={className}
+      >
+         {children}
+      </a>
    )
 }
