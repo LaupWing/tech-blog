@@ -56,11 +56,13 @@ const Header:FC<HeaderProps> = () => {
       }
    }, [])
 
+   console.log(activeSegment)
+
    const links = [
       { 
          href: "/",
          label: "Home",
-         segement: "home"
+         segement: null
       },
       { 
          href: "/blog",
