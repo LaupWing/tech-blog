@@ -6,6 +6,7 @@ import clsx from "clsx"
 import { FC, useEffect, useState } from "react"
 import { UnstyledLink } from "@/components/links"
 import { ThemeProvider } from "next-themes"
+import { PreloadProvider } from "@/store/PreloadContext"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -29,10 +30,12 @@ export default function RootLayout({
       >
          <body className={inter.className}>
             <ThemeProvider attribute="class" defaultTheme="light">
-               <Header />
-               <div id="skip-nav">
-                  {children}
-               </div>
+               <PreloadProvider>
+                  <Header />
+                  <div id="skip-nav">
+                     {children}
+                  </div>
+               </PreloadProvider>
             </ThemeProvider>
          </body>
       </html>
