@@ -15,6 +15,12 @@
    }
 }
 
+@layer utilities {
+   .layout {
+      @apply container mx-auto;
+   }
+}
+
 /* Example */
 body {
    color: rgb(var(--foreground-rgb));
