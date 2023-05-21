@@ -63,13 +63,14 @@ const Header:FC<HeaderProps> = () => {
       },
    ]
 
+   console.log(baseRoute)
    return (
       <header className={clsx(
          "sticky top-0 z-50 transition-shadow bg-primary",
          windowScroll.y > 0 && "shadow-sm"
       )}>
          <nav className="layout py-4 flex items-center justify-between">
-            <ul className="flex items-center justify-between gap-3 text-xs md:gap-4 md:text-base">
+            <ul className="flex items-center justify-between gap-3 text-xs md:gap-6 md:text-base">
                {links.map(({ href, label }) => (
                   <li key={`${href}-${label}`}>
                      <UnstyledLink
