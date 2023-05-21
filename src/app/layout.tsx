@@ -33,6 +33,29 @@ const Header:FC<HeaderProps> = () => {
    const baseRoute = `/${pathname.split("/")[0]}`
    const windowScroll = useWindowScroll()
 
+   const links = [
+      { 
+         href: "/",
+         label: "Home"
+      },
+      { 
+         href: "/blog",
+         label: "Blog"
+      },
+      { 
+         href: "/projects",
+         label: "Projects"
+      },
+      { 
+         href: "/library",
+         label: "Library"
+      },
+      { 
+         href: "/about",
+         label: "About"
+      },
+   ]
+
    return (
       <header className={clsx(
          "sticky top-0 z-50 transition-shadow",
