@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 import { Inter } from "next/font/google"
 import { useWindowScroll } from "react-use"
 import clsx from "clsx"
-import { FC } from "react"
+import { FC, useEffect, useState } from "react"
 import { UnstyledLink } from "@/components/links"
 import { ThemeProvider } from "next-themes"
 
@@ -23,10 +23,10 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={inter.className}>
-            <ThemeProvider>
+            {/* <ThemeProvider> */}
                <Header />
                {children}
-            </ThemeProvider>
+            {/* </ThemeProvider> */}
          </body>
       </html>
    )
@@ -39,6 +39,13 @@ const Header:FC<HeaderProps> = () => {
    const pathname = usePathname()
    const baseRoute = `/${pathname.split("/")[0]}`
    const windowScroll = useWindowScroll()
+   const [onTop, setOnTop] = useState<boolean>(false)
+
+   useEffect(() => {
+      if(windowScroll.y > 0) {
+         setOnTop(true)
+      }
+   }, [])
 
    const links = [
       { 
@@ -67,7 +74,7 @@ const Header:FC<HeaderProps> = () => {
    return (
       <header className={clsx(
          "sticky top-0 z-50 transition-shadow bg-primary",
-         windowScroll.y > 0 && "shadow-sm"
+         onTop && "shadow-sm"
       )}>
          <nav className="layout py-4 flex items-center justify-between">
             <ul className="flex items-center justify-between gap-3 text-xs md:gap-6 md:text-base">
