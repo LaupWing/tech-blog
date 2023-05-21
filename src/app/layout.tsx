@@ -42,8 +42,9 @@ interface HeaderProps {
 }
 const Header:FC<HeaderProps> = () => {
    const pathname = usePathname()
-   const baseRoute = `/${pathname.split("/")[0]}`
+   // const baseRoute = `/${pathname.split("/")[0]}`
    const [onTop, setOnTop] = useState<boolean>(false)
+   const [baseRoute, setBaseRoute] = useState<string>("")
 
    useEffect(() => {
       const handleScroll = () => {
@@ -54,7 +55,12 @@ const Header:FC<HeaderProps> = () => {
          window.removeEventListener("scroll", handleScroll)
       }
    }, [])
+   useEffect(() => {
+      console.log(pathname.split("/"))
+      setBaseRoute(`/${pathname.split("/")[1]}`)
+   }, [pathname])
 
+   console.log(baseRoute)
    const links = [
       { 
          href: "/",
@@ -78,7 +84,6 @@ const Header:FC<HeaderProps> = () => {
       },
    ]
 
-   console.log(baseRoute)
    return (
       <header className={clsx(
          "sticky top-0 z-50 transition-shadow bg-primary",
