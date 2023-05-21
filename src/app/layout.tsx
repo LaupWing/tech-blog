@@ -2,6 +2,9 @@
 import "./globals.css"
 import { usePathname } from "next/navigation"
 import { Inter } from "next/font/google"
+import { useWindowScroll } from "react-use"
+import clsx from "clsx"
+import { FC } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,7 +28,17 @@ export default function RootLayout({
 interface HeaderProps {
    large?: boolean
 }
-const Header = () => {
+const Header:FC<HeaderProps> = () => {
    const pathname = usePathname()
    const baseRoute = `/${pathname.split("/")[0]}`
+   const windowScroll = useWindowScroll()
+
+   return (
+      <header className={clsx(
+         "sticky top-0 z-50 transition-shadow",
+         windowScroll.y > 0 && "shadow-sm"
+      )}>
+
+      </header>
+   )
 }
