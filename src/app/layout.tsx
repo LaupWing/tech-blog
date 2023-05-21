@@ -38,7 +38,9 @@ const Header:FC<HeaderProps> = () => {
          "sticky top-0 z-50 transition-shadow",
          windowScroll.y > 0 && "shadow-sm"
       )}>
+         <div className="bg-white">
 
+         </div>
       </header>
    )
 }
