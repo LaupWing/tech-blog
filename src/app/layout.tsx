@@ -65,7 +65,7 @@ const Header:FC<HeaderProps> = () => {
             <ul className="flex items-center justify-between gap-3 text-xs md:gap-4 md:text-base">
                {links.map(({ href, label }) => (
                   <li key={`${href}-${label}`}>
-
+                     
                   </li>
                ))}
             </ul>
