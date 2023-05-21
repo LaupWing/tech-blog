@@ -2,7 +2,6 @@
 import "./globals.css"
 import { usePathname } from "next/navigation"
 import { Inter } from "next/font/google"
-import { useWindowScroll } from "react-use"
 import clsx from "clsx"
 import { FC, useEffect, useState } from "react"
 import { UnstyledLink } from "@/components/links"
@@ -38,12 +37,15 @@ interface HeaderProps {
 const Header:FC<HeaderProps> = () => {
    const pathname = usePathname()
    const baseRoute = `/${pathname.split("/")[0]}`
-   const windowScroll = useWindowScroll()
    const [onTop, setOnTop] = useState<boolean>(false)
 
    useEffect(() => {
-      if(windowScroll.y > 0) {
-         setOnTop(true)
+      const handleScroll = () => {
+         setOnTop(window.pageYOffset > 0)
+      }
+      window.addEventListener("scroll", handleScroll)
+      return () => {
+         window.removeEventListener("scroll", handleScroll)
       }
    }, [])
 
