@@ -118,6 +118,19 @@ export async function GET(request: Request) {
                   </div>
                </div>
             </div>
+            {banner && (
+               <div 
+                  style={{
+                     display: "flex"
+                  }}
+               >
+                  <img 
+                     src={banner} 
+                     tw="h-[83vh] block"
+                     alt="Banner" 
+                  />
+               </div>
+            )}
          </div>
       </div>
    ),
