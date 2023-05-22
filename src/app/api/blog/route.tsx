@@ -17,7 +17,7 @@ export async function GET(request: Request) {
 
    const { searchParams } = new URL(request.url)
 
-   const laup = `https://${request.headers.get("Host")}/images/laup.jpg`
+   const laup = `http://${request.headers.get("Host")}/images/laup.jpg`
    const templateTitle = searchParams.get("templateTitle")
    const banner = searchParams.get("banner")
 
@@ -92,10 +92,30 @@ export async function GET(request: Request) {
                   }}
                >
                   <img 
-                     src={"http://localhost:3000/images/laup.jpg"} 
+                     src={laup} 
                      tw="w-[80px] rounded-full"
                      alt="Photo of Laup"
                   />
+                  <div
+                     style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.1rem"
+                     }}
+                  >
+                     <p 
+                        style={{margin: 0}}
+                        tw="font-medium text-[1.6rem] mt-0 text-white"
+                     >
+                        Laup Wing
+                     </p>
+                     <p 
+                        style={{margin: 0}}
+                        tw="text-xl mt-0 text-gray-300"
+                     >
+                        @laupwing
+                     </p>
+                  </div>
                </div>
             </div>
          </div>
