@@ -25,6 +25,19 @@ export async function GET(request: Request) {
    }
    
    return new ImageResponse(
-      <div></div>
+      <div
+         style={{
+            height: "100%",
+            width: "100%",
+            fontFamily: "Inter",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            padding: "4rem 3rem",
+            backgroundColor: "#0e0e0e"
+         }}
+      ></div>
    )
 }
