@@ -5,6 +5,8 @@ import { ImageResponse, NextResponse } from "next/server"
 //    new URL("../../../assets/fonts/Inter-Regular.ttf", import.meta.url)
 // ).then((res) => res.arrayBuffer())
 
+
+
 export async function GET(request: Request) {
    // const interRegular = await inter400
    // console.log(interRegular)
