@@ -1,3 +1,4 @@
+import { FC } from "react"
 
 const defaultMeta = {
    title: "Laup Wing Tech",
@@ -10,7 +11,15 @@ const defaultMeta = {
    robots: "follow, index"
 }
 
-export const Seo = () => {
+export interface SeoProps extends Partial<typeof defaultMeta> {
+   data?: string
+   templateTitle?: string
+   isBlog?: boolean
+   banner?: string
+   canonical?: string
+}
+
+export const Seo:FC<SeoProps> = () => {
    return (
       <div>Seo</div>
    )
