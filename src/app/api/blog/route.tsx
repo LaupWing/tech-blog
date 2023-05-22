@@ -80,6 +80,22 @@ export async function GET(request: Request) {
                      {query.templateTitle}
                   </span>
                </h1>
+
+               <div
+                  style={{
+                     display: "flex",
+                     flexDirection: "row",
+                     gap: "1.4em",
+                     alignItems: "center",
+                     marginTop: "auto"
+                  }}
+               >
+                  <img 
+                     src="/images/profile.jpg" 
+                     tw="w-[80px] rounded-full"
+                     alt="Photo of Laup" 
+                  />
+               </div>
             </div>
          </div>
       </div>
