@@ -1,4 +1,5 @@
 import { ImageResponse, NextResponse } from "next/server"
+import { CSSProperties } from "react"
 
 export const inter400 = fetch(
    new URL("@/assets/fonts/Inter-Regular.ttf", import.meta.url)
@@ -66,6 +67,19 @@ export async function GET(request: Request) {
                >
                   tech.laupwing.com
                </h3>
+               <h1 tw="mt-0 text-4xl leading-tight font-normal">
+                  <span
+                     style={{
+                        backgroundImage: "linear-gradient(90deg, #ffc000, #876117)",
+                        backgroundClip: "text",
+                        "-webkit-background-clip": "text",
+                        color: "transparent",
+                        padding: "0.5rem 0"
+                     } as CSSProperties}
+                  >
+                     {query.templateTitle}
+                  </span>
+               </h1>
             </div>
          </div>
       </div>
