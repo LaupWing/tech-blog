@@ -20,6 +20,7 @@ export default function RootLayout({
 }: {
    children: React.ReactNode
 }) {
+   const test = fetch("/api/blog")
    return (
       <html 
          lang="en"
