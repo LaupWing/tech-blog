@@ -38,6 +38,36 @@ export async function GET(request: Request) {
             padding: "4rem 3rem",
             backgroundColor: "#0e0e0e"
          }}
-      ></div>
+      >
+         <div 
+            style={{
+               display: "flex",
+               flexDirection: "row",
+               gap: "1rem",
+               height: "100%",
+               width: "100%"
+            }}
+         >
+            <div
+               style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  textAlign: "left",
+                  height: "100%",
+                  width: "0%",
+                  flexGrow: 1
+               }}
+            >
+               <h3
+                  style={{
+                     margin: 0
+                  }}
+                  tw="text-2xl font-normal text-gray-300"
+               >
+                  tech.laupwing.com
+               </h3>
+            </div>
+         </div>
+      </div>
    )
 }
