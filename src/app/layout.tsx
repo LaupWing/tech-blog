@@ -9,6 +9,7 @@ import { UnstyledLink } from "@/components/links"
 // import { PreloadProvider } from "@/store/PreloadContext"
 import { defaultMeta } from "@/config"
 import { Metadata } from "next"
+import { Header } from "@/components/Header"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
          <head />
          <body className={inter.className}>
+            <Header />
             {/* <ThemeProvider attribute="class" defaultTheme="light">
                <PreloadProvider>
                   <Header />
