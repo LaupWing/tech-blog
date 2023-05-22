@@ -16,7 +16,8 @@ export async function GET(request: Request) {
    const interMedium = await inter500
 
    const { searchParams } = new URL(request.url)
-   
+
+   const laup = `https://${request.headers.get("Host")}/images/laup.jpg`
    const templateTitle = searchParams.get("templateTitle")
    const banner = searchParams.get("banner")
 
@@ -91,9 +92,9 @@ export async function GET(request: Request) {
                   }}
                >
                   <img 
-                     src="/images/profile.jpg" 
+                     src={"http://localhost:3000/images/laup.jpg"} 
                      tw="w-[80px] rounded-full"
-                     alt="Photo of Laup" 
+                     alt="Photo of Laup"
                   />
                </div>
             </div>
