@@ -24,7 +24,7 @@ export async function GET(request: Request) {
       banner
    }
    
-   return new ImageResponse(
+   return new ImageResponse((
       <div
          style={{
             height: "100%",
@@ -69,5 +69,23 @@ export async function GET(request: Request) {
             </div>
          </div>
       </div>
+   ),
+      {
+         width: 1200,
+         height: 600,
+         emoji: "twemoji",
+         fonts: [
+            {
+               name: "Inter",
+               data: interRegular,
+               weight: 400
+            },
+            {
+               name: "Inter",
+               data: interMedium,
+               weight: 500
+            },
+         ]
+      }
    )
 }
