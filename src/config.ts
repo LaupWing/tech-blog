@@ -16,3 +16,10 @@ interface Favicons {
    type?: string
 }
 
+export const favicons: Array<Favicons> = [
+   {
+      rel: "apple-touch-icon",
+      sizes: "57x57",
+      href: "/favicon/apple-icon-57x57.png"
+   }
+]
