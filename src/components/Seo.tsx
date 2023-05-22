@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation"
 import { FC } from "react"
 
 const defaultMeta = {
@@ -20,6 +21,9 @@ export interface SeoProps extends Partial<typeof defaultMeta> {
 }
 
 export const Seo:FC<SeoProps> = () => {
+   const router = useRouter()
+   
+
    return (
       <div>Seo</div>
    )
