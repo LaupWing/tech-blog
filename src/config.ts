@@ -8,3 +8,11 @@ export const defaultMeta = {
    type: "website",
    robots: "follow, index"
 }
+
+interface Favicons {
+   rel: string
+   href: string
+   sizes?: string
+   type?: string
+}
+
