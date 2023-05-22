@@ -19,7 +19,8 @@ module.exports = {
          colors: {
             primary: withOpacityValue("--color-primary"),
             contrast: withOpacityValue("--color-contrast"),
-            accent: withOpacityValue("--color-accent")
+            accent: withOpacityValue("--color-accent"),
+            "accent-to-gradient": "var(--color-accent-to-gradient)",
          },
          // Example
          backgroundImage: {
