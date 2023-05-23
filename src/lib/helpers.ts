@@ -13,7 +13,7 @@ export const openGraph = ({
    description,
    banner,
    // Need to replace this
-   logo = "https://www.cgsusa.org/wp-content/uploads/cropped-placeholder.jpg",
+   logo = `${process.env.SITE_URL}/images/logo.png`,
    isBlog = false
 }: OpenGraphType) : string => {
    const ogLogo = encodeURIComponent(logo)
