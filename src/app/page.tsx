@@ -1,4 +1,3 @@
-import { useLoaded } from "@/hooks/useLoaded"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 import { generateRss } from "@/lib/rss"
 
@@ -20,13 +19,19 @@ const fetchFrontmatters = async () => {
 }
 
 export default async function Home() {
-   const {recentBlogs, recentLibrary, recentProjects} = await fetchFrontmatters()
-   // const isLoaded = useLoaded()
-   // console.log(isLoaded)
+   const {
+      recentBlogs, 
+      recentLibrary, 
+      recentProjects} = await fetchFrontmatters()
    return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-         <article>
-            
+         <article className="layout">
+            <h2 className="text-2xl md:text-4xl 2xl:text-5xl">
+               Hallo!
+            </h2>
+            <h1 className="mt-1 text-3xl md:text-5xl 2xl:text-6xl">
+               My name is 
+            </h1>
          </article>
       </main>
    )
