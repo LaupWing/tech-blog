@@ -77,7 +77,7 @@ export async function GET(request: Request) {
                   >
                      <span
                         style={{
-                           backgroundImage: "linear-gradient(90deg, #ffc000, #876117)",
+                           backgroundImage: "linear-gradient(90deg, #f1e69a, #a79a5a)",
                            backgroundClip: "text",
                            "-webkit-background-clip": "text",
                            color: "transparent",
@@ -103,9 +103,27 @@ export async function GET(request: Request) {
                      query.theme === "dark" ? "text-white" : "text-black"
                   )}
                >
-
+                  <span
+                     style={{
+                        backgroundImage: "linear-gradient(90deg, #ffc000, #876117)",
+                        backgroundClip: "text",
+                        "-webkit-background-clip": "text",
+                        color: "transparent",
+                        padding: "0.5rem 0"
+                     } as CSSProperties}
+                  >
+                     {query.siteName}
+                  </span>
                </h1>
             )}
+            <p
+               tw={clsx(
+                  "text-3xl",
+                  query.theme === "dark" ? "text-gray-300" : "text-gray-800" 
+               )}
+            >
+               {query.description}
+            </p>
          </div>
       ),
       {
