@@ -27,8 +27,10 @@ export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
    }, [])
 }
 
-export function getRecent<T extends Frontmatter>(contents: Array<T>){
-   // return contents.sort((a, b) => {
-      
-   // })
+export function getRecent<T extends Frontmatter>(contents: Array<T>, limit = 4){
+   const sortedContents =  contents.sort((a, b) => {
+      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime() 
+   })
+   
+   return sortedContents.slice(0, limit)
 }
