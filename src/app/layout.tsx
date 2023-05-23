@@ -1,7 +1,7 @@
 import "./globals.css"
 import { Inter } from "next/font/google"
 import clsx from "clsx"
-import { defaultMeta } from "@/config"
+import { defaultMeta, favicons } from "@/config"
 import { Metadata } from "next"
 import { Header } from "@/components/Header"
 import { AppProvider } from "@/store/AppProvider"
@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
          site: "@laupwing",
          title: defaultMeta.title,
          description: defaultMeta.description,
-         images: image
+         images: [image]
       },
       openGraph: {
          url: process.env.SITE_URL,
@@ -33,7 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
          title: defaultMeta.title,
          siteName: defaultMeta.siteName,
          description: defaultMeta.description
-      }
+      },
+      themeColor: "#ffffff",
+      icons: favicons,
    }
 }
 
