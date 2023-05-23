@@ -4,7 +4,7 @@ import clsx from "clsx"
 import { defaultMeta, favicons } from "@/config"
 import { Metadata } from "next"
 import { Header } from "@/components/Header"
-import { AppProvider } from "@/store/AppProvider"
+import { AppProvider } from "@/context/AppProvider"
 import { openGraph } from "@/lib/helpers"
 
 const inter = Inter({ subsets: ["latin"] })
