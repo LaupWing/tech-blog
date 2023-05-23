@@ -8,3 +8,19 @@ export const inter700 = fetch(
 ).then((res) => res.arrayBuffer())
 
 export const runtime = "edge"
+
+export async function GET(request: Request) {
+   const interRegular = await inter400
+   const interBold = await inter700
+
+   const { searchParams } = new URL(request.url)
+
+   const siteName = searchParams.get("siteName")
+   const description = searchParams.get("description")
+   const theme = searchParams.get("theme")
+   const logo = searchParams.get("logo")
+   const templateTitle = searchParams.get("templateTitle")
+   const logoWidth = searchParams.get("logoWidth")
+   const logoHeight = searchParams.get("logoHeight")
+   
+}
