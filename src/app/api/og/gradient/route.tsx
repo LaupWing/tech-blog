@@ -22,5 +22,13 @@ export async function GET(request: Request) {
    const templateTitle = searchParams.get("templateTitle")
    const logoWidth = searchParams.get("logoWidth")
    const logoHeight = searchParams.get("logoHeight")
-   
+ 
+   const query = {
+      siteName: siteName ?? "Site Name",
+      description: description ?? "Description",
+      theme: theme ?? "dark",
+      logo: logo ?? `${process.env.SITE_URL}/images/logo.png`,
+      logoWidth: logoWidth ? +logoWidth : 100,
+      logoHeight: logoHeight ? +logoHeight : 100 
+   }
 }
