@@ -3,6 +3,7 @@ import { useSelectedLayoutSegment } from "next/navigation"
 import { FC, useEffect, useState } from "react"
 import { UnstyledLink } from "./links"
 import clsx from "clsx"
+import { ThemeButton } from "./buttons"
 
 interface HeaderProps {
    large?: boolean
@@ -71,6 +72,7 @@ export const Header:FC<HeaderProps> = () => {
                   </li>
                ))}
             </ul>
+            <ThemeButton />
          </nav>
       </header>
    )
