@@ -1,3 +1,4 @@
+import { Accent } from "@/components/Accent"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 import { generateRss } from "@/lib/rss"
 
@@ -30,7 +31,7 @@ export default async function Home() {
                Hallo!
             </h2>
             <h1 className="mt-1 text-3xl md:text-5xl 2xl:text-6xl">
-               My name is 
+               My name is <Accent>Laup Wing </Accent>
             </h1>
          </article>
       </main>
