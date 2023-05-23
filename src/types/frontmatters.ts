@@ -13,6 +13,11 @@ export interface BlogFrontmatter {
    repost?: string
 }
 
+export interface BlogType {
+   code: string
+   frontmatter: BlogFrontmatter
+}
+
 export interface ProjectFrontmatter {
    slug: string
    title: string
