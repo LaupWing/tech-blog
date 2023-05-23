@@ -28,7 +28,7 @@ export const openGraph = ({
          ? encodeURIComponent(banner.trim())
          : undefined
       
-      return `http://localhost:3000/`
+      return `${process.env.SITE_URL}}`
    }
 
    
