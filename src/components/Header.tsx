@@ -62,7 +62,7 @@ export const Header:FC<HeaderProps> = () => {
                      <UnstyledLink
                         href={href}
                         className={clsx(
-                           "border-b-[3px] pb-1", 
+                           "border-b-[3px] pb-1 text-accent", 
                            activeSegment === segement ? "border-black" : "border-transparent"
                         )}
                      >

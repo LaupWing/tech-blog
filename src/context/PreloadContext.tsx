@@ -18,7 +18,7 @@ export const PreloadProvider:FC<PropsWithChildren> = ({
       <PreloadContext.Provider value={preloaded}>
          <div
             className={clsx(
-               "fixed inset-0 items-center justify-center bg-primary transition-opacity z-50",
+               "fixed inset-0 items-center justify-center bg-primary transition-opacity z-[100]",
                preloaded && "pointer-events-none opacity-0"
             )}
          />

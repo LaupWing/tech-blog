@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 const withOpacityValue = (variable) => {
    return ({ opacityValue }) => {
+      console.log(opacityValue)
+      console.log(variable)
       if (opacityValue === undefined) {
          return `rgba(var(${variable}))`
       }
@@ -18,7 +20,7 @@ module.exports = {
    theme: {
       extend: {
          colors: {
-            primary: withOpacityValue("--color-primary"),
+            primary: "rgb(var(--color-primary) / <alpha-value>)",
             contrast: withOpacityValue("--color-contrast"),
             accent: withOpacityValue("--color-accent"),
             "accent-to-gradient": "var(--color-accent-to-gradient)",
