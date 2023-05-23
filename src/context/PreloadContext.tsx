@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { FC, PropsWithChildren, createContext, useEffect, useState } from "react"
+import { FC, PropsWithChildren, createContext, useContext, useEffect, useState } from "react"
 
 const PreloadContext = createContext<boolean>(false)
 
@@ -10,7 +10,7 @@ export const PreloadProvider:FC<PropsWithChildren> = ({
 
    useEffect(() => {
       setTimeout(() => {
-         // setPreloaded(true)
+         setPreloaded(true)
       }, 200)
    }, [])
 
@@ -26,3 +26,5 @@ export const PreloadProvider:FC<PropsWithChildren> = ({
       </PreloadContext.Provider>
    )
 }
+
+export const usePreloadeState = () => useContext(PreloadContext)
