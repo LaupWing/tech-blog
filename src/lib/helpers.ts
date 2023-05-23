@@ -28,7 +28,7 @@ export const openGraph = ({
          ? encodeURIComponent(banner.trim())
          : undefined
       
-      return `${process.env.SITE_URL}}`
+      return `${process.env.SITE_URL}/api/og/blog?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`
    }
 
    
