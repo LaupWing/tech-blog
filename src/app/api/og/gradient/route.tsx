@@ -1,3 +1,4 @@
+import { ImageResponse } from "next/server"
 
 export const inter400 = fetch(
    new URL("@/assets/fonts/Inter-Regular.ttf", import.meta.url)
@@ -31,4 +32,35 @@ export async function GET(request: Request) {
       logoWidth: logoWidth ? +logoWidth : 100,
       logoHeight: logoHeight ? +logoHeight : 100 
    }
+
+   return new ImageResponse(
+      (
+         <div
+            style={{
+               height: "100%",
+               width: "100%",
+               fontFamily: "Inter"
+            }}
+         >
+
+         </div>
+      ),
+      {
+         width: 1200,
+         height: 630,
+         emoji: "twemoji",
+         fonts: [
+            {
+               name: "Inter",
+               data: interRegular,
+               weight: 400
+            },
+            {
+               name: "Inter",
+               data: interBold,
+               weight: 700
+            }
+         ]
+      }
+   )
 }
