@@ -31,6 +31,5 @@ export const openGraph = ({
       return `${process.env.SITE_URL}/api/og/blog?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`
    }
 
-   
-   return ""
+   return `${process.env.SITE_URL}/api/og/gradient?siteName=${ogSiteName}&description=${ogDescription}&logo=${ogLogo}${ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ""}`
 }
