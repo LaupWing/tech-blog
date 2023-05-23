@@ -25,14 +25,9 @@ export default async function Home() {
    // console.log(isLoaded)
    return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-         <section className="min-h-screen -mt-20 mb-20 flex flex-col justify-center fade-in-start">
-            <h2 data-fade="1">Hi</h2>
-            <h2 data-fade="2">Hi</h2>
-            <h2 data-fade="3">Hi</h2>
-            <h2 data-fade="4">Hi</h2>
-            <h2 data-fade="5">Hi</h2>
-            <h2 data-fade="6">Hi</h2>
-         </section>
+         <article>
+            
+         </article>
       </main>
    )
 }
