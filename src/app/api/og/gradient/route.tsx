@@ -87,11 +87,24 @@ export async function GET(request: Request) {
                         {query.templateTitle}
                      </span>
                   </h1>
+                  <h3
+                     tw={clsx(
+                        "text-2xl font-bold",
+                        query.theme === "dark" ? "text-gray-300" : "text-gray-700"
+                     )}
+                  >
+                     {query.siteName}
+                  </h3>
                </div>   
             ): (
-               <div>
+               <h1
+                  tw={clsx(
+                     "mt-6 text-6xl font-bold",
+                     query.theme === "dark" ? "text-white" : "text-black"
+                  )}
+               >
 
-               </div>
+               </h1>
             )}
          </div>
       ),
