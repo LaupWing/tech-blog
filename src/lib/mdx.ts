@@ -1,6 +1,8 @@
 import { ContentType, PickFrontmatter } from "@/types/frontmatters"
 import { readFileSync, readdirSync } from "fs"
+import matter from "gray-matter"
 import { join } from "path"
+import readingTime from "reading-time"
 
 
 export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
@@ -11,6 +13,16 @@ export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
          join(process.cwd(), "src", "contents", type, postSlug),
          "utf-8"
       )
-      // const {}
-   })
+      const { data } = matter(source)
+
+      const res = [
+         {
+            ...(data as PickFrontmatter<T>),
+            slug: postSlug.replace(".mdx", ""),
+            readingTime: readingTime(source)
+         },
+         ...allPosts
+      ]
+      return res
+   }, [])
 }
