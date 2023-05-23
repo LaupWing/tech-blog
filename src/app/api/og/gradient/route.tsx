@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import { ImageResponse } from "next/server"
+import { CSSProperties } from "react"
 
 export const inter400 = fetch(
    new URL("@/assets/fonts/Inter-Regular.ttf", import.meta.url)
@@ -30,6 +31,7 @@ export async function GET(request: Request) {
       description: description ?? "Description",
       theme: theme ?? "dark",
       logo: logo ?? `${process.env.SITE_URL}/images/logo.png`,
+      templateTitle,
       logoWidth: logoWidth ? +logoWidth : 100,
       logoHeight: logoHeight ? +logoHeight : 100 
    }
@@ -58,6 +60,39 @@ export async function GET(request: Request) {
                src={query.logo} 
                alt="Favicon" 
             />
+            {query.templateTitle ? (
+               <div
+                  style={{
+                     display: "flex",
+                     flexDirection: "column",
+                     justifyContent: "center",
+                     alignItems: "center"
+                  }}
+               >
+                  <h1
+                     tw={clsx(
+                        "mt-8 text-6xl font-bold",
+                        query.theme === "dark" ? "text-white" : "text-black"
+                     )}
+                  >
+                     <span
+                        style={{
+                           backgroundImage: "linear-gradient(90deg, #ffc000, #876117)",
+                           backgroundClip: "text",
+                           "-webkit-background-clip": "text",
+                           color: "transparent",
+                           padding: "0.5rem 0"
+                        } as CSSProperties}
+                     >
+                        {query.templateTitle}
+                     </span>
+                  </h1>
+               </div>   
+            ): (
+               <div>
+
+               </div>
+            )}
          </div>
       ),
       {
