@@ -1,5 +1,6 @@
 import { Accent } from "@/components/Accent"
-import { ButtonLink } from "@/components/links"
+import { IconNewspaper } from "@/components/Icons"
+import { ButtonLink, UnstyledLink } from "@/components/links"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 import { generateRss } from "@/lib/rss"
 
@@ -25,6 +26,7 @@ export default async function Home() {
       recentBlogs, 
       recentLibrary, 
       recentProjects} = await fetchFrontmatters()
+   const socialLinkStyle = "inline-flex items-center gap-1 text-sm font-medium md:text-base text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-contrast group"
    return (
       <main>
          <section className="flex min-h-screen flex-col items-center justify-center -mt-20">
@@ -50,6 +52,15 @@ export default async function Home() {
                   <ButtonLink href="/about">
                      Learn more about me
                   </ButtonLink>
+               </div>
+               <div className="mt-4 flex flex-wrap gap-4 gap-y-2 md:mt-8">
+                  <UnstyledLink
+                     href="https://google.com"
+                     className={socialLinkStyle}
+                  >
+                     <IconNewspaper className="shrink-0" />
+                     <span>Resume</span>
+                  </UnstyledLink>
                </div>
             </article>
          </section>
