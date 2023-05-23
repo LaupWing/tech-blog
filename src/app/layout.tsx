@@ -34,8 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
          siteName: defaultMeta.siteName,
          description: defaultMeta.description
       },
-      themeColor: "#ffffff",
-      icons: favicons,
+      themeColor: "#ffffff"
    }
 }
 
@@ -52,7 +51,11 @@ export default function RootLayout({
          }}
          className={clsx(inter.className, "light")}
       >
-         <head />
+         <head>
+            {favicons.map(favicon => (
+               <link key={favicon.href} {...favicon} />
+            ))}
+         </head>
          <body className={inter.className}>
             <AppProvider>
                <Header />
