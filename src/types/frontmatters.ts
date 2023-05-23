@@ -26,6 +26,23 @@ export interface ProjectFrontmatter {
    github?: string
 }
 
+export interface LibraryFrontmatter {
+   slug: string
+   title: string
+   readTime: ReadTimeResults
+   description: string
+   tags: string
+}
+
+export interface LibraryType {
+   code: string
+   frontmatter: LibraryFrontmatter
+}
+
+export interface ProjectType {
+   code: string
+   frontmatter: ProjectFrontmatter
+}
 
 export type ContentType = "blog" | "library" | "projects"
 
