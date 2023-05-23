@@ -5,10 +5,15 @@ import { defaultMeta } from "@/config"
 import { Metadata } from "next"
 import { Header } from "@/components/Header"
 import { AppProvider } from "@/store/AppProvider"
+import { openGraph } from "@/lib/helpers"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export async function generateMetadata(): Promise<Metadata> {
+   const image = openGraph({
+      description: defaultMeta.description,
+      siteName: defaultMeta.siteName
+   })
 
    return {
       title: defaultMeta.title,
@@ -18,6 +23,15 @@ export async function generateMetadata(): Promise<Metadata> {
          card: "summary_large_image",
          site: "@laupwing",
          title: defaultMeta.title,
+         description: defaultMeta.description,
+         images: image
+      },
+      openGraph: {
+         url: process.env.SITE_URL,
+         // @ts-ignore
+         type: defaultMeta.type,
+         title: defaultMeta.title,
+         siteName: defaultMeta.siteName,
          description: defaultMeta.description
       }
    }
