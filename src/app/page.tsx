@@ -27,7 +27,7 @@ export default async function Home() {
       recentProjects} = await fetchFrontmatters()
    return (
       <main>
-         <section className="flex min-h-screen flex-col items-center justify-center -mt-20 mb-20">
+         <section className="flex min-h-screen flex-col items-center justify-center -mt-20">
             <article className="layout">
                <h2 className="text-2xl md:text-4xl 2xl:text-5xl">
                   Hallo!
