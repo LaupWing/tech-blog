@@ -34,6 +34,7 @@ export interface ProjectFrontmatter {
 export interface LibraryFrontmatter {
    slug: string
    title: string
+   publishedAt: string
    readTime: ReadTimeResults
    description: string
    tags: string
