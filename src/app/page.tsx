@@ -21,8 +21,8 @@ const fetchFrontmatters = async () => {
 
 export default async function Home() {
    const {recentBlogs, recentLibrary, recentProjects} = await fetchFrontmatters()
-   const isLoaded = useLoaded()
-   console.log(isLoaded)
+   // const isLoaded = useLoaded()
+   // console.log(isLoaded)
    return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
          <section>

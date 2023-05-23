@@ -1,3 +1,4 @@
+"use client"
 import clsx from "clsx"
 import { FC, PropsWithChildren, createContext, useContext, useEffect, useState } from "react"
 

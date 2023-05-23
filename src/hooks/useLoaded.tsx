@@ -1,5 +1,8 @@
+"use client"
+import { usePreloadeState } from "@/context/PreloadContext"
+
 export const useLoaded = () => {
-   const preloaded = usePreload
+   const preloaded = usePreloadeState()
 
    return (
       <div>useLoaded</div>
