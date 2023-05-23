@@ -28,7 +28,7 @@ export const openGraph = ({
          ? encodeURIComponent(banner.trim())
          : undefined
       
-      return `https`
+      return `http://localhost:3000/`
    }
 
    
