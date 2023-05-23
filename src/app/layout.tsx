@@ -47,9 +47,9 @@ export default function RootLayout({
       <html 
          lang="en"
          style={{
-            colorScheme: "dark",
+            colorScheme: "light",
          }}
-         className={clsx(inter.className, "dark")}
+         className={clsx(inter.className, "light")}
       >
          <head>
             {favicons.map(favicon => (
