@@ -1,5 +1,5 @@
 
 
-export async function getAllFilesFrontmatter(params:type) {
+// export async function getAllFilesFrontmatter(params:type) {
    
-}
+// }
