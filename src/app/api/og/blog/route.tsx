@@ -1,4 +1,4 @@
-import { ImageResponse, NextResponse } from "next/server"
+import { ImageResponse } from "next/server"
 import { CSSProperties } from "react"
 
 export const inter400 = fetch(
