@@ -8,15 +8,18 @@ import { AppProvider } from "@/store/AppProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata:Metadata = {
-   title: defaultMeta.title,
-   robots: defaultMeta.robots,
-   description: defaultMeta.description,
-   twitter: {
-      card: "summary_large_image",
-      site: "@laupwing",
+export async function generateMetadata(): Promise<Metadata> {
+
+   return {
       title: defaultMeta.title,
-      description: defaultMeta.description
+      robots: defaultMeta.robots,
+      description: defaultMeta.description,
+      twitter: {
+         card: "summary_large_image",
+         site: "@laupwing",
+         title: defaultMeta.title,
+         description: defaultMeta.description
+      }
    }
 }
 

@@ -12,7 +12,6 @@ export const openGraph = ({
    templateTitle,
    description,
    banner,
-   // Need to replace this
    logo = `${process.env.SITE_URL}/images/logo.png`,
    isBlog = false
 }: OpenGraphType) : string => {
