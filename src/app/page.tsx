@@ -1,17 +1,26 @@
-import { getAllFilesFrontmatter } from "@/lib/mdx"
+import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 import { generateRss } from "@/lib/rss"
 
 const fetchFrontmatters = async () => {
    generateRss()
    const blogs = await getAllFilesFrontmatter("blog")
+   const projects = await getAllFilesFrontmatter("projects")
+   const library = await getAllFilesFrontmatter("library")
+
+   const recentBlogs = getRecent(blogs)
+   const recentProjects = getRecent(projects)
+   const recentLibrary = getRecent(library)
+
    return {
-      blogs
+      recentBlogs,
+      recentLibrary,
+      recentProjects
    }
 }
 
 export default async function Home() {
-   const test = await fetchFrontmatters()
-   console.log(test)
+   const {recentBlogs, recentLibrary, recentProjects} = await fetchFrontmatters()
+   
    return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
          
