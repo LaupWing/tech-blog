@@ -18,6 +18,7 @@ export async function GET(request: Request) {
    const { searchParams } = new URL(request.url)
 
    const laup = `http://${request.headers.get("Host")}/images/laup.jpg`
+   console.log(laup)
    const templateTitle = searchParams.get("templateTitle")
    const banner = searchParams.get("banner")
 

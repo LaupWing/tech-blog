@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import { ImageResponse } from "next/server"
 
 export const inter400 = fetch(
@@ -39,10 +40,24 @@ export async function GET(request: Request) {
             style={{
                height: "100%",
                width: "100%",
-               fontFamily: "Inter"
+               fontFamily: "Inter",
+               display: "flex",
+               flexDirection: "column",
+               alignItems: "center",
+               justifyContent: "center",
+               textAlign: "center",
+               padding: "0 5rem",
+               backgroundColor: clsx(query.theme === "dark" ? "#222" : "#fff")
             }}
          >
-
+            <img 
+               style={{
+                  width: query.logoWidth,
+                  ...(query.logoHeight && { height: query.logoHeight })
+               }}
+               src={query.logo} 
+               alt="Favicon" 
+            />
          </div>
       ),
       {
