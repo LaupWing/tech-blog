@@ -8,7 +8,7 @@ import { FC, PropsWithChildren } from "react"
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
    return (
       <ThemeProvider attribute="class" defaultTheme="light">
-         <PreloadProvider>
+         {/* <PreloadProvider> */}
             {/* <SWRConfig
                value={{
                   fetcher: (url) => axios.get(url).then((res) => res.data),
@@ -16,7 +16,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
             > */}
             {children}
             {/* </SWRConfig> */}
-         </PreloadProvider>
+         {/* </PreloadProvider> */}
       </ThemeProvider>
    )
 }
