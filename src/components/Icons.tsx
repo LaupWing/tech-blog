@@ -1,5 +1,6 @@
 import { IoArrowDownOutline, IoNewspaperSharp } from "react-icons/io5"
 import { SiGithub, SiTwitter } from "react-icons/si"
+import { FiMoon, FiSun } from "react-icons/fi"
 import { IconType } from "react-icons"
 
 export const IconNewspaper:IconType = (props) => {
@@ -34,3 +35,18 @@ export const IconTwitter:IconType = (props) => {
    )
 }
 
+export const IconSun:IconType = (props) => {
+   return (
+      <FiSun
+         {...props}
+      />
+   )
+}
+
+export const IconMoon:IconType = (props) => {
+   return (
+      <FiMoon
+         {...props}
+      />
+   )
+}
