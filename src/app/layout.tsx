@@ -12,7 +12,13 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata:Metadata = {
    title: defaultMeta.title,
    robots: defaultMeta.robots,
-   description: defaultMeta.description
+   description: defaultMeta.description,
+   twitter: {
+      card: "summary_large_image",
+      site: "@laupwing",
+      title: defaultMeta.title,
+      description: defaultMeta.description
+   }
 }
 
 export default function RootLayout({
