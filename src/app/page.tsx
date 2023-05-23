@@ -1,5 +1,5 @@
 import { Accent } from "@/components/Accent"
-import { IconNewspaper } from "@/components/Icons"
+import { IconGithub, IconNewspaper, IconTwitter } from "@/components/Icons"
 import { ButtonLink, UnstyledLink } from "@/components/links"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 import { generateRss } from "@/lib/rss"
@@ -60,6 +60,20 @@ export default async function Home() {
                   >
                      <IconNewspaper className="shrink-0" />
                      <span>Resume</span>
+                  </UnstyledLink>
+                  <UnstyledLink
+                     href="https://google.com"
+                     className={socialLinkStyle}
+                  >
+                     <IconTwitter className="shrink-0 transition-colors group-hover:text-[#1da1f2]" />
+                     <span>@laupwing</span>
+                  </UnstyledLink>
+                  <UnstyledLink
+                     href="https://google.com"
+                     className={socialLinkStyle}
+                  >
+                     <IconGithub className="shrink-0" />
+                     <span>laupwing</span>
                   </UnstyledLink>
                </div>
             </article>
