@@ -16,10 +16,14 @@
    }
 }
 
-@layer utilities {
+@layer base {
    .layout {
       @apply container mx-auto;
    }
+}
+
+@layer utilities {
+   
 }
 
 /* Example */
