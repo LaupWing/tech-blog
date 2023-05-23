@@ -51,3 +51,8 @@ export interface ProjectType {
 
 export type ContentType = "blog" | "library" | "projects"
 
+export type PickFrontmatter<T extends ContentType> = T extends "blog"
+   ? BlogFrontmatter
+   : T extends "library"
+   ? LibraryFrontmatter
+   : ProjectFrontmatter
