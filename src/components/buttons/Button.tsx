@@ -4,7 +4,7 @@ import { ComponentPropsWithoutRef, FC } from "react"
 type ButtonVariant = "default" | "gold"
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-   isLoading: boolean
+   isLoading?: boolean
    variant?: ButtonVariant
 }
 
