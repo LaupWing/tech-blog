@@ -1,12 +1,6 @@
 import { TooltipProps, Tooltip as TippyTooltip } from "react-tippy"
 import { ComponentPropsWithoutRef, ReactNode, FC } from "react"
 
-declare module "react-tippy" {
-   export interface TooltipProps {
-     children?: React.ReactNode;
-   }
- }
-
 type TooltipTextProps = {
    tipChildren: ReactNode
    children: ReactNode
