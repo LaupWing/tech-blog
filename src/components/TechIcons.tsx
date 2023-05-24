@@ -18,7 +18,6 @@ import { IoLogoVercel } from "react-icons/io5"
 import { ComponentPropsWithoutRef, FC } from "react"
 import clsx from "clsx"
 import { Tooltip } from "./Tooltip"
-// import { Tooltip } from "./elements"
 
 export type TechListType = keyof typeof techList
 
