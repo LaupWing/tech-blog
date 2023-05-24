@@ -11,8 +11,8 @@ module.exports = {
          colors: {
             primary: "rgb(var(--color-primary) / <alpha-value>)",
             contrast: "rgb(var(--color-contrast) / <alpha-value>)",
-            accent: "rgb(var(--color-accent) / <alpha-value>)",
-            "accent-to-gradient": "var(--color-accent-to-gradient)",
+            "accent-light": "rgb(var(--color-accent-light) / <alpha-value>)",
+            "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
          },
          // Example
          backgroundImage: {
