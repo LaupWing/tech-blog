@@ -26,6 +26,7 @@ const HomeBlogs = async () => {
             <h2 id="projects" className="text-2xl md:text-4xl">
                <Accent>Recent Blog Posts</Accent>
             </h2>
+            <ul></ul>
          </article>
       </section>
    )
