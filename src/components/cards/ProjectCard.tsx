@@ -2,6 +2,7 @@ import { ProjectFrontmatter } from "@/types/frontmatters"
 import clsx from "clsx"
 import { ComponentPropsWithoutRef, FC } from "react"
 import { UnstyledLink } from "../links"
+import { TechIcons, TechListType } from "../TechIcons"
 
 interface ProjectCardProps extends ComponentPropsWithoutRef<"li"> {
    project: ProjectFrontmatter
@@ -26,7 +27,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
                {project.description}
             </p>
             <div className="mt-2">
-
+               <TechIcons techs={project.techs.split(",") as Array<TechListType>} />
             </div>
          </UnstyledLink>
       </li>

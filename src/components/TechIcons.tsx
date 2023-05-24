@@ -1,3 +1,4 @@
+"use client"
 import {
    SiFirebase,
    SiGit,
@@ -32,7 +33,7 @@ export const TechIcons:FC<TechIconsProps> = ({
       <ul className={clsx(className, "flex gap-2")}>
          {techs.map((tech) => {
             if(!techList[tech]){
-               return
+               return null
             }
             const current = techList[tech]
 
