@@ -7,7 +7,7 @@ import { Header } from "@/components/Header"
 import { AppProvider } from "@/context/AppProvider"
 import { openGraph } from "@/lib/helpers"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], weight: ["400","500","700"] })
 
 export async function generateMetadata(): Promise<Metadata> {
    const image = openGraph({

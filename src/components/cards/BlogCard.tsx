@@ -53,6 +53,12 @@ export const BlogCard:FC<BlogCardProps> = ({
                   ))}
                </div>
             </div>
+            <div className="p-4">
+               <h4 className="text-gray-800 dark:text-gray-100 font-bold">{post.title}</h4>
+               <div className="mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+                  
+               </div>
+            </div>
          </UnstyledLink>
       </li>
    )
