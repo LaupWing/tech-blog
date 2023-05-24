@@ -46,7 +46,10 @@ export const BlogCard:FC<BlogCardProps> = ({
                />
                <div className="absolute bottom-0 px-4 w-full py-2 mt-2 flex flex-wrap justify-end gap-x-2 gap-y-1 text-sm text-black dark:text-gray-100">
                   {post.tags.split(",").map((tag) => (
-                     <Tag className="bg-opacity-80 dark:!bg-opacity-60">
+                     <Tag 
+                        className="bg-opacity-80 dark:!bg-opacity-60"
+                        key={tag}
+                     >
                         {checkTagged?.(tag) 
                            ? <Accent>{tag}</Accent>
                            : tag

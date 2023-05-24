@@ -5,8 +5,16 @@ interface LibraryCardProps extends ComponentPropsWithoutRef<"li"> {
    snippet: LibraryFrontmatter & InjectedMeta
 }
 
-export const LibraryCard:FC<LibraryCardProps> = () => {
+export const LibraryCard:FC<LibraryCardProps> = ({
+   className,
+   snippet
+}) => {
+   
    return (
-      <div>LibraryCard</div>
+      <li
+         className="h-full rounded-md border bg-white dark:border-gray-600"
+      >
+         
+      </li>
    )
 }
