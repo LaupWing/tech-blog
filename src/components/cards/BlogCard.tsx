@@ -23,7 +23,7 @@ export const BlogCard:FC<BlogCardProps> = ({
          >
             <CloudinaryImage 
                noStyle
-               className=""
+               className="rounded-t-md overflow-hidden pointer-events-none"
                publicId="samples/bike"
                alt="Bike"
                width={1200}

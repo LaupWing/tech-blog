@@ -38,12 +38,12 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
       },
       transformations: {
          rawTransformation: aspect 
-            ? `c_full,ar_${aspect.width}:${aspect.height},w_${width}`
+            ? `c_fill,ar_${aspect.width}:${aspect.height},w_${width}`
             : undefined
       }
    })
 
-   // console.log(url)
+   console.log(url)
    // console.log(extractPublicId("https://res.cloudinary.com/laupwing/image/upload/v1684915995/samples/bike.jpg"))
 
    const aspectRatio = aspect ? aspect.height / aspect.width : undefined
@@ -62,6 +62,7 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
          {...props}
       >
          <div
+            className="img"
             style={{
                position: "relative",
                height: 0,
@@ -74,7 +75,7 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
                <Image 
                   width={+width}
                   height={+height}
-                  src={"https://res.cloudinary.com/theodorusclarence/image/upload/q_auto,f_auto,c_fill,ar_5:2,w_1200/theodorusclarence/banner/bernd-dittrich-W1NsOMhU8hI-unsplash_ugoyld"}
+                  src={url}
                   alt={alt}
                   title={title || alt}
                />
