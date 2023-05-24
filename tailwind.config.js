@@ -10,7 +10,7 @@ module.exports = {
       extend: {
          colors: {
             light: "rgb(var(--color-light) / <alpha-value>)",
-            contrast: "rgb(var(--color-contrast) / <alpha-value>)",
+            dark: "rgb(var(--color-dark) / <alpha-value>)",
             "accent-light": "rgb(var(--color-accent-light) / <alpha-value>)",
             "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
          },

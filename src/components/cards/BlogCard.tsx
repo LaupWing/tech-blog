@@ -28,7 +28,7 @@ export const BlogCard:FC<BlogCardProps> = ({
          onClick={onClick}
       >
          <UnstyledLink
-            className="block h-full rounded-md focus-within:outline-none focus-visible:ring focus-visible:ring-contrast"
+            className="block h-full rounded-md focus-within:outline-none focus-visible:ring focus-visible:ring-accent-light"
             href={`/blog/${post.slug}`}
          >
             <div className="relative">

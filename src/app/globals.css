@@ -5,7 +5,7 @@
 
 :root {
    --color-light: 255 255 255;
-   --color-contrast: 14 14 14;
+   --color-dark: 14 14 14;
    --color-accent-light: 241 230 154;
    --color-accent-dark: 167 154 90;
 }

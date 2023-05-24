@@ -4,7 +4,7 @@ import { IconGithub, IconNewspaper, IconTwitter } from "@/components/Icons"
 import { ButtonLink, UnstyledLink } from "@/components/links"
 
 const HomeIntro = () => {
-   const socialLinkStyle = "inline-flex items-center gap-1 text-sm font-medium md:text-base text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-contrast group"
+   const socialLinkStyle = "inline-flex items-center gap-1 text-sm font-medium md:text-base text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent-light group"
    
    return (
       <section className="flex min-h-screen flex-col items-center justify-center -mt-20">
