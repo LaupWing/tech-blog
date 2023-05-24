@@ -15,7 +15,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
 }) => {
    return (
       <li className={clsx(
-         "rounded-md md:w-full border dark:border-gray-600 scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu transition duration-100 motion-reduce:hover:scale-100 animate-shadow",
+         "project-card rounded-md md:w-full border dark:border-gray-600 scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu transition duration-100 motion-reduce:hover:scale-100 animate-shadow",
          className
          )}
       >
@@ -37,6 +37,9 @@ export const ProjectCard:FC<ProjectCardProps> = ({
                width={1440}
                height={792}
             />
+            <p className="animated-underline mt-2 inline-block font-medium">
+               See more →
+            </p>
          </UnstyledLink>
       </li>
    )
