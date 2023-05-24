@@ -1,4 +1,13 @@
 import { Accent } from "@/components/Accent"
+import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
+
+const fetchRecentProjects = async () => {
+   const projects = await getAllFilesFrontmatter("projects")
+
+   const recentProjects = getRecent(projects)
+
+   return recentProjects
+}
 
 const HomeProjects = () => {
    return (
