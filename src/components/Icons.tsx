@@ -12,7 +12,7 @@ export const IconNewspaper:IconType = (props) => {
    )
 }
 
-export const IconHearth:IconType = (props) => {
+export const IconHeart:IconType = (props) => {
    return (
       <GiTechnoHeart 
          {...props}
