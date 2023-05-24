@@ -1,4 +1,5 @@
 import "./globals.css"
+import "react-tippy/dist/tippy.css"
 import { Inter } from "next/font/google"
 import clsx from "clsx"
 import { defaultMeta, favicons } from "@/config"
