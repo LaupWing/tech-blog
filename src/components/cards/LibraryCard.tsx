@@ -22,6 +22,11 @@ export const LibraryCard:FC<LibraryCardProps> = ({
          >
             <div className="p-4">
                <h4 className="text-gray-800 dark:text-gray-100">{snippet.title}</h4>
+               <div className="mt-1 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
+                  <div>
+                     
+                  </div>
+               </div>
             </div>
          </UnstyledLink>
       </li>

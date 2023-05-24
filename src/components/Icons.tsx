@@ -1,11 +1,20 @@
 import { IoArrowDownOutline, IoNewspaperSharp } from "react-icons/io5"
 import { SiGithub, SiTwitter } from "react-icons/si"
 import { FiClock, FiEye, FiMoon, FiSun } from "react-icons/fi"
+import { GiTechnoHeart } from "react-icons/gi"
 import { IconType } from "react-icons"
 
 export const IconNewspaper:IconType = (props) => {
    return (
       <IoNewspaperSharp 
+         {...props}
+      />
+   )
+}
+
+export const IconHearth:IconType = (props) => {
+   return (
+      <GiTechnoHeart 
          {...props}
       />
    )

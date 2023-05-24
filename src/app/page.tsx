@@ -4,6 +4,7 @@ import HomeIntro from "./HomeIntro"
 import HomeProjects from "./HomeProjects"
 import HomeBlogs from "./HomeBlogs"
 import { Suspense } from "react"
+import HomeLibrary from "./HomeLibrary"
 
 const fetchFrontmatters = async () => {
    generateRss()
@@ -38,6 +39,10 @@ export default async function Home() {
          <Suspense fallback={"loading"}>
             {/* @ts-expect-error Server Component */}
             <HomeProjects />
+         </Suspense>
+         <Suspense fallback={"loading"}>
+            {/* @ts-expect-error Server Component */}
+            <HomeLibrary />
          </Suspense>
       </main>
    )
