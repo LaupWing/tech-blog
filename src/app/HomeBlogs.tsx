@@ -6,12 +6,6 @@ const fetchRecentBlogs = async () => {
    const blogs = await getAllFilesFrontmatter("blog")
 
    const recentBlogs = getRecent(blogs)
-   // await new Promise((resolve)=>{
-   //    return setTimeout(() =>{
-   //       resolve("")
-   //    },10000)
-   // })
-
 
    return recentBlogs
 }
