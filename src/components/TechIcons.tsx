@@ -12,8 +12,15 @@ import {
    SiTailwindcss,
    SiTypescript,
    SiWordpress,
- } from "react-icons/si"
- import { IoLogoVercel } from "react-icons/io5"
+} from "react-icons/si"
+import { IoLogoVercel } from "react-icons/io5"
+import { ComponentPropsWithoutRef } from "react"
+
+export type TechListType = keyof typeof techList
+
+export interface TechIconsProps extends ComponentPropsWithoutRef<"ul"> {
+   tech: Array<TechListType>
+}
 
  const techList = {
    react: {
