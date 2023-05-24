@@ -3,6 +3,7 @@ import clsx from "clsx"
 import { ComponentPropsWithoutRef, FC } from "react"
 import { UnstyledLink } from "../links"
 import { TechIcons, TechListType } from "../TechIcons"
+import { CloudinaryImage } from "../images"
 
 interface ProjectCardProps extends ComponentPropsWithoutRef<"li"> {
    project: ProjectFrontmatter
@@ -29,6 +30,13 @@ export const ProjectCard:FC<ProjectCardProps> = ({
             <div className="mt-2">
                <TechIcons techs={project.techs.split(",") as Array<TechListType>} />
             </div>
+            <CloudinaryImage 
+               className="pointer-events-none mt-3 w-full"
+               publicId="samples/bike"
+               alt={project.title}
+               width={1440}
+               height={792}
+            />
          </UnstyledLink>
       </li>
    )
