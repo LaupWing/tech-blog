@@ -31,6 +31,7 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
    aspect,
    ...props
 }) => {
+   console.log(publicId)
    const url = buildUrl(publicId, {
       cloud: {
          cloudName: "laupwing"
@@ -41,6 +42,9 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
             : undefined
       }
    })
+
+   // console.log(url)
+   // console.log(extractPublicId("https://res.cloudinary.com/laupwing/image/upload/v1684915995/samples/bike.jpg"))
 
    const aspectRatio = aspect ? aspect.height / aspect.width : undefined
 
@@ -70,7 +74,7 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
                <Image 
                   width={+width}
                   height={+height}
-                  src={url}
+                  src={"https://cms-cdn.placeholder.co/warehouse_for_rent_19b6e42cf3.jpg?width=1920"}
                   alt={alt}
                   title={title || alt}
                />
