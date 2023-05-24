@@ -1,10 +1,12 @@
-import { BlogFrontmatter } from "@/types/frontmatters"
+import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
+import { ComponentPropsWithoutRef, FC } from "react"
 
-interface BlogcardProps {
-   post: BlogFrontmatter
+interface BlogCardProps extends ComponentPropsWithoutRef<"li"> {
+   post: BlogFrontmatter & InjectedMeta
+   checkTagged?: (tag: string) => boolean
 }
 
-export const BlogCard = () => {
+export const BlogCard:FC<BlogCardProps> = () => {
    return (
       <div>BlogCard</div>
    )
