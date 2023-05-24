@@ -1,6 +1,6 @@
-import { ComponentPropsWithoutRef } from "react"
+import { ComponentPropsWithoutRef, FC } from "react"
 
-interface CloudinaryImageType extends ComponentPropsWithoutRef<"figure"> {
+interface CloudinaryImageProps extends ComponentPropsWithoutRef<"figure"> {
    publicId: string
    height: string | number
    width: string | number
@@ -14,4 +14,10 @@ interface CloudinaryImageType extends ComponentPropsWithoutRef<"figure"> {
       height: number
    }
    mdx?: boolean
+}
+
+export const CloudinaryImage:FC<CloudinaryImageProps> = () => {
+   return (
+      <div>CloudinaryImage</div>
+   )
 }
