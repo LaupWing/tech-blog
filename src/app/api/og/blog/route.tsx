@@ -1,11 +1,11 @@
 import { ImageResponse } from "next/server"
 import { CSSProperties } from "react"
 
-export const inter400 = fetch(
+const inter400 = fetch(
    new URL("@/assets/fonts/Inter-Regular.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer())
 
-export const inter500 = fetch(
+const inter500 = fetch(
    new URL("@/assets/fonts/Inter-Medium.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer())
 
