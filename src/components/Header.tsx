@@ -53,7 +53,7 @@ export const Header:FC<HeaderProps> = () => {
 
    return (
       <header className={clsx(
-         "sticky top-0 z-50 transition-shadow bg-primary",
+         "sticky top-0 z-50 transition-shadow bg-light dark:bg-dark",
          onTop && "shadow-sm"
       )}>
          <nav className="layout py-4 flex items-center justify-between text-contrast">

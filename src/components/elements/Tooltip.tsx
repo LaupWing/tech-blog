@@ -23,7 +23,7 @@ export const Tooltip:FC<TooltipTextProps> = ({
          trigger="mouseenter"
          interactive
          html={
-            <div className={clsx(className, "inline-block rounded-md bg-primary p-2 text-gray-600 shadow-md dark:text-gray-200 border dark:border-gray-600")}>
+            <div className={clsx(className, "inline-block rounded-md bg-light dark:bg-dark p-2 text-gray-600 shadow-md dark:text-gray-200 border dark:border-gray-600")}>
                {tipChildren}
             </div>
          }  

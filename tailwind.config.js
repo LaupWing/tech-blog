@@ -9,7 +9,7 @@ module.exports = {
    theme: {
       extend: {
          colors: {
-            primary: "rgb(var(--color-primary) / <alpha-value>)",
+            light: "rgb(var(--color-light) / <alpha-value>)",
             contrast: "rgb(var(--color-contrast) / <alpha-value>)",
             "accent-light": "rgb(var(--color-accent-light) / <alpha-value>)",
             "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",

@@ -19,7 +19,7 @@ export const Button:FC<ButtonProps> = ({
    const disabled = isLoading || buttonDisabled
 
    const variants: Record<ButtonVariant, string> = {
-      default: "bg-primary text-gray-600 disabled:bg-gray-200 dark:text-gray-200 dark:disabled:bg-gray-700",
+      default: "bg-light dark:bg-dark text-gray-600 disabled:bg-gray-200 dark:text-gray-200 dark:disabled:bg-gray-700",
       gold: ""
    }
 
