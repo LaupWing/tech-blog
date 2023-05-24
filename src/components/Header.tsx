@@ -59,16 +59,15 @@ export const Header:FC<HeaderProps> = () => {
          <nav className="layout py-4 flex items-center justify-between text-contrast">
             <ul className="flex items-center justify-between gap-3 text-xs md:gap-6 md:text-base">
                {links.map(({ href, label, segement }) => (
-                  <li key={`${href}-${label}`}>
+                  <li className="pb-2" key={`${href}-${label}`}>
                      <UnstyledLink
                         href={href}
-                        className={clsx(
-                           "border-b-[3px] pb-1", 
-                           activeSegment === segement ? "border-black" : "border-transparent"
-                        )}
                      >
                         {label}
                      </UnstyledLink>
+                     {activeSegment === segement && <div
+                        className="h-[3px] w-full bg-gradient-to-r from-accent-light to-accent-dark shadow"
+                     />}
                   </li>
                ))}
             </ul>
