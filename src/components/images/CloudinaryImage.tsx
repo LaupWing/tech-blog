@@ -1,4 +1,4 @@
-import buildUrl from "cloudinary-build-url"
+import { buildUrl, extractPublicId} from "cloudinary-build-url"
 import { ComponentPropsWithoutRef, FC } from "react"
 
 interface CloudinaryImageProps extends ComponentPropsWithoutRef<"figure"> {

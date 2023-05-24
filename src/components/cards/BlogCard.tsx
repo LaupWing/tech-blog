@@ -2,6 +2,7 @@ import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import clsx from "clsx"
 import { ComponentPropsWithoutRef, FC } from "react"
 import { UnstyledLink } from "../links"
+import { CloudinaryImage } from "../images"
 
 interface BlogCardProps extends ComponentPropsWithoutRef<"li"> {
    post: BlogFrontmatter & InjectedMeta
@@ -20,7 +21,18 @@ export const BlogCard:FC<BlogCardProps> = ({
             className="block h-full rounded-md focus-within:outline-none focus-visible:ring focus-visible:ring-contrast"
             href={`/blog/${post.slug}`}
          >
-
+            <CloudinaryImage 
+               noStyle
+               className=""
+               publicId="e"
+               alt="x"
+               width={1200}
+               height={(1200 * 2) /5}
+               aspect={{
+                  height: 2,
+                  width: 5
+               }}
+            />
          </UnstyledLink>
       </li>
    )
