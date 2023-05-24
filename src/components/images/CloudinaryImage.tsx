@@ -1,3 +1,4 @@
+"use client"
 import { buildUrl, extractPublicId} from "cloudinary-build-url"
 import clsx from "clsx"
 import Image from "next/image"
@@ -31,7 +32,21 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
    aspect,
    ...props
 }) => {
-   
+   const urlBlurred = buildUrl(publicId, {
+      cloud: {
+         cloudName: "laupwing",
+      },
+      transformations: {
+         effect: {
+            name: "blur:1000"
+         },
+         quality: 1,
+         rawTransformations: aspect
+            ? `c_fill,ar_${aspect.width}:${aspect.height},w_${width}`
+            : undefined
+      }
+   })
+
    const url = buildUrl(publicId, {
       cloud: {
          cloudName: "laupwing"
@@ -59,7 +74,7 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
          {...props}
       >
          <div
-            className="img"
+            className="img-blur"
             style={{
                position: "relative",
                height: 0,
@@ -68,6 +83,20 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
                   : `${(+height / +width) * 100}%`
             }}
          >
+            <style jsx>
+               {`
+                  .img-blur::before {
+                     content: "";
+                     position: absolute;
+                     inset: 0;
+                     filter: blur(20px);
+                     z-index: 0;
+                     background-image: url(${urlBlurred});
+                     background-position: center center;
+                     background-size: 100%;
+                  }
+               `}
+            </style>
             <div className="absolute top-0 left-0">
                <Image 
                   width={+width}
