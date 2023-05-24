@@ -1,5 +1,5 @@
 "use client"
-import { Accent } from "@/components/elements/Accent"
+import { Accent } from "@/components/elements"
 import { IconGithub, IconNewspaper, IconTwitter } from "@/components/Icons"
 import { ButtonLink, UnstyledLink } from "@/components/links"
 

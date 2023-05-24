@@ -3,7 +3,7 @@ import { InjectedMeta, LibraryFrontmatter } from "@/types/frontmatters"
 import clsx from "clsx"
 import { UnstyledLink } from "../links"
 import { IconHeart } from "../Icons"
-import { Accent } from "../elements/Accent"
+import { Accent } from "../elements"
 
 interface LibraryCardProps extends ComponentPropsWithoutRef<"li"> {
    snippet: LibraryFrontmatter & InjectedMeta

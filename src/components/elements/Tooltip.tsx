@@ -19,28 +19,28 @@ export const Tooltip:FC<TooltipTextProps> = ({
    ...props
 }) => {
    return (
-      <TippyTooltip
-         trigger="mouseenter"
-         interactive
-         html={
-            <div className={clsx(className, "inline-block rounded-md bg-light dark:bg-dark p-2 text-gray-600 shadow-md dark:text-gray-200 border dark:border-gray-600")}>
-               {tipChildren}
-            </div>
-         }  
-         {...props}
-      >
-         {withUnderline ? (
-            <span 
-               className={clsx(spanClassName, "underline")}
-               style={{
-                  textDecorationStyle: "dotted"
-               }}
-            >
-               {children}
-            </span>
-         ) : (
-            <>{children}</>
-         )}
-      </TippyTooltip>
+      // <TippyTooltip
+      //    trigger="mouseenter"
+      //    interactive
+      //    html={
+      //       <div className={clsx(className, "inline-block rounded-md bg-light dark:bg-dark p-2 text-gray-600 shadow-md dark:text-gray-200 border dark:border-gray-600")}>
+      //          {tipChildren}
+      //       </div>
+      //    }  
+      //    {...props}
+      // >
+      //    {withUnderline ? (
+      //       <span 
+      //          className={clsx(spanClassName, "underline")}
+      //          style={{
+      //             textDecorationStyle: "dotted"
+      //          }}
+      //       >
+      //          {children}
+      //       </span>
+      //    ) : (
+      //       <>{children}</>
+      //    )}
+      // </TippyTooltip>
    )
 }

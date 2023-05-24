@@ -1,4 +1,4 @@
-import { Accent } from "@/components/elements/Accent"
+import { Accent } from "@/components/elements"
 import { LibraryCard } from "@/components/cards"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 
