@@ -6,6 +6,7 @@ import { CloudinaryImage } from "../images"
 import { Tag } from "../elements"
 import { Accent } from "../Accent"
 import { IconClock, IconEye } from "../Icons"
+import { format } from "date-fns"
 
 interface BlogCardProps extends ComponentPropsWithoutRef<"li"> {
    post: BlogFrontmatter & InjectedMeta
@@ -66,6 +67,17 @@ export const BlogCard:FC<BlogCardProps> = ({
                      <Accent>--- views</Accent>
                   </div>
                </div>
+               <p className="mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
+                  <span className="font-bold text-gray-800 dark:text-gray-100">
+                     {format(
+                        new Date(post.lastUpdated ?? post.publishedAt),
+                        "MMM dd, yyyy"
+                     )}
+                  </span>
+               </p>
+               <p className="text-sm text-gray-700 dark:text-gray-300">
+                  {post.description}
+               </p>
             </div>
          </UnstyledLink>
       </li>
