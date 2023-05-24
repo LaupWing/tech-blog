@@ -22,7 +22,7 @@ const HomeProjects = async () => {
             <p className="mt-2 text-gray-600 dark:text-gray-300">
                My most recent awesome projects.
             </p>
-            <ul className="mt-2 text-gray-600 dark:text-gray-300">
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                {recentProjects.map((project, i) => (
                   <ProjectCard 
                      key={project.slug}

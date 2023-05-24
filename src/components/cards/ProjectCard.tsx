@@ -11,6 +11,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
    project,
    className
 }) => {
+   console.log(project)
    return (
       <li className={clsx(
          "rounded-md md:w-full border dark:border-gray-600 scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu transition duration-100 motion-reduce:hover:scale-100 animate-shadow",
@@ -22,6 +23,12 @@ export const ProjectCard:FC<ProjectCardProps> = ({
             className="flex h-full flex-col items-start rounded-md p-4 focus:outline-none focus-visible:ring focus-visible:ring-accent-light"
          >
             <h4>{project.title}</h4>
+            <p className="mb-auto text-sm text-gray-700 dark:text-gray-300">
+               {project.description}
+            </p>
+            <div className="mt-2">
+
+            </div>
          </UnstyledLink>
       </li>
    )
