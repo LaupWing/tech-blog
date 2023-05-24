@@ -1,4 +1,5 @@
 import { Accent } from "@/components/Accent"
+import { ProjectCard } from "@/components/cards"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 
 const fetchRecentProjects = async () => {
@@ -9,7 +10,9 @@ const fetchRecentProjects = async () => {
    return recentProjects
 }
 
-const HomeProjects = () => {
+const HomeProjects = async () => {
+   const recentProjects = await fetchRecentProjects()
+
    return (
       <section className="py-20">
          <article className="layout">
@@ -19,6 +22,14 @@ const HomeProjects = () => {
             <p className="mt-2 text-gray-600 dark:text-gray-300">
                My most recent awesome projects.
             </p>
+            <ul className="mt-2 text-gray-600 dark:text-gray-300">
+               {recentProjects.map((project, i) => (
+                  <ProjectCard 
+                     key={project.slug}
+                     project={project}
+                  />
+               ))}
+            </ul>
          </article>
       </section>
    )

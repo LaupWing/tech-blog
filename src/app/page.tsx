@@ -35,7 +35,10 @@ export default async function Home() {
             {/* @ts-expect-error Server Component */}
             <HomeBlogs />
          </Suspense>
-         <HomeProjects />
+         <Suspense fallback={"loading"}>
+            {/* @ts-expect-error Server Component */}
+            <HomeProjects />
+         </Suspense>
       </main>
    )
 }
