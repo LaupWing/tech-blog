@@ -1,3 +1,4 @@
+import buildUrl from "cloudinary-build-url"
 import { ComponentPropsWithoutRef, FC } from "react"
 
 interface CloudinaryImageProps extends ComponentPropsWithoutRef<"figure"> {
@@ -7,7 +8,6 @@ interface CloudinaryImageProps extends ComponentPropsWithoutRef<"figure"> {
    alt: string
    title?: string
    className?: string
-   preview?: boolean
    noStyle?: boolean
    aspect?: {
       width: number
@@ -16,7 +16,30 @@ interface CloudinaryImageProps extends ComponentPropsWithoutRef<"figure"> {
    mdx?: boolean
 }
 
-export const CloudinaryImage:FC<CloudinaryImageProps> = () => {
+export const CloudinaryImage:FC<CloudinaryImageProps> = ({
+   publicId,
+   height,
+   width,
+   alt,
+   title,
+   className,
+   noStyle = false,
+   mdx = false,
+   style,
+   aspect,
+   ...props
+}) => {
+   const url = buildUrl(publicId, {
+      cloud: {
+         cloudName: "laupwing"
+      },
+      transformations: {
+         rawTransformation: aspect 
+            ? `c_full,ar_${aspect.width}:${aspect.height},w_${width}`
+            : undefined
+      }
+   })
+
    return (
       <div>CloudinaryImage</div>
    )
