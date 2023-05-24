@@ -17,6 +17,7 @@ import {
 import { IoLogoVercel } from "react-icons/io5"
 import { ComponentPropsWithoutRef, FC } from "react"
 import clsx from "clsx"
+import { Tooltip } from "./Tooltip"
 // import { Tooltip } from "./elements"
 
 export type TechListType = keyof typeof techList
@@ -38,15 +39,14 @@ export const TechIcons:FC<TechIconsProps> = ({
             const current = techList[tech]
 
             return (
-               <div></div>
-               // <Tooltip 
-               //    key={current.name} 
-               //    tipChildren={<p>{current.name}</p>}
-               // >
-               //    <li className="text-xl text-gray-700 dark:text-gray-200">
-               //       <current.icon />
-               //    </li>
-               // </Tooltip>
+               <Tooltip 
+                  key={current.name} 
+                  tipChildren={<p>{current.name}</p>}
+               >
+                  <li className="text-xl text-gray-700 dark:text-gray-200">
+                     <current.icon />
+                  </li>
+               </Tooltip>
             )
          })}
       </ul>
