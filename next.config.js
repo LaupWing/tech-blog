@@ -5,8 +5,7 @@ const nextConfig = {
    },
    images: {
       domains: [
-         "res.cloudinary.com",
-         "cms-cdn.placeholder.co"
+         "res.cloudinary.com"
       ]
    }
 }

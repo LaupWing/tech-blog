@@ -74,7 +74,7 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
                <Image 
                   width={+width}
                   height={+height}
-                  src={"https://cms-cdn.placeholder.co/warehouse_for_rent_19b6e42cf3.jpg?width=1920"}
+                  src={"https://res.cloudinary.com/theodorusclarence/image/upload/q_auto,f_auto,c_fill,ar_5:2,w_1200/theodorusclarence/banner/bernd-dittrich-W1NsOMhU8hI-unsplash_ugoyld"}
                   alt={alt}
                   title={title || alt}
                />
