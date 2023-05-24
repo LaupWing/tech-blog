@@ -1,19 +1,75 @@
 import {
    SiFirebase,
    SiGit,
-   SiGoogleanalytics,
+   SiGatsby,
    SiJavascript,
    SiMarkdown,
    SiMongodb,
    SiNextdotjs,
    SiNodedotjs,
-   SiNotion,
-   SiPrettier,
    SiReact,
    SiRedux,
-   SiSass,
-   SiSwift,
    SiTailwindcss,
    SiTypescript,
+   SiWordpress,
  } from "react-icons/si"
  import { IoLogoVercel } from "react-icons/io5"
+
+ const techList = {
+   react: {
+      icon: SiReact,
+      name: "React"
+   },
+   nextjs: {
+      icon: SiNextdotjs,
+      name: "Next.js"
+   },
+   tailwindcss: {
+      icon: SiTailwindcss,
+      name: "Tailwind CSS"
+   },
+   javascript: {
+      icon: SiJavascript,
+      name: "Javascript"
+   },
+   typescript: {
+      icon: SiTypescript,
+      name: "Typescript"
+   },
+   nodejs: {
+      icon: SiNodedotjs,
+      name: "Node.js"
+   },
+   firebase: {
+      icon: SiFirebase,
+      name: "Firebase"
+   },
+   mongodb: {
+      icon: SiMongodb,
+      name: "MongoDB"
+   },
+   swr: {
+      icon: IoLogoVercel,
+      name: "SWR"
+   },
+   redux: {
+      icon: SiRedux,
+      name: "Redux"
+   },
+   mdx: {
+      icon: SiMarkdown,
+      name: "MDX"
+   },
+   git: {
+      icon: SiGit,
+      name: "Git"
+   },
+   gatsby: {
+      icon: SiGatsby,
+      name: "Gatsby"
+   },
+   wordpress: {
+      icon: SiWordpress,
+      name: "Wordpress"
+   },
+ }
