@@ -5,6 +5,7 @@ import { UnstyledLink } from "../links"
 import { CloudinaryImage } from "../images"
 import { Tag } from "../elements"
 import { Accent } from "../Accent"
+import { IconClock, IconEye } from "../Icons"
 
 interface BlogCardProps extends ComponentPropsWithoutRef<"li"> {
    post: BlogFrontmatter & InjectedMeta
@@ -56,7 +57,14 @@ export const BlogCard:FC<BlogCardProps> = ({
             <div className="p-4">
                <h4 className="text-gray-800 dark:text-gray-100 font-bold">{post.title}</h4>
                <div className="mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
-                  
+                  <div className="flex items-center gap-1">
+                     <IconClock className="inline-block text-base" />
+                     <Accent>{post.readingTime.text}</Accent>
+                  </div>
+                  <div className="flex items-center gap-1">
+                     <IconEye className="inline-block text-base" />
+                     <Accent>--- views</Accent>
+                  </div>
                </div>
             </div>
          </UnstyledLink>
