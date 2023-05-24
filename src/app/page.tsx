@@ -1,6 +1,7 @@
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 import { generateRss } from "@/lib/rss"
-import { HomeIntro } from "./HomeIntro"
+import HomeIntro from "./HomeIntro"
+import HomeProjects from "./HomeProjects"
 
 const fetchFrontmatters = async () => {
    generateRss()
@@ -28,6 +29,7 @@ export default async function Home() {
    return (
       <main>
          <HomeIntro />
+         <HomeProjects />
       </main>
    )
 }
