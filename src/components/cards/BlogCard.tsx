@@ -24,8 +24,8 @@ export const BlogCard:FC<BlogCardProps> = ({
             <CloudinaryImage 
                noStyle
                className=""
-               publicId="e"
-               alt="x"
+               publicId="samples/bike"
+               alt="Bike"
                width={1200}
                height={(1200 * 2) /5}
                aspect={{

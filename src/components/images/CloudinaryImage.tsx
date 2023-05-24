@@ -1,4 +1,6 @@
 import { buildUrl, extractPublicId} from "cloudinary-build-url"
+import clsx from "clsx"
+import Image from "next/image"
 import { ComponentPropsWithoutRef, FC } from "react"
 
 interface CloudinaryImageProps extends ComponentPropsWithoutRef<"figure"> {
@@ -40,7 +42,40 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
       }
    })
 
+   const aspectRatio = aspect ? aspect.height / aspect.width : undefined
+
    return (
-      <div>CloudinaryImage</div>
+      <figure
+         className={clsx(
+            className,
+            !noStyle && "overflow-hidden rounded shadow dark:shadow-none",
+            (mdx && +width <= 800) && "mx-auto w-full"
+         )}
+         style={{
+            ...((mdx && +width <= 800) ? { maxWidth: width } : {}),
+            ...style
+         }}
+         {...props}
+      >
+         <div
+            style={{
+               position: "relative",
+               height: 0,
+               paddingTop: aspectRatio
+                  ? `${aspectRatio * 100}%`
+                  : `${(+height / +width) * 100}%`
+            }}
+         >
+            <div className="absolute top-0 left-0">
+               <Image 
+                  width={+width}
+                  height={+height}
+                  src={url}
+                  alt={alt}
+                  title={title || alt}
+               />
+            </div>
+         </div>
+      </figure>
    )
 }
