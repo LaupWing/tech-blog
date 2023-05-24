@@ -11,7 +11,7 @@ export const Accent:FC<ComponentPropsWithoutRef<"span">> = ({
          <span
             className={clsx(
                className,
-               "transition-colors from-[#f1e69a] bg-gradient-to-r to-[#a79a5a] bg-clip-text text-transparent"
+               "transition-colors from-accent-light bg-gradient-to-r to-accent-dark bg-clip-text text-transparent"
             )}
          >
             {children}

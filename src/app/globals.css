@@ -6,8 +6,8 @@
 :root {
    --color-primary: 255 255 255;
    --color-contrast: 14 14 14;
-   --color-accent: 255 192 0;
-   --color-accent-to-gradient: 135 97 23;
+   --color-accent-light: 241 230 154;
+   --color-accent-dark: 167 154 90;
 }
 
 @media (prefers-color-scheme: dark) {
