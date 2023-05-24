@@ -53,10 +53,10 @@ export const Header:FC<HeaderProps> = () => {
 
    return (
       <header className={clsx(
-         "sticky top-0 z-50 transition-shadow bg-primary",
+         "sticky top-0 z-50 transition-shadow bg-light dark:bg-dark",
          onTop && "shadow-sm"
       )}>
-         <nav className="layout py-4 flex items-center justify-between text-dark">
+         <nav className="layout py-4 flex items-center justify-between text-dark dark:text-light">
             <ul className="flex items-center justify-between gap-3 text-xs md:gap-6 md:text-base">
                {links.map(({ href, label, segement }) => (
                   <li className="pb-2" key={`${href}-${label}`}>

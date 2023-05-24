@@ -5,18 +5,17 @@
 
 :root {
    --color-light: 255 255 255;
-   --color-primary: 255 255 255;
    --color-dark: 14 14 14;
    --color-accent-light: 241 230 154;
    --color-accent-dark: 167 154 90;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
    :root {
       --color-primary: 14 14 14;
       --color-contrast: 255 255 255;
    }
-}
+} */
 @layer base {
    
    .layout {
