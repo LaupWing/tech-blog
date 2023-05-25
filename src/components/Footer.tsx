@@ -21,10 +21,11 @@ const SocialLinks = () => {
    return (
       <div className="mt-2 flex space-x-4">
          <div className="flex items-center justify-center">
-            <Tooltip
+            {/* <Tooltip
                trigger="mouseenter"
                hideOnClick={false}
                interactive
+               tipChildren={<></>}
                html={
                   <div className="inline-block rounded-md border bg-light p-2 text-gray-600 shadow dark:border-gray-600 dark:bg-dark dark:text-gray-200">
 
@@ -32,9 +33,9 @@ const SocialLinks = () => {
                }
             >
                <button>
-                  
+
                </button>
-            </Tooltip>
+            </Tooltip> */}
          </div>
       </div>
    )
