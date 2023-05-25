@@ -2,8 +2,8 @@ import { ComponentPropsWithoutRef, FC } from "react"
 import { InjectedMeta, LibraryFrontmatter } from "@/types/frontmatters"
 import clsx from "clsx"
 import { UnstyledLink } from "../links"
-// import { IconHeart } from "../Icons"
-// import { Accent } from "../elements/Accent"
+import { IconHeart } from "../Icons"
+import { Accent } from "../elements/Accent"
 
 interface LibraryCardProps extends ComponentPropsWithoutRef<"li"> {
    snippet: LibraryFrontmatter & InjectedMeta
@@ -25,8 +25,9 @@ export const LibraryCard:FC<LibraryCardProps> = ({
             <div className="p-4">
                <h4 className="text-gray-800 dark:text-gray-100">{snippet.title}</h4>
                <div className="mt-1 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
-                  <div>
-                     
+                  <div className="flex items-center gap-1">
+                     <IconHeart className="inline-block text-base" />
+                     <Accent>--- likes</Accent>
                   </div>
                </div>
             </div>
