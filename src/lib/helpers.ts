@@ -32,3 +32,10 @@ export const openGraph = ({
 
    return `${process.env.SITE_URL}/api/og/gradient?siteName=${ogSiteName}&description=${ogDescription}&logo=${ogLogo}${ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ""}`
 }
+
+export const getFromSessionStorage = (key: string) => {
+   if (typeof sessionStorage !== "undefined"){
+      return sessionStorage.getItem(key)
+   }
+   return null
+}
