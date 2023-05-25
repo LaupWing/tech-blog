@@ -1,7 +1,9 @@
 "use client"
 import { IconCalendar, IconEye } from "@/components/Icons"
+import { BlogCard } from "@/components/cards"
 import { Tag } from "@/components/elements"
 import { SortListBox, SortOption } from "@/components/elements/SortListBox"
+import { ContentPlaceholder } from "@/components/sections"
 import { getFromSessionStorage } from "@/lib/helpers"
 import { getTags } from "@/lib/mdx-client"
 import { BlogFrontmatter, FrontmatterWithTags, InjectedMeta } from "@/types/frontmatters"
@@ -70,7 +72,16 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
             />
          </div>
          <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            
+            {blogs.length > 0 ? (
+               blogs.map((blog) => (
+                  <BlogCard 
+                     key={blog.slug}
+                     post={blog}
+                  />
+               ))
+            ): (
+               <ContentPlaceholder />
+            )}
          </ul>
       </>
    )
