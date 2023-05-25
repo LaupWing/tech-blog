@@ -2,6 +2,7 @@ import { IconCalendar, IconEye } from "@/components/Icons"
 import { Accent } from "@/components/elements/Accent"
 import { SortOption } from "@/components/elements/SortListBox"
 import { getAllFilesFrontmatter } from "@/lib/mdx"
+import BlogsContainer from "./BlogsContainer"
 
 const fetchBlogs = async () => {
    const blogs = await getAllFilesFrontmatter("blog")
@@ -24,7 +25,7 @@ const sortOptions: Array<SortOption> = [
 
 const Blog = async () => {
    const blogs = await fetchBlogs()
-   console.log(blogs)
+   
    return (
       <main>
          <section className="layout py-12">
@@ -34,6 +35,7 @@ const Blog = async () => {
             <p className="mt-2 text-gray-600 dark:text-gray-300">
                Interesting tech findings.
             </p>
+            <BlogsContainer />
          </section>
       </main>
    )
