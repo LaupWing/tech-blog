@@ -7,10 +7,10 @@ import { ContentPlaceholder } from "@/components/sections"
 import { getFromSessionStorage } from "@/lib/helpers"
 import { getTags } from "@/lib/mdx-client"
 import { BlogFrontmatter, FrontmatterWithTags, InjectedMeta } from "@/types/frontmatters"
-import { ChangeEvent, FC, useState } from "react"
+import { ChangeEvent, FC, useEffect, useState } from "react"
 
 interface BlogsContainerProps {
-   blogs: Array<BlogFrontmatter>
+   posts: Array<BlogFrontmatter>
 }
 
 const sortOptions: Array<SortOption> = [
@@ -27,16 +27,26 @@ const sortOptions: Array<SortOption> = [
 ]
 
 const BlogsContainer:FC<BlogsContainerProps> = ({
-   blogs
+   posts
 }) => {
    const [sortOrder, setSortOrder] = useState<SortOption>(
       () => sortOptions[Number(getFromSessionStorage("blog-sort")) || 0]
    )
-   const tags = getTags(blogs)
+   const tags = getTags(posts)
    const [search, setSearch] = useState<string>("")
-   const [filteredBlogs, setFilteredBlogs] = useState<Array<BlogFrontmatter & InjectedMeta>>(
-      () => [...blogs]
+   const [filteredPosts, setFilteredPosts] = useState<Array<BlogFrontmatter & InjectedMeta>>(
+      () => [...posts]
    )
+
+   useEffect(() => {
+      const result = posts.filter((post) =>
+         post.title.toLowerCase().includes(search.toLowerCase()) ||
+         post.description.toLowerCase().includes(search.toLowerCase()) ||
+         search.toLowerCase()
+            .split(" ")
+            .every((tag) => post.tags.includes(tag))
+      )
+   }, [search])
    
    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value)
@@ -55,7 +65,7 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
       }
    }
 
-   const filteredTags = getTags(filteredBlogs)
+   const filteredTags = getTags(filteredPosts)
 
    return (
       <>
@@ -86,11 +96,11 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
             />
          </div>
          <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {blogs.length > 0 ? (
-               blogs.map((blog) => (
+            {posts.length > 0 ? (
+               posts.map((post) => (
                   <BlogCard 
-                     key={blog.slug}
-                     post={blog}
+                     key={post.slug}
+                     post={post}
                   />
                ))
             ): (
