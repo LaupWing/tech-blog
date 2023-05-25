@@ -1,7 +1,7 @@
 "use client"
 import { IconCalendar, IconEye } from "@/components/Icons"
 import { Tag } from "@/components/elements"
-import { SortOption } from "@/components/elements/SortListBox"
+import { SortListBox, SortOption } from "@/components/elements/SortListBox"
 import { getFromSessionStorage } from "@/lib/helpers"
 import { getTags } from "@/lib/mdx-client"
 import { BlogFrontmatter, FrontmatterWithTags, InjectedMeta } from "@/types/frontmatters"
@@ -32,7 +32,9 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
    )
    const tags = getTags(blogs)
    const [search, setSearch] = useState<string>("")
-   const [filteredBlogs, setFilteredBlogs] = useState<Array<BlogFrontmatter & InjectedMeta>>(blogs)
+   const [filteredBlogs, setFilteredBlogs] = useState<Array<BlogFrontmatter & InjectedMeta>>(
+      () => [...blogs]
+   )
 
    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value)
@@ -58,6 +60,13 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
                   {tag}
                </Tag>
             ))}
+         </div>
+         <div className="relative z-10 mt-6 flex flex-col items-end gap-4 text-gray-600 dark:text-gray-300 md:flex-row md:items-center md:justify-between">
+            <SortListBox 
+               selected={sortOrder}
+               setSelected={setSortOrder}
+               options={sortOptions}
+            />
          </div>
       </>
    )

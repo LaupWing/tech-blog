@@ -69,7 +69,7 @@ export const SortListBox:FC<SortListboxProps> = ({
                                     selected ? "font-medium" : "font-normal",
                                     "block truncate"
                                  )}>
-
+                                    {opt.name}
                                  </span>
                                  {selected ? (
                                     <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-green-400">
