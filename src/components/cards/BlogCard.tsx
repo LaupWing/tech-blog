@@ -4,7 +4,7 @@ import { ComponentPropsWithoutRef, FC } from "react"
 import { UnstyledLink } from "../links"
 import { CloudinaryImage } from "../images"
 import { Tag } from "../elements"
-import { Accent } from "../Accent"
+import { Accent } from "../elements/Accent"
 import { IconClock, IconEye } from "../Icons"
 import { format } from "date-fns"
 
