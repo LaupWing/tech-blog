@@ -35,7 +35,9 @@ const Blog = async () => {
             <p className="mt-2 text-gray-600 dark:text-gray-300">
                Interesting tech findings.
             </p>
-            <BlogsContainer />
+            <BlogsContainer 
+               blogs={blogs}
+            />
          </section>
       </main>
    )

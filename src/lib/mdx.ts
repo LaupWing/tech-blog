@@ -1,9 +1,8 @@
-import { ContentType, Frontmatter, FrontmatterWithTags, PickFrontmatter } from "@/types/frontmatters"
+import { ContentType, Frontmatter, PickFrontmatter } from "@/types/frontmatters"
 import { readFileSync, readdirSync } from "fs"
 import matter from "gray-matter"
 import { join } from "path"
 import readingTime from "reading-time"
-import { countBy, map, sortBy, toPairs } from "lodash"
 
 export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
    const files = readdirSync(join(process.cwd(), "src", "contents", type))
@@ -33,12 +32,4 @@ export function getRecent<T extends Frontmatter>(contents: Array<T>, limit = 4){
    })
    
    return sortedContents.slice(0, limit)
-}
-
-export function getTags<T extends Array<FrontmatterWithTags>>(contents: T){
-   const tags = contents.reduce(
-      (accTags: string[], content) => [...accTags, ...content.tags.split(",")],
-      []
-   )
-   return map(sortBy(toPairs(countBy(tags)), 1), 0).reverse()
 }

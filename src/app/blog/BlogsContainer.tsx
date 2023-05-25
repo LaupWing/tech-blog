@@ -1,11 +1,16 @@
 "use client"
+import { getTags } from "@/lib/mdx-client"
+import { FrontmatterWithTags } from "@/types/frontmatters"
 import { FC } from "react"
 
 interface BlogsContainerProps {
-
+   blogs: Array<FrontmatterWithTags>
 }
 
-const BlogsContainer:FC = () => {
+const BlogsContainer:FC<BlogsContainerProps> = ({
+   blogs
+}) => {
+   const tags = getTags(blogs)
 
    return (
       <>
