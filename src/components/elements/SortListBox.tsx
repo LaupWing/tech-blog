@@ -1,3 +1,4 @@
+"use client"
 import { IconType } from "react-icons"
 import { Dispatch, FC, SetStateAction, Fragment } from "react"
 import { Listbox, Transition } from "@headlessui/react"
