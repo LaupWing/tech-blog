@@ -3,8 +3,8 @@ import { ComponentPropsWithoutRef, ReactNode, FC } from "react"
 import clsx from "clsx"
 
 type TooltipTextProps = {
-   tipChildren: ReactNode
-   children: ReactNode
+   tipChildren?: ReactNode
+   children?: ReactNode
    className?: string
    spanClassName?: string
    withUnderline?: boolean

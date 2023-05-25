@@ -7,6 +7,7 @@ import { Metadata } from "next"
 import { Header } from "@/components/Header"
 import { AppProvider } from "@/context/AppProvider"
 import { openGraph } from "@/lib/helpers"
+import { Footer } from "@/components/Footer"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400","500","700"] })
 
@@ -63,6 +64,7 @@ export default function RootLayout({
                <div id="skip-nav">
                   {children}
                </div>
+               <Footer />
             </AppProvider>
          </body>
       </html>

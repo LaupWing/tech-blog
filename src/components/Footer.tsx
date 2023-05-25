@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react"
 import { IconType } from "react-icons"
 import { IconGithub, IconLinkedin, IconTwitter } from "./Icons"
 import { Accent } from "./elements/Accent"
+import { Tooltip } from "./Tooltip"
 
 export const Footer:FC = () => {
    return (
@@ -15,6 +16,29 @@ export const Footer:FC = () => {
    )
 }
 
+
+const SocialLinks = () => {
+   return (
+      <div className="mt-2 flex space-x-4">
+         <div className="flex items-center justify-center">
+            <Tooltip
+               trigger="mouseenter"
+               hideOnClick={false}
+               interactive
+               html={
+                  <div className="inline-block rounded-md border bg-light p-2 text-gray-600 shadow dark:border-gray-600 dark:bg-dark dark:text-gray-200">
+
+                  </div>
+               }
+            >
+               <button>
+                  
+               </button>
+            </Tooltip>
+         </div>
+      </div>
+   )
+}
 
 interface Social {
    href: string
