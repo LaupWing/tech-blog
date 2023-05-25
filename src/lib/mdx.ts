@@ -1,12 +1,16 @@
 import { ContentType, Frontmatter, PickFrontmatter } from "@/types/frontmatters"
 import { readFileSync, readdirSync } from "fs"
 import matter from "gray-matter"
+import { bundleMDX } from "mdx-bundler"
 import { join } from "path"
 import readingTime from "reading-time"
 
 export async function getFileBySlug(type: ContentType, slug: string) {
    const source = readFileSync(join(process.cwd(), "src", type, `${slug}.mdx`), "utf-8")
-   
+ 
+   const {} = await bundleMDX({
+      source
+   })
 }
 
 export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
