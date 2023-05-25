@@ -83,6 +83,7 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
                <Tag
                   key={tag}
                   onClick={() => toggleTag(tag)}
+                  disabled={!filteredTags.includes(tag)}
                >
                   {tag}
                </Tag>
