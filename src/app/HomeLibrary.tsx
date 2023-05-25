@@ -1,6 +1,7 @@
 import { Accent } from "@/components/elements/Accent"
 import { LibraryCard } from "@/components/cards"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
+import { ButtonLink } from "@/components/links"
 
 const fetchRecentLibrary = async () => {
    const library = await getAllFilesFrontmatter("library")
@@ -30,6 +31,13 @@ const HomeLibrary = async () => {
                   />
                ))}
             </ul>
+            <ButtonLink
+               className="mt-4"
+               href="/library"
+               // Add tracking event
+            >
+               See more snippets
+            </ButtonLink>
          </article>
       </section>
    )
