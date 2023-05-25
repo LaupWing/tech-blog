@@ -1,6 +1,7 @@
 import { IconType } from "react-icons"
 import { Dispatch, FC, SetStateAction } from "react"
 import { Listbox } from "@headlessui/react"
+import { IconSelector } from "../Icons"
 
 export interface SortOption {
    id: string
@@ -33,7 +34,14 @@ export const SortListBox:FC<SortListboxProps> = ({
                         {selected.name}
                      </span>
                   </span>
+                  <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                     <IconSelector 
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                     />
+                  </span>
                </Listbox.Button>
+               
             </div>
          </Listbox>
       </div>
