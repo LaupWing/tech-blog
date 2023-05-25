@@ -1,5 +1,5 @@
 import { IoArrowDownOutline, IoNewspaperSharp } from "react-icons/io5"
-import { SiGithub, SiTwitter } from "react-icons/si"
+import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si"
 import { FiClock, FiEye, FiMoon, FiSun } from "react-icons/fi"
 import { GiTechnoHeart } from "react-icons/gi"
 import { IconType } from "react-icons"
@@ -71,6 +71,14 @@ export const IconClock:IconType = (props) => {
 export const IconEye:IconType = (props) => {
    return (
       <FiEye
+         {...props}
+      />
+   )
+}
+
+export const IconLinkedin:IconType = (props) => {
+   return (
+      <SiLinkedin
          {...props}
       />
    )
