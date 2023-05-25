@@ -1,3 +1,4 @@
+import { IconCalendar } from "@/components/Icons"
 import { Accent } from "@/components/elements/Accent"
 import { SortOption } from "@/components/elements/SortListBox"
 import { getAllFilesFrontmatter } from "@/lib/mdx"
@@ -8,13 +9,13 @@ const fetchBlogs = async () => {
    return blogs
 }
 
-// const sortOptions: Array<SortOption> = [
-//    {
-//       id: "date",
-//       name: "Sort by date",
-//       icon
-//    }
-// ]
+const sortOptions: Array<SortOption> = [
+   {
+      id: "date",
+      name: "Sort by date",
+      icon: IconCalendar
+   }
+]
 
 const Blog = async () => {
    const blogs = await fetchBlogs()
