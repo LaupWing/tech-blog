@@ -16,13 +16,14 @@ export const ButtonLink:FC<ButtonLinkProps> = ({
 }) => {
    console.log(className)
    return (
-      <UnstyledLink
-         {...props}
+      <Button
          className={className}
       >
-         <Button>
+         <UnstyledLink
+            {...props}
+         >
             {children}
-         </Button>  
-      </UnstyledLink>
+         </UnstyledLink>
+      </Button>  
    )
 }
