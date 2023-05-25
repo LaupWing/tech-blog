@@ -4,6 +4,7 @@ import clsx from "clsx"
 import { UnstyledLink } from "../links"
 import { IconHeart } from "../Icons"
 import { Accent } from "../elements/Accent"
+import { TechIcons, TechListType } from "../TechIcons"
 
 interface LibraryCardProps extends ComponentPropsWithoutRef<"li"> {
    snippet: LibraryFrontmatter & InjectedMeta
@@ -29,6 +30,8 @@ export const LibraryCard:FC<LibraryCardProps> = ({
                      <IconHeart className="inline-block text-base" />
                      <Accent>--- likes</Accent>
                   </div>
+                  <span>•</span>
+                  <TechIcons techs={snippet.tags.split(",") as Array<TechListType>} />
                </div>
             </div>
          </UnstyledLink>
