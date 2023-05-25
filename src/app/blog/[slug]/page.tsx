@@ -2,7 +2,11 @@ import { getFiles } from "@/lib/mdx"
 
 const SingleBlogPage = () => {
    return (
-      <div>SingleBlogPage</div>
+      <main>
+         <section>
+            
+         </section>
+      </main>
    )
 }
 
