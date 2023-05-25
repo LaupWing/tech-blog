@@ -9,7 +9,7 @@ const fetchBlogs = async () => {
 }
 
 const Blog = async () => {
-   const blogs = await fetchBlogs()
+   const posts = await fetchBlogs()
    
    return (
       <main>
@@ -21,7 +21,7 @@ const Blog = async () => {
                Interesting tech findings.
             </p>
             <BlogsContainer 
-               blogs={blogs}
+               posts={posts}
             />
          </section>
       </main>

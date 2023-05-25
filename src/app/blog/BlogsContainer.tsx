@@ -46,6 +46,7 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
             .split(" ")
             .every((tag) => post.tags.includes(tag))
       )
+      setFilteredPosts(result)
    }, [search])
    
    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
@@ -96,8 +97,8 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
             />
          </div>
          <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {posts.length > 0 ? (
-               posts.map((post) => (
+            {filteredPosts.length > 0 ? (
+               filteredPosts.map((post) => (
                   <BlogCard 
                      key={post.slug}
                      post={post}
