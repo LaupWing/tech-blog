@@ -1,7 +1,8 @@
 import { IconType } from "react-icons"
-import { Dispatch, FC, SetStateAction } from "react"
-import { Listbox } from "@headlessui/react"
+import { Dispatch, FC, SetStateAction, Fragment } from "react"
+import { Listbox, Transition } from "@headlessui/react"
 import { IconSelector } from "../Icons"
+import clsx from "clsx"
 
 export interface SortOption {
    id: string
@@ -41,7 +42,43 @@ export const SortListBox:FC<SortListboxProps> = ({
                      />
                   </span>
                </Listbox.Button>
-               
+               <Transition
+                  as={Fragment}
+                  leave="transition ease-in duration-100"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+               >
+                  <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-300 bg-light py-1 text-base shadow-lg focus:outline-none dark:border-gray-600 dark:bg-dark dark:shadow-none sm:text-sm">
+                     {options.map((opt) => (
+                        <Listbox.Option
+                           key={opt.id}
+                           className={({ active }) => 
+                              clsx(
+                                 "relative select-none py-2 pl-10 pr-4",
+                                 active 
+                                    ? "bg-accent-dark/10 dark:bg-accent-light/20"
+                                    : "text-gray-700 dark:text-gray-300"
+                              )
+                           }
+                           value={opt}
+                        >
+                           {({ selected }) => (
+                              <>
+                                 <span className={clsx(
+                                    selected ? "font-medium" : "font-normal",
+                                    "block truncate"
+                                 )}>
+
+                                 </span>
+                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+
+                                 </span>
+                              </>
+                           )}
+                        </Listbox.Option>
+                     ))}
+                  </Listbox.Options>
+               </Transition>
             </div>
          </Listbox>
       </div>
