@@ -2,7 +2,7 @@
 import { IconType } from "react-icons"
 import { Dispatch, FC, SetStateAction, Fragment } from "react"
 import { Listbox, Transition } from "@headlessui/react"
-import { IconSelector } from "../Icons"
+import { IconCheckmark, IconSelector } from "../Icons"
 import clsx from "clsx"
 
 export interface SortOption {
@@ -71,9 +71,11 @@ export const SortListBox:FC<SortListboxProps> = ({
                                  )}>
 
                                  </span>
-                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-
-                                 </span>
+                                 {selected ? (
+                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-green-400">
+                                       <IconCheckmark className="w-5 h-5" aria-hidden="true" />
+                                    </span>
+                                 ): null}
                               </>
                            )}
                         </Listbox.Option>
