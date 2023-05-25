@@ -63,6 +63,7 @@ export type PickFrontmatter<T extends ContentType> = T extends "blog"
    ? LibraryFrontmatter
    : ProjectFrontmatter
 
+export type FrontmatterWithTags = BlogFrontmatter | LibraryFrontmatter
 export type Frontmatter = 
    | ProjectFrontmatter
    | BlogFrontmatter
