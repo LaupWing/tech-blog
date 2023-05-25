@@ -7,6 +7,8 @@ const fetchBlogs = async () => {
    return blogs
 }
 
+// const sortOptions: 
+
 const Blog = async () => {
    const blogs = await fetchBlogs()
    console.log(blogs)
