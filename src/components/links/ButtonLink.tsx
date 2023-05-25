@@ -14,6 +14,7 @@ export const ButtonLink:FC<ButtonLinkProps> = ({
    variant = "default",
    ...props
 }) => {
+   console.log(className)
    return (
       <UnstyledLink
          {...props}
