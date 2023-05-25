@@ -15,15 +15,17 @@ interface SortListboxProps {
    selected: SortOption
    setSelected: Dispatch<SetStateAction<SortOption>>
    options: SortOption[]
+   className?: string
 }
 
 export const SortListBox:FC<SortListboxProps> = ({
    selected,
    setSelected,
-   options
+   options,
+   className
 }) => {
    return (
-      <div className="w-full max-w-[200px]">
+      <div className={clsx("w-full max-w-[200px]", className)}>
          <Listbox 
             value={selected}
             onChange={setSelected}

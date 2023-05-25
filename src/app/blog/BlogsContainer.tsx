@@ -35,7 +35,7 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
    const [filteredBlogs, setFilteredBlogs] = useState<Array<BlogFrontmatter & InjectedMeta>>(
       () => [...blogs]
    )
-
+   
    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value)
    }
@@ -63,6 +63,7 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
          </div>
          <div className="relative z-10 mt-6 flex flex-col items-end gap-4 text-gray-600 dark:text-gray-300 md:flex-row md:items-center md:justify-between">
             <SortListBox 
+               className="ml-auto"
                selected={sortOrder}
                setSelected={setSortOrder}
                options={sortOptions}
