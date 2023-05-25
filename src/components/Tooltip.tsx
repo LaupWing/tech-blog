@@ -11,8 +11,8 @@ type TooltipTextProps = {
 } & TooltipProps & Omit<ComponentPropsWithoutRef<"div">, "children" | "className">
 
 export const Tooltip:FC<TooltipTextProps> = ({
-   tipChildren,
-   children,
+   tipChildren = null,
+   children = null,
    className,
    spanClassName,
    withUnderline = false,
