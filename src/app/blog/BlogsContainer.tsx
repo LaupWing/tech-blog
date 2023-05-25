@@ -69,6 +69,9 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
                options={sortOptions}
             />
          </div>
+         <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            
+         </ul>
       </>
    )
 }
