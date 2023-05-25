@@ -4,6 +4,11 @@ import matter from "gray-matter"
 import { join } from "path"
 import readingTime from "reading-time"
 
+export async function getFileBySlug(type: ContentType, slug: string) {
+   const source = readFileSync(join(process.cwd(), "src", type, `${slug}.mdx`), "utf-8")
+   
+}
+
 export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
    const files = readdirSync(join(process.cwd(), "src", "contents", type))
 
