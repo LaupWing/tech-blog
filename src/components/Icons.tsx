@@ -2,7 +2,7 @@ import { IoArrowDownOutline, IoNewspaperSharp } from "react-icons/io5"
 import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si"
 import { FiClock, FiEye, FiMail, FiMoon, FiSun } from "react-icons/fi"
 import { GiTechnoHeart } from "react-icons/gi"
-import { HiCalendar } from "react-icons/hi"
+import { HiCalendar, HiSelector } from "react-icons/hi"
 import { IconType } from "react-icons"
 
 export const IconNewspaper:IconType = (props) => {
@@ -96,6 +96,14 @@ export const IconMail:IconType = (props) => {
 export const IconCalendar:IconType = (props) => {
    return (
       <HiCalendar
+         {...props}
+      />
+   )
+}
+
+export const IconSelector:IconType = (props) => {
+   return (
+      <HiSelector
          {...props}
       />
    )
