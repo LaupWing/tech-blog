@@ -1,6 +1,15 @@
 import { Accent } from "@/components/elements/Accent"
+import { getAllFilesFrontmatter } from "@/lib/mdx"
 
-const Blog = () => {
+const fetchBlogs = async () => {
+   const blogs = await getAllFilesFrontmatter("blog")
+
+   return blogs
+}
+
+const Blog = async () => {
+   const blogs = await fetchBlogs()
+   console.log(blogs)
    return (
       <main>
          <section className="layout py-12">
