@@ -1,10 +1,9 @@
 import { CloudinaryImage } from "@/components/images"
-import { getFiles } from "@/lib/mdx"
+import { getFileBySlug, getFiles } from "@/lib/mdx"
 
 const fetchPost = async (slug: string) => {
-   // const params = useParams()
-   // console.log(params)
-   console.log(slug)
+   const post = await getFileBySlug("blog", slug)
+   console.log(post)
 } 
 
 interface PageProps {

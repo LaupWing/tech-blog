@@ -5,12 +5,12 @@ import { bundleMDX } from "mdx-bundler"
 import { join } from "path"
 import readingTime from "reading-time"
 import rehypeAutolinkHeadings from "rehype-autolink-headings/lib"
-import rehypePrism from "rehype-prism-plus/."
+import rehypePrism from "rehype-prism-plus"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 
 export async function getFileBySlug(type: ContentType, slug: string) {
-   const source = readFileSync(join(process.cwd(), "src", type, `${slug}.mdx`), "utf-8")
+   const source = readFileSync(join(process.cwd(), "src", "contents", type, `${slug}.mdx`), "utf-8")
  
    const { code, frontmatter } = await bundleMDX({
       source,
