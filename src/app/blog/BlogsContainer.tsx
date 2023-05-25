@@ -42,6 +42,19 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
       setSearch(e.target.value)
    }
 
+   const toggleTag = (tag: string) => {
+      if(search.includes(tag)){
+         setSearch((s) =>
+            s
+               .split(" ")
+               .filter((t) => t !== tag)
+               .join(" ")
+         )
+      } else {
+         setSearch((s) => (s !== "" ? `${s.trim()} ${tag}` : tag))
+      }
+   }
+
    const filteredTags = getTags(filteredBlogs)
 
    return (
@@ -58,6 +71,7 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
             {tags.map((tag) => (
                <Tag
                   key={tag}
+                  onClick={() => toggleTag(tag)}
                >
                   {tag}
                </Tag>
