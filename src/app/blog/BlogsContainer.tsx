@@ -1,5 +1,8 @@
 "use client"
+import { IconCalendar, IconEye } from "@/components/Icons"
 import { Tag } from "@/components/elements"
+import { SortOption } from "@/components/elements/SortListBox"
+import { getFromSessionStorage } from "@/lib/helpers"
 import { getTags } from "@/lib/mdx-client"
 import { BlogFrontmatter, FrontmatterWithTags, InjectedMeta } from "@/types/frontmatters"
 import { ChangeEvent, FC, useState } from "react"
@@ -8,9 +11,25 @@ interface BlogsContainerProps {
    blogs: Array<BlogFrontmatter>
 }
 
+const sortOptions: Array<SortOption> = [
+   {
+      id: "date",
+      name: "Sort by date",
+      icon: IconCalendar
+   },
+   {
+      id: "views",
+      name: "Sort by views",
+      icon: IconEye
+   }
+]
+
 const BlogsContainer:FC<BlogsContainerProps> = ({
    blogs
 }) => {
+   const [sortOrder, setSortOrder] = useState<SortOption>(
+      () => sortOptions[Number(getFromSessionStorage("blog-sort")) || 0]
+   )
    const tags = getTags(blogs)
    const [search, setSearch] = useState<string>("")
    const [filteredBlogs, setFilteredBlogs] = useState<Array<BlogFrontmatter & InjectedMeta>>(blogs)
