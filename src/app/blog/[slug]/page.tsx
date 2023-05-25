@@ -4,6 +4,7 @@ import { getFiles } from "@/lib/mdx"
 const fetchPost = async (slug: string) => {
    // const params = useParams()
    // console.log(params)
+   console.log(slug)
 } 
 
 interface PageProps {

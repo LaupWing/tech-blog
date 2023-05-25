@@ -58,7 +58,7 @@ export default function RootLayout({
                <link key={favicon.href} {...favicon} />
             ))}
          </head>
-         <body className={inter.className}>
+         <body className={`${inter.className} bg-light dark:bg-dark`}>
             <AppProvider>
                <Header />
                <div id="skip-nav">
