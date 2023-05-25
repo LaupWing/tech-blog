@@ -1,6 +1,7 @@
 import { Accent } from "@/components/elements/Accent"
 import { BlogCard } from "@/components/cards"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
+import { ButtonLink } from "@/components/links"
 
 const fetchRecentBlogs = async () => {
    const blogs = await getAllFilesFrontmatter("blog")
@@ -28,6 +29,13 @@ const HomeBlogs = async () => {
                   />
                ))}
             </ul>
+            <ButtonLink
+               className="mt-4"
+               href="/blog"
+               // Add tracking event
+            >
+               See more post
+            </ButtonLink>
          </article>
       </section>
    )
