@@ -1,4 +1,6 @@
+import { IconHistory } from "@/components/Icons"
 import { CloudinaryImage } from "@/components/images"
+import { UnstyledLink } from "@/components/links"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
 import { format } from "date-fns"
@@ -23,6 +25,8 @@ const SingleBlogPage = async (props: PageProps) => {
       frontmatter,
       code
    } = post
+
+   const COMMIT_HISTORY_LINK = `https://github.com/LaupWing/tech-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`
 
    return (
       <main>
@@ -51,6 +55,13 @@ const SingleBlogPage = async (props: PageProps) => {
                         {format(new Date(frontmatter.lastUpdated), "MMMM dd, yyyy")}
                         .
                      </p>
+                     <UnstyledLink
+                        href={COMMIT_HISTORY_LINK}
+                        className="inline-flex items-center gap-1 rounded-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-accent-light focus:outline-none focus-visible:ring focus-visible:ring-accent-dark"
+                     >
+                        <IconHistory className="text-lg" />
+                        <span>See changes</span>
+                     </UnstyledLink>
                   </div>
                )}
             </div>
