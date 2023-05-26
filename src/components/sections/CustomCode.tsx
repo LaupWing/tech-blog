@@ -1,6 +1,7 @@
 "use client"
 import useCopyToClipboard from "@/hooks/useCopyToClipboard"
 import { ComponentPropsWithoutRef, FC, useRef, useState } from "react"
+import { IconCheckCircle, IconClipboard } from "../Icons"
 
 interface CustomCodeProps extends ComponentPropsWithoutRef<"code">{}
 
@@ -32,6 +33,23 @@ export const CustomCode:FC<CustomCodeProps> = ({
                   {language}
                </span>
             </div>
+         )}
+         {language && (
+            <button
+               onClick={() => {
+                  copy(textRef?.current?.textContent ?? "").then(() => {
+                     setIsCopied(true)
+                     setTimeout(() => setIsCopied(false), 1500)
+                  })
+               }}
+               className="absolute right-2 top-2 hidden rounded border border-gray-600 p-2 text-lg transition-colors hover:bg-gray-700 md:block"
+            >
+               {isCopied ? (
+                  <IconCheckCircle className="text-green-400" />
+               ): (
+                  <IconClipboard />
+               )}
+            </button>
          )}
       </code>
    )
