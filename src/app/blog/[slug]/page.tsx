@@ -14,7 +14,11 @@ interface PageProps {
 
 const SingleBlogPage = async (props: PageProps) => {
    const post = await fetchPost(props.params.slug)
-   console.log(post)
+   const {
+      frontmatter,
+      code
+   } = post
+
    return (
       <main>
          <section className="layout">
@@ -29,7 +33,7 @@ const SingleBlogPage = async (props: PageProps) => {
                      width: 5
                   }}
                />
-               <h1 className="mt-4"></h1>
+               <h1 className="mt-4">{frontmatter.title}</h1>
             </div>
          </section>
       </main>
