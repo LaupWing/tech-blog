@@ -7,7 +7,7 @@ import {
 } from "react"
 import { UnstyledLink } from "../links"
 import clsx from "clsx"
-import { IconGithub } from "../Icons"
+import { IconGithub, IconRepoForked, IconStar } from "../Icons"
 import { Accent } from "../elements/Accent"
 
 interface GithubRepo {
@@ -60,7 +60,12 @@ export const GithubCard: FC<GithubCardProps> = ({
             </p>
             <div className="mt-2 flex gap-3">
                <div className="flex items-center gap-1 text-xs">
-                  
+                  <IconStar className="shrink-0 text-[1.2em]" />
+                  <span>{data!.stargazers_count.toLocaleString()}</span>
+               </div>
+               <div className="flex items-center gap-1 text-xs">
+                  <IconRepoForked className="shrink-0 text-[1.2em]" />
+                  <span>{data!.forks.toLocaleString()}</span>
                </div>
             </div>
          </UnstyledLink>
