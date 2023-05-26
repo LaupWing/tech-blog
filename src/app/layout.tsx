@@ -1,4 +1,5 @@
 import "@/styles/globals.css"
+import "@/styles/dracula.css"
 import "@/styles/mdx.css"
 import "react-tippy/dist/tippy.css"
 import { Inter } from "next/font/google"
