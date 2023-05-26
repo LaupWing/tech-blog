@@ -9,7 +9,7 @@ export const Pre:FC<PreProps> = (props) => {
          <style jsx>{`
             pre {
                position: relative;
-               position-top: 2.5rem;
+               padding-top: 2.5rem;
             }
          `}</style>
       </pre>
