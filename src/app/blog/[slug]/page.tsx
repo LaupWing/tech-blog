@@ -1,6 +1,7 @@
 import { CloudinaryImage } from "@/components/images"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
+import { format } from "date-fns"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -38,6 +39,11 @@ const SingleBlogPage = async (props: PageProps) => {
                   }}
                />
                <h1 className="mt-4">{frontmatter.title}</h1>
+               <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  Writton on{" "}
+                  {format(new Date(frontmatter.publishedAt), "MMMM dd, yyyy")} by
+                  Laup Wing
+               </p>
             </div>
          </section>
       </main>
