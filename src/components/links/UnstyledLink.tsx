@@ -1,4 +1,6 @@
+"use client"
 import Link, { LinkProps } from "next/link"
+import { usePathname } from "next/navigation"
 import { ComponentPropsWithRef, FC, ReactNode } from "react"
 
 export interface UnstyledLinkProps extends ComponentPropsWithRef<"a">, LinkProps {
@@ -15,6 +17,11 @@ export const UnstyledLink:FC<UnstyledLinkProps> = ({
    className,
    ...props
 }) => {
+   const pathname = usePathname()
+   let _href = href
+   if(href.includes("#")){
+      _href = `${pathname}${href}`
+   }
    const isNewTab = openNewTab !== undefined
       ? openNewTab
       : href && !href.startsWith("/") && !href.startsWith("#")
@@ -22,7 +29,7 @@ export const UnstyledLink:FC<UnstyledLinkProps> = ({
    if(!isNewTab) {
       return (
          <Link 
-            href={href}
+            href={_href}
             className={className}
             {...props}
          >
