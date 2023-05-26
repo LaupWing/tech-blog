@@ -5,6 +5,10 @@ import {
    ComponentPropsWithoutRef,
    FC
 } from "react"
+import { UnstyledLink } from "../links"
+import clsx from "clsx"
+import { IconGithub } from "../Icons"
+import { Accent } from "../elements/Accent"
 
 interface GithubRepo {
    full_name: string
@@ -24,7 +28,8 @@ interface GithubCardProps extends ComponentPropsWithoutRef<"div"> {
 }
 
 export const GithubCard: FC<GithubCardProps> = ({
-   repo
+   repo,
+   className
 }) => {
    const [error, setError] = useState<false|string>(false)
    const [data, setData] = useState<GithubRepo>()
@@ -39,8 +44,21 @@ export const GithubCard: FC<GithubCardProps> = ({
    }, [])
 
    return !error && !data ? (
-      <div>
-         
+      <div className="not-prose">
+         <UnstyledLink
+            href={data!.html_url}
+            className={clsx("!block max-w-xl not-prose px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 scale-100 transform-gpu hover:scale-[1.02] active:scale-[0.97] transition duration-100 animate-shadow", className)}
+         >
+            <div className="flex items-center gap-2 text-sm md:text-base">
+               <IconGithub className="ml-0.5 shrink-0 text-[1.2em]" />
+               <Accent className="truncate overflow-ellipsis font-semibold">
+                  {data!.full_name}
+               </Accent>
+            </div>
+            <p className="mt-2 text-sm text-gray-700 dark:text-gray-200">
+               {data!.description}
+            </p>
+         </UnstyledLink>
       </div>
    ) : (
       <div className="mx-auto !block max-w-xl not-prose px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 animate-pulse bg-gray-300 dark:bg-gray-600 h-[111px]" />
