@@ -2,6 +2,7 @@ import { IoArrowDownOutline, IoNewspaperSharp } from "react-icons/io5"
 import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si"
 import { FiClock, FiEye, FiMail, FiMoon, FiSun } from "react-icons/fi"
 import { GiTechnoHeart } from "react-icons/gi"
+import { MdHistory } from "react-icons/md"
 import { HiCalendar, HiCheck, HiSelector } from "react-icons/hi"
 import { IconType } from "react-icons"
 
@@ -112,6 +113,14 @@ export const IconSelector:IconType = (props) => {
 export const IconCheckmark:IconType = (props) => {
    return (
       <HiCheck
+         {...props}
+      />
+   )
+}
+
+export const IconHistory:IconType = (props) => {
+   return (
+      <MdHistory
          {...props}
       />
    )
