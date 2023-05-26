@@ -79,7 +79,7 @@ const SingleBlogPage = async (props: PageProps) => {
 
             <hr className="dark:border-gray-600" />
             <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
-               <article className="mdx">
+               <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
 
                </article>
             </section>
