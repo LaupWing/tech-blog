@@ -1,4 +1,4 @@
-import "./globals.css"
+import "@/styles/globals.css"
 import "@/styles/mdx.css"
 import "react-tippy/dist/tippy.css"
 import { Inter } from "next/font/google"
