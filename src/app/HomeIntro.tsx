@@ -2,6 +2,7 @@
 import { Accent } from "@/components/elements/Accent"
 import { IconGithub, IconNewspaper, IconTwitter } from "@/components/Icons"
 import { ButtonLink, UnstyledLink } from "@/components/links"
+import { TC } from "@/components/TC"
 
 const HomeIntro = () => {
    const socialLinkStyle = "inline-flex items-center gap-1 text-sm font-medium md:text-base text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent-light group"
@@ -55,6 +56,9 @@ const HomeIntro = () => {
                </UnstyledLink>
             </div>
          </article>
+         <TC 
+            className="absolute bottom-0 right-6 transform-gpu w-[calc(100%-3rem)] md:w-[600px] 2xl:w-[900px] opacity-70"
+         />
       </section>
    )
 }
