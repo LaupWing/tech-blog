@@ -5,6 +5,7 @@ import { UnstyledLink } from "@/components/links"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
 import { format } from "date-fns"
+import Content from "./Content"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -80,7 +81,9 @@ const SingleBlogPage = async (props: PageProps) => {
             <hr className="dark:border-gray-600" />
             <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
                <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
-
+                  <Content 
+                     code={code}
+                  />
                </article>
             </section>
          </section>
