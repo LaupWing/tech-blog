@@ -7,6 +7,7 @@ import LiteYouTubeEmbed from "react-lite-youtube-embed"
 import { Split } from "./sections/Split"
 import { SplitImage } from "./sections/SplitImage"
 import { TechIcons } from "./TechIcons"
+import { TweetCard } from "./cards"
 
 
 export const MDXComponents = {
@@ -19,5 +20,6 @@ export const MDXComponents = {
    Split,
    SplitImage,
    TechIcons,
+   TweetCard,
    
 }
