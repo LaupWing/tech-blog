@@ -8,6 +8,7 @@ import { Split } from "./sections/Split"
 import { SplitImage } from "./sections/SplitImage"
 import { TechIcons } from "./TechIcons"
 import { TweetCard } from "./cards"
+import { GithubCard } from "./cards/GithubCard"
 
 export const MDXComponents = {
    a: CustomLink,
@@ -20,5 +21,5 @@ export const MDXComponents = {
    SplitImage,
    TechIcons,
    TweetCard,
-
+   GithubCard
 }
