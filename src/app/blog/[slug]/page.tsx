@@ -1,9 +1,13 @@
 import { CloudinaryImage } from "@/components/images"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
+import { BlogFrontmatter } from "@/types/frontmatters"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
-   return post
+   return post as {
+      code: string
+      frontmatter: BlogFrontmatter
+   }
 } 
 
 interface PageProps {
