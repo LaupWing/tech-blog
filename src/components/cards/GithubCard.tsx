@@ -58,6 +58,11 @@ export const GithubCard: FC<GithubCardProps> = ({
             <p className="mt-2 text-sm text-gray-700 dark:text-gray-200">
                {data!.description}
             </p>
+            <div className="mt-2 flex gap-3">
+               <div className="flex items-center gap-1 text-xs">
+                  
+               </div>
+            </div>
          </UnstyledLink>
       </div>
    ) : (
