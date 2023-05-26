@@ -1,0 +1,4 @@
+
+interface TweetCardProps {
+   className?: string
+}
