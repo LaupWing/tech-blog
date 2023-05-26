@@ -1,5 +1,5 @@
 "use client"
-import { FC, useRef, useEffect } from "react"
+import { FC, useRef, useEffect, useState } from "react"
 import { UnstyledLink } from "../links"
 import clsx from "clsx"
 
@@ -10,17 +10,16 @@ export type HeadingScrollSpy = Array<{
 }>
 
 interface TableOfContentsProps {
-   toc?: HeadingScrollSpy
    activeSection: string | null
    minLevel: number
 }
 
 export const TableContents:FC<TableOfContentsProps> = ({
-   toc,
    activeSection,
    minLevel
 }) => {
    const lastPosition = useRef<number>(0)
+   const [toc, setToc] = useState<HeadingScrollSpy>()
 
    useEffect(() => {
       const container = document.getElementById("toc-container")
@@ -51,6 +50,10 @@ export const TableContents:FC<TableOfContentsProps> = ({
          }
       }
    }, [activeSection])
+
+   useEffect(() => {
+
+   }, [])
 
    return (
       <div

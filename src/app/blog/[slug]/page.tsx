@@ -6,6 +6,7 @@ import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
 import { format } from "date-fns"
 import Content from "./Content"
+import { TableContents } from "@/components/sections/TableContents"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -86,7 +87,12 @@ const SingleBlogPage = async (props: PageProps) => {
                   />
                </article>
                <aside className="py-4">
-                  
+                  <div className="sticky top-36">
+                     {/* <TableContents 
+                        toc={toc}
+                        minLevel={minLevel}
+                     /> */}
+                  </div>
                </aside>
             </section>
          </section>
