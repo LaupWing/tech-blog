@@ -1,2 +1,5 @@
 export { ContentPlaceholder } from "./ContentPlaceholder"
 export { Pre } from "./Pre"
+export { Split } from "./Split"
+export { SplitImage } from "./SplitImage"
+export { CustomCode } from "./CustomCode"
