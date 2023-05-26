@@ -1,5 +1,10 @@
 "use client"
-import { useState } from "react"
+import { 
+   useState, 
+   useEffect, 
+   ComponentPropsWithoutRef,
+   FC
+} from "react"
 
 interface GithubRepo {
    full_name: string
@@ -14,9 +19,24 @@ interface GithubRepo {
    }
 }
 
-export const GithubCard = () => {
+interface GithubCardProps extends ComponentPropsWithoutRef<"div"> {
+   repo: string
+}
+
+export const GithubCard: FC<GithubCardProps> = ({
+   repo
+}) => {
    const [error, setError] = useState<false|string>(false)
-   const [data, setDate] = useState()
+   const [data, setData] = useState<GithubRepo>()
+
+   useEffect(() => {
+      const fetchData = async () => {
+         const res = await fetch(`https://api.github.com/repos/${repo}`)
+         const data = await res.json()
+         setData(data)
+      }
+      fetchData()
+   }, [])
 
    return (
       <div>GithubCard</div>
