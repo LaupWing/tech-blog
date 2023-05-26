@@ -3,7 +3,7 @@ import { getFileBySlug, getFiles } from "@/lib/mdx"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
-   console.log(post)
+   return post
 } 
 
 interface PageProps {
@@ -14,6 +14,7 @@ interface PageProps {
 
 const SingleBlogPage = async (props: PageProps) => {
    const post = await fetchPost(props.params.slug)
+   console.log(post)
    return (
       <main>
          <section className="layout">
