@@ -3,7 +3,7 @@ import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si"
 import { FiClock, FiEye, FiMail, FiMoon, FiSun } from "react-icons/fi"
 import { GiTechnoHeart } from "react-icons/gi"
 import { MdHistory } from "react-icons/md"
-import { HiCalendar, HiCheck, HiSelector } from "react-icons/hi"
+import { HiCalendar, HiCheck, HiClipboard, HiSelector } from "react-icons/hi"
 import { IconType } from "react-icons"
 
 export const IconNewspaper:IconType = (props) => {
@@ -121,6 +121,14 @@ export const IconCheckmark:IconType = (props) => {
 export const IconHistory:IconType = (props) => {
    return (
       <MdHistory
+         {...props}
+      />
+   )
+}
+
+export const IconClipboard:IconType = (props) => {
+   return (
+      <HiClipboard
          {...props}
       />
    )
