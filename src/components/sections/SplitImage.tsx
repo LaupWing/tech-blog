@@ -1,7 +1,11 @@
 import { FC, PropsWithChildren } from "react"
 
-export const SplitImage:FC<PropsWithChildren> = () => {
+export const SplitImage:FC<PropsWithChildren> = ({
+   children
+}) => {
   return (
-    <div>SplitImage</div>
+    <div className="grid grid-cols-2 items-start gap-4">
+      {children}
+    </div>
   )
 }

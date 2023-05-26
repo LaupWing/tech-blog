@@ -1,7 +1,11 @@
 import { FC, PropsWithChildren } from "react"
 
-export const Split:FC<PropsWithChildren> = () => {
+export const Split:FC<PropsWithChildren> = ({
+   children
+}) => {
    return (
-      <div>Split</div>
+      <div className="!mb-0 flex flex-col space-y-4">
+         {children}
+      </div>
    )
 }
