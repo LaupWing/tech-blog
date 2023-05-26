@@ -44,6 +44,15 @@ const SingleBlogPage = async (props: PageProps) => {
                   {format(new Date(frontmatter.publishedAt), "MMMM dd, yyyy")} by
                   Laup Wing
                </p>
+               {frontmatter.lastUpdated && (
+                  <div className="mt-2 flex flex-wrap gap-2 text-sm text-gray-700 dark:text-gray-200">
+                     <p>
+                        Last updated{" "}
+                        {format(new Date(frontmatter.lastUpdated), "MMMM dd, yyyy")}
+                        .
+                     </p>
+                  </div>
+               )}
             </div>
          </section>
       </main>
