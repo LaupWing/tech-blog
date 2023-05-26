@@ -3,7 +3,15 @@ import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si"
 import { FiClock, FiEye, FiMail, FiMoon, FiSun } from "react-icons/fi"
 import { GiTechnoHeart } from "react-icons/gi"
 import { MdHistory } from "react-icons/md"
-import { HiCalendar, HiCheck, HiCheckCircle, HiClipboard, HiOutlineStar, HiSelector } from "react-icons/hi"
+import { BiGitRepoForked } from "react-icons/bi"
+import { 
+   HiCalendar, 
+   HiCheck, 
+   HiCheckCircle, 
+   HiClipboard, 
+   HiOutlineStar, 
+   HiSelector 
+} from "react-icons/hi"
 import { IconType } from "react-icons"
 
 export const IconNewspaper:IconType = (props) => {
@@ -145,6 +153,14 @@ export const IconCheckCircle:IconType = (props) => {
 export const IconStar:IconType = (props) => {
    return (
       <HiOutlineStar
+         {...props}
+      />
+   )
+}
+
+export const IconRepoForked:IconType = (props) => {
+   return (
+      <BiGitRepoForked
          {...props}
       />
    )
