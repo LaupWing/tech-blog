@@ -1,4 +1,5 @@
-import { IconHistory } from "@/components/Icons"
+import { IconClock, IconEye, IconHistory } from "@/components/Icons"
+import { Accent } from "@/components/elements/Accent"
 import { CloudinaryImage } from "@/components/images"
 import { UnstyledLink } from "@/components/links"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
@@ -64,7 +65,24 @@ const SingleBlogPage = async (props: PageProps) => {
                      </UnstyledLink>
                   </div>
                )}
+               <div className="mt-6 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center gap-1">
+                     <IconClock className="inline-block text-base" />
+                     <Accent>{frontmatter.readingTime.text}</Accent>
+                  </div>
+                  <div className="flex items-center gap-1">
+                     <IconEye className="text-base inline-block" />
+                     <Accent>--- views</Accent>
+                  </div>
+               </div>
             </div>
+
+            <hr className="dark:border-gray-600" />
+            <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
+               <article className="mdx">
+
+               </article>
+            </section>
          </section>
       </main>
    )
