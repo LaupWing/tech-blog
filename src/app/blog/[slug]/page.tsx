@@ -88,6 +88,9 @@ const SingleBlogPage = async (props: PageProps) => {
                </article>
                <aside className="py-4">
                   <div className="sticky top-36">
+                     <TableContents 
+                        slug={frontmatter.slug}
+                     />
                      {/* <TableContents 
                         toc={toc}
                         minLevel={minLevel}
