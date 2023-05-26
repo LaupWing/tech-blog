@@ -2,6 +2,7 @@
 import { FC, useRef, useEffect, useState } from "react"
 import { UnstyledLink } from "../links"
 import clsx from "clsx"
+import useScrollSpy from "@/hooks/useScrollSpy"
 
 export type HeadingScrollSpy = Array<{
    id: string
@@ -10,16 +11,17 @@ export type HeadingScrollSpy = Array<{
 }>
 
 interface TableOfContentsProps {
-   activeSection: string | null
-   minLevel: number
+   slug: string
 }
 
 export const TableContents:FC<TableOfContentsProps> = ({
-   activeSection,
-   minLevel
+   slug
 }) => {
    const lastPosition = useRef<number>(0)
    const [toc, setToc] = useState<HeadingScrollSpy>()
+   const minLevel = toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0
+
+   const activeSection = useScrollSpy()
 
    useEffect(() => {
       const container = document.getElementById("toc-container")
@@ -52,8 +54,24 @@ export const TableContents:FC<TableOfContentsProps> = ({
    }, [activeSection])
 
    useEffect(() => {
+      const headings = document.querySelectorAll(".mdx h1, .mdx h2, .mdx h3")
 
-   }, [])
+      const headingsArray: HeadingScrollSpy = []
+
+      headings.forEach((heading) => {
+         const id = heading.id
+         const level = +heading.tagName.replace("H", "")
+         const text = heading.textContent + ""
+
+         headingsArray.push({
+            id,
+            level,
+            text
+         })
+
+         setToc(headingsArray)
+      })
+   }, [slug])
 
    return (
       <div
