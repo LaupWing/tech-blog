@@ -38,7 +38,11 @@ export const GithubCard: FC<GithubCardProps> = ({
       fetchData()
    }, [])
 
-   return (
-      <div>GithubCard</div>
+   return !error && !data ? (
+      <div>
+         
+      </div>
+   ) : (
+      <div className="mx-auto !block max-w-xl not-prose px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 animate-pulse bg-gray-300 dark:bg-gray-600 h-[111px]" />
    )
 }
