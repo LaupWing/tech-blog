@@ -62,6 +62,11 @@ const SingleProjectPage = async (props: PageProps) => {
                   </CustomLink>
                </div>
             )}
+            
+            <hr className="mt-4 dark:border-gray-600" />
+            <section className="lg:grid lg:grid-cols-[250px] lg:gap-8">
+               
+            </section>
          </div>
       </section>
    )
