@@ -1,4 +1,4 @@
-import { IconEye, IconGithub } from "@/components/Icons"
+import { IconEye, IconGithub, IconLink } from "@/components/Icons"
 import { CloudinaryImage } from "@/components/images"
 import { CustomLink } from "@/components/links/CustomLink"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
@@ -48,6 +48,17 @@ const SingleProjectPage = async (props: PageProps) => {
                      className="mt-1"
                   >
                      Repository
+                  </CustomLink>
+               </div>
+            )}
+            {frontmatter.link && (
+               <div className="inline-flex items-center gap-2">
+                  <IconLink className="text-lg text-gray-800 dark:text-light" />
+                  <CustomLink
+                     href={frontmatter.link}
+                     className="mt-1"
+                  >
+                     Open Live Site
                   </CustomLink>
                </div>
             )}
