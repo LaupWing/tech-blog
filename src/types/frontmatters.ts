@@ -26,6 +26,8 @@ export interface ProjectFrontmatter {
    description: string
    category?: string
    techs: string
+   wordCount: number;
+   readingTime: ReadTimeResults;
    banner: string
    link?: string
    github?: string

@@ -3,11 +3,11 @@ import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter, ProjectFrontmatter } from "@/types/frontmatters"
 
 const fetchProject = async (slug: string) => {
-   const project = await getFileBySlug("projects", slug)
+   const post = await getFileBySlug("projects", slug)
 
-   return project as {
+   return post as {
       code: string
-      frontmatter: BlogFrontmatter
+      frontmatter: ProjectFrontmatter
    }
 }
 
@@ -18,7 +18,7 @@ interface PageProps {
 }
 
 const SingleProjectPage = async (props: PageProps) => {
-   const project = await fetchProject(props.params.slug)
+   const { frontmatter, code } = await fetchProject(props.params.slug)
    
    return (
       <section className="layout">
@@ -28,7 +28,7 @@ const SingleProjectPage = async (props: PageProps) => {
             width={1440}
             height={792}
          />
-         <h1 className="mt-4">{project.}</h1>
+         <h1 className="mt-4">{}</h1>
       </section>
    )
 }
