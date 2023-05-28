@@ -7,7 +7,7 @@ interface ContentProps {
    code: string
 }
 
-const Content:FC<ContentProps> = ({
+export const Content:FC<ContentProps> = ({
    code
 }) => {
    const Component = useMemo(() => getMDXComponent(code), [code])
@@ -22,4 +22,3 @@ const Content:FC<ContentProps> = ({
       />
    )
 }
-export default Content
