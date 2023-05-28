@@ -1,4 +1,12 @@
 import { Accent } from "@/components/elements/Accent"
+import { getAllFilesFrontmatter } from "@/lib/mdx"
+
+const fetchProjects = async () => {
+   const projects = await getAllFilesFrontmatter("projects")
+
+   return projects
+}
+
 
 const Projects = () => {
    return (
