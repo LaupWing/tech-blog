@@ -1,7 +1,15 @@
 import { CloudinaryImage } from "@/components/images"
-import { getFiles } from "@/lib/mdx"
+import { getAllFilesFrontmatter, getFiles } from "@/lib/mdx"
 
-const SingleProjectPage = () => {
+const fetchProject = async () => {
+   const project = await getAllFilesFrontmatter("projects")
+
+   return project
+}
+
+const SingleProjectPage = async () => {
+   const project = await fetchProject()
+   
    return (
       <section className="layout">
          <CloudinaryImage
