@@ -1,6 +1,7 @@
 import { IconEye, IconGithub, IconLink } from "@/components/Icons"
 import { CloudinaryImage } from "@/components/images"
 import { CustomLink } from "@/components/links/CustomLink"
+import { Content } from "@/components/sections"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter, ProjectFrontmatter } from "@/types/frontmatters"
 
@@ -65,7 +66,11 @@ const SingleProjectPage = async (props: PageProps) => {
             
             <hr className="mt-4 dark:border-gray-600" />
             <section className="lg:grid lg:grid-cols-[250px] lg:gap-8">
-               
+               <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
+                  <Content
+                     code={code}
+                  />
+               </article>
             </section>
          </div>
       </section>
