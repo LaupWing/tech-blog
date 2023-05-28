@@ -9,6 +9,7 @@ import {
    HiCheck, 
    HiCheckCircle, 
    HiClipboard, 
+   HiLink, 
    HiOutlineStar, 
    HiSelector 
 } from "react-icons/hi"
@@ -161,6 +162,14 @@ export const IconStar:IconType = (props) => {
 export const IconRepoForked:IconType = (props) => {
    return (
       <BiGitRepoForked
+         {...props}
+      />
+   )
+}
+
+export const IconLink:IconType = (props) => {
+   return (
+      <HiLink
          {...props}
       />
    )
