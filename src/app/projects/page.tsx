@@ -8,7 +8,9 @@ const fetchProjects = async () => {
 }
 
 
-const Projects = () => {
+const Projects = async () => {
+   const projects = await fetchProjects()
+
    return (
       <section className="layout py-12">
          <h1 className="text-3xl md:text-5xl">
