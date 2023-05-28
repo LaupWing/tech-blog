@@ -1,3 +1,4 @@
+import { IconEye } from "@/components/Icons"
 import { CloudinaryImage } from "@/components/images"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter, ProjectFrontmatter } from "@/types/frontmatters"
@@ -32,6 +33,12 @@ const SingleProjectPage = async (props: PageProps) => {
          <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
             {frontmatter.description}
          </p>
+         <div className="mt-2 flex flex-wrap items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
+            <div className="flex items-center gap-1">
+               <IconEye className="inline-block text-base" />
+               --- views
+            </div>
+         </div>
       </section>
    )
 }
