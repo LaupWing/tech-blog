@@ -1,5 +1,6 @@
-import { IconEye } from "@/components/Icons"
+import { IconEye, IconGithub } from "@/components/Icons"
 import { CloudinaryImage } from "@/components/images"
+import { CustomLink } from "@/components/links/CustomLink"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter, ProjectFrontmatter } from "@/types/frontmatters"
 
@@ -38,6 +39,18 @@ const SingleProjectPage = async (props: PageProps) => {
                <IconEye className="inline-block text-base" />
                --- views
             </div>
+            {(frontmatter.github || frontmatter.link) && " - "}
+            {frontmatter.github && (
+               <div className="inline-flex items-center gap-2">
+                  <IconGithub className="text-lg text-gray-800 dark:text-light" />
+                  <CustomLink
+                     href={frontmatter.github}
+                     className="mt-1"
+                  >
+                     Repository
+                  </CustomLink>
+               </div>
+            )}
          </div>
       </section>
    )
