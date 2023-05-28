@@ -1,14 +1,24 @@
 import { CloudinaryImage } from "@/components/images"
-import { getAllFilesFrontmatter, getFiles } from "@/lib/mdx"
+import { getFileBySlug, getFiles } from "@/lib/mdx"
+import { BlogFrontmatter, ProjectFrontmatter } from "@/types/frontmatters"
 
-const fetchProject = async () => {
-   const project = await getAllFilesFrontmatter("projects")
+const fetchProject = async (slug: string) => {
+   const project = await getFileBySlug("projects", slug)
 
-   return project
+   return project as {
+      code: string
+      frontmatter: BlogFrontmatter
+   }
 }
 
-const SingleProjectPage = async () => {
-   const project = await fetchProject()
+interface PageProps {
+   params: {
+      slug: string
+   }
+}
+
+const SingleProjectPage = async (props: PageProps) => {
+   const project = await fetchProject(props.params.slug)
    
    return (
       <section className="layout">
@@ -18,6 +28,7 @@ const SingleProjectPage = async () => {
             width={1440}
             height={792}
          />
+         <h1 className="mt-4">{project.}</h1>
       </section>
    )
 }
