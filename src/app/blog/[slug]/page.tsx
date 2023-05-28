@@ -91,10 +91,6 @@ const SingleBlogPage = async (props: PageProps) => {
                      <TableContents 
                         slug={frontmatter.slug}
                      />
-                     {/* <TableContents 
-                        toc={toc}
-                        minLevel={minLevel}
-                     /> */}
                   </div>
                </aside>
             </section>
