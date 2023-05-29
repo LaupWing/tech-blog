@@ -28,18 +28,18 @@ export default function useContentMeta(
    //    }
    //    : undefined
    
-   const {
-      data,
-      error: isError,
-      mutate
-   } = useSWR<SingleContentMeta>(
-      "/api/content/" + slug,
-      // {
-      //    fallbackData: preloadMeta
-      // }
-   )
+   // const {
+   //    data,
+   //    error: isError,
+   //    mutate
+   // } = useSWR<SingleContentMeta>(
+   //    "/api/content/" + slug,
+   //    // {
+   //    //    fallbackData: preloadMeta
+   //    // }
+   // )
    incrementViews(slug)
-   console.log(data)
+   // console.log(data)
 
    // useEffect(() => {
    //    if (runIncrement){
