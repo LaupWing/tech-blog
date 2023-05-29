@@ -10,6 +10,7 @@ import { Header } from "@/components/Header"
 import { AppProvider } from "@/context/AppProvider"
 import { openGraph } from "@/lib/helpers"
 import { Footer } from "@/components/Footer"
+import NextTopLoader from "nextjs-toploader"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400","500","700"] })
 
@@ -61,6 +62,7 @@ export default function RootLayout({
             ))}
          </head>
          <body className={`${inter.className} bg-light dark:bg-dark`}>
+            <NextTopLoader />
             <AppProvider>  
                <Header />
                <div id="skip-nav">
