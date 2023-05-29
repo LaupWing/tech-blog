@@ -1,5 +1,5 @@
 import { cacheOnly } from "@/lib/swr"
-import { ContentMeta } from "@/types/meta"
+import { ContentMeta, SingleContentMeta } from "@/types/meta"
 import useSWR from "swr"
 
 export default function useContentMeta(
@@ -16,6 +16,12 @@ export default function useContentMeta(
       cacheOnly
    )
    const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
-   // const preloadMet
+   const preloadMeta: SingleContentMeta | undefined = _preloadMeta
+      ? {
+         contentLikes: _preloadMeta.likes,
+         contentViews: _preloadMeta.views,
+         likesByUser: _preloadMeta.likesByUser
+      }
+      : undefined
    
 }
