@@ -10,7 +10,6 @@ import { Header } from "@/components/Header"
 import { AppProvider } from "@/context/AppProvider"
 import { openGraph } from "@/lib/helpers"
 import { Footer } from "@/components/Footer"
-import ProgressBar from "next-nprogress-bar"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400","500","700"] })
 
@@ -62,12 +61,6 @@ export default function RootLayout({
             ))}
          </head>
          <body className={`${inter.className} bg-light dark:bg-dark`}>
-            <ProgressBar
-               height="4px"
-               color="#fffd00"
-               options={{ showSpinner: false }}
-               shallowRouting
-            />
             <AppProvider>  
                <Header />
                <div id="skip-nav">
