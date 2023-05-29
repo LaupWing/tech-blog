@@ -1,5 +1,6 @@
 import { cacheOnly } from "@/lib/swr"
 import { ContentMeta, SingleContentMeta } from "@/types/meta"
+import { useEffect } from "react"
 import useSWR from "swr"
 
 export default function useContentMeta(
@@ -24,4 +25,20 @@ export default function useContentMeta(
       }
       : undefined
    
+   const {
+      data,
+      error: isError,
+      mutate
+   } = useSWR<SingleContentMeta>(
+      "/api/content" + slug,
+      {
+         fallbackData: preloadMeta
+      }
+   )
+
+   useEffect(() => {
+      if (runIncrement){
+         
+      }
+   }, [mutate, runIncrement, slug])
 }
