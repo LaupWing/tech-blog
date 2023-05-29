@@ -21,24 +21,24 @@ export async function POST(req: NextRequest) {
          },
          create: {
             slug: slug,
-            views: {
+            View: {
                create: {
                   sessionId: sessionId
                }
             }
          },
          update: {
-            views:{
+            View:{
                create: {
-                  sessionId
+                  sessionId: sessionId
                }
             }
          },
          include: {
             _count: {
                select: {
-                  views: true,
-                  likes: true
+                  Like: true,
+                  View: true
                }
             }
          }
