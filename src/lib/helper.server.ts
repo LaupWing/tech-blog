@@ -6,4 +6,6 @@ export const getSessionId = (req: NextApiRequest) => {
 
    const currentUserId = createHash("md5")
       .update(ipAddress + (process.env.IP_ADDRESS_SALT as string), "utf8")
+      .digest("hex")
+   return currentUserId
 } 
