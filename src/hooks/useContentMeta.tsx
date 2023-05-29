@@ -1,3 +1,4 @@
+"use client"
 import { cacheOnly } from "@/lib/swr"
 import { ContentMeta, SingleContentMeta } from "@/types/meta"
 import { debounce } from "lodash"
@@ -17,65 +18,65 @@ export default function useContentMeta(
       "/api/content",
       cacheOnly
    )
-   const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
-   const preloadMeta: SingleContentMeta | undefined = _preloadMeta
-      ? {
-         contentLikes: _preloadMeta.likes,
-         contentViews: _preloadMeta.views,
-         likesByUser: _preloadMeta.likesByUser
-      }
-      : undefined
+   // const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
+   // const preloadMeta: SingleContentMeta | undefined = _preloadMeta
+   //    ? {
+   //       contentLikes: _preloadMeta.likes,
+   //       contentViews: _preloadMeta.views,
+   //       likesByUser: _preloadMeta.likesByUser
+   //    }
+   //    : undefined
    
-   const {
-      data,
-      error: isError,
-      mutate
-   } = useSWR<SingleContentMeta>(
-      "/api/content" + slug,
-      {
-         fallbackData: preloadMeta
-      }
-   )
+   // const {
+   //    data,
+   //    error: isError,
+   //    mutate
+   // } = useSWR<SingleContentMeta>(
+   //    "/api/content" + slug,
+   //    {
+   //       fallbackData: preloadMeta
+   //    }
+   // )
 
-   useEffect(() => {
-      if (runIncrement){
-         incrementViews(slug)
-            .then(data => {
-               mutate({
-                  ...data
-               })
-            })
-      }
-   }, [mutate, runIncrement, slug])
+   // useEffect(() => {
+   //    if (runIncrement){
+   //       incrementViews(slug)
+   //          .then(data => {
+   //             mutate({
+   //                ...data
+   //             })
+   //          })
+   //    }
+   // }, [mutate, runIncrement, slug])
 
-   const addLike = () => {
-      if (!data || data.likesByUser >= 5){
-         return
-      }
+   // const addLike = () => {
+   //    if (!data || data.likesByUser >= 5){
+   //       return
+   //    }
 
-      mutate(
-         {
-            contentViews: data.contentViews,
-            contentLikes: data.contentLikes + 1,
-            likesByUser: data.likesByUser + 1
-         },
-         false
-      )
+   //    mutate(
+   //       {
+   //          contentViews: data.contentViews,
+   //          contentLikes: data.contentLikes + 1,
+   //          likesByUser: data.likesByUser + 1
+   //       },
+   //       false
+   //    )
 
-      incrementLikes(slug).then(() => {
-         debounce(() => {
-            mutate()
-         }, 1000)()
-      })
-   }
+   //    incrementLikes(slug).then(() => {
+   //       debounce(() => {
+   //          mutate()
+   //       }, 1000)()
+   //    })
+   // }
 
    return {
-      isLoading: !isError && !data,
-      isError,
-      views: data?.contentViews,
-      contentLikes: data?.contentLikes ?? 0,
-      likesByUser: data?.likesByUser ?? 0,
-      addLike
+      // isLoading: !isError && !data,
+      // isError,
+      // views: data?.contentViews,
+      // contentLikes: data?.contentLikes ?? 0,
+      // likesByUser: data?.likesByUser ?? 0,
+      // addLike
    }
 }
 

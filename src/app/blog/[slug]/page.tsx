@@ -8,6 +8,7 @@ import { format } from "date-fns"
 import { TableContents } from "@/components/sections/TableContents"
 import Content from "./Content"
 import { LikeButton } from "@/components/buttons"
+import useContentMeta from "@/hooks/useContentMeta"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -29,6 +30,10 @@ const SingleBlogPage = async (props: PageProps) => {
       frontmatter,
       code
    } = post
+
+   const meta = useContentMeta(frontmatter.slug, {
+      runIncrement: true
+   })
 
    const COMMIT_HISTORY_LINK = `https://github.com/LaupWing/tech-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`
 
