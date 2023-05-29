@@ -1,5 +1,6 @@
 import { cacheOnly } from "@/lib/swr"
 import { ContentMeta, SingleContentMeta } from "@/types/meta"
+import { debounce } from "lodash"
 import { useEffect } from "react"
 import useSWR from "swr"
 
@@ -46,6 +47,36 @@ export default function useContentMeta(
             })
       }
    }, [mutate, runIncrement, slug])
+
+   const addLike = () => {
+      if (!data || data.likesByUser >= 5){
+         return
+      }
+
+      mutate(
+         {
+            contentViews: data.contentViews,
+            contentLikes: data.contentLikes + 1,
+            likesByUser: data.likesByUser + 1
+         },
+         false
+      )
+
+      incrementLikes(slug).then(() => {
+         debounce(() => {
+            mutate()
+         }, 1000)()
+      })
+   }
+
+   return {
+      isLoading: !isError && !data,
+      isError,
+      views: data?.contentViews,
+      contentLikes: data?.contentLikes ?? 0,
+      likesByUser: data?.likesByUser ?? 0,
+      addLike
+   }
 }
 
 async function incrementViews(slug: string) {
