@@ -1,3 +1,4 @@
+import { ContentMeta } from "@/types/meta"
 import useSWR from "swr"
 
 export default function useContentMeta(
@@ -9,5 +10,7 @@ export default function useContentMeta(
       runIncrement?: boolean
    } = {}
 ){ 
-   // const { data: allContentMeta } = useSWR<Array<Conte>>
+   // const { data: allContentMeta } = useSWR<Array<ContentMeta>>(
+   //    contentMetaFlag
+   // )
 }
