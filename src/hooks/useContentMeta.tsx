@@ -38,7 +38,12 @@ export default function useContentMeta(
 
    useEffect(() => {
       if (runIncrement){
-
+         incrementViews(slug)
+            .then(data => {
+               mutate({
+                  ...data
+               })
+            })
       }
    }, [mutate, runIncrement, slug])
 }
