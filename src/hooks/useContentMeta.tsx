@@ -18,6 +18,7 @@ export default function useContentMeta(
       "/api/content",
       cacheOnly
    )
+   console.log(allContentMeta)
    // const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
    // const preloadMeta: SingleContentMeta | undefined = _preloadMeta
    //    ? {

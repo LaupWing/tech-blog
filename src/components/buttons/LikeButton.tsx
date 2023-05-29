@@ -51,7 +51,7 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
                </linearGradient>
                <clipPath
                   id="clip-path"
-                  clipPathUnits={"userOnSpace"}
+                  clipPathUnits={"userSpaceOnUse"}
                >
                   <path d={CHAD_PATH} />
                </clipPath>

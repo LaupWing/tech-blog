@@ -31,10 +31,6 @@ const SingleBlogPage = async (props: PageProps) => {
       code
    } = post
 
-   const meta = useContentMeta(frontmatter.slug, {
-      runIncrement: true
-   })
-
    const COMMIT_HISTORY_LINK = `https://github.com/LaupWing/tech-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`
 
    return (
@@ -90,6 +86,7 @@ const SingleBlogPage = async (props: PageProps) => {
                <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
                   <Content
                      code={code}
+                     slug={frontmatter.slug}
                   />
                </article>
                <aside className="py-4">
