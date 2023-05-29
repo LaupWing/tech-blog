@@ -10,7 +10,12 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
    const sessionId = getSessionId(req)
-   console.log(sessionId)
+   
+   try {
+      // const content = await pr
+   } catch(e){
+      console.log(e)
+   }
    
    return NextResponse.json({})
 }
