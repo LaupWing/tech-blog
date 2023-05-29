@@ -10,7 +10,7 @@ import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 
 export async function getFileBySlug(type: ContentType, slug: string) {
-   const source = readFileSync(join(process.cwd(), "src", "contents", type, `${slug}.mdx`), "utf-8")
+   const source = readFileSync(join(process.cwd(), "src", "contents", type, `${slug}.mdx`), "utf8")
  
    const { code, frontmatter } = await bundleMDX({
       source,
@@ -50,7 +50,7 @@ export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
    return files.reduce((allPosts: Array<PickFrontmatter<T>>, postSlug) => {
       const source = readFileSync(
          join(process.cwd(), "src", "contents", type, postSlug),
-         "utf-8"
+         "utf8"
       )
       const { data } = matter(source)
 
