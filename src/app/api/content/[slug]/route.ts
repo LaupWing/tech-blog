@@ -9,8 +9,8 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-   // const sessionId = getSessionId(req)
-   // console.log(sessionId)
+   const sessionId = getSessionId(req)
+   console.log(sessionId)
    
    return NextResponse.json({})
 }
