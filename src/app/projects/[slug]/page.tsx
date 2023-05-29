@@ -1,10 +1,10 @@
 import { IconEye, IconGithub, IconLink } from "@/components/Icons"
-import { CloudinaryImage } from "@/components/images"
-import { CustomLink } from "@/components/links/CustomLink"
+// import { CloudinaryImage } from "@/components/images"
+// import { CustomLink } from "@/components/links/CustomLink"
 import { Content } from "@/components/sections"
 import { TableContents } from "@/components/sections/TableContents"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
-import { BlogFrontmatter, ProjectFrontmatter } from "@/types/frontmatters"
+import { ProjectFrontmatter } from "@/types/frontmatters"
 
 const fetchProject = async (slug: string) => {
    const post = await getFileBySlug("projects", slug)
@@ -26,12 +26,12 @@ const SingleProjectPage = async (props: PageProps) => {
    
    return (
       <section className="layout">
-         <CloudinaryImage
+         {/* <CloudinaryImage
             publicId="samples/bike"
             alt="Bike"
             width={1440}
             height={792}
-         />
+         /> */}
          <h1 className="mt-4">{frontmatter.title}</h1>
          <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
             {frontmatter.description}
@@ -41,7 +41,7 @@ const SingleProjectPage = async (props: PageProps) => {
                <IconEye className="inline-block text-base" />
                --- views
             </div>
-            {(frontmatter.github || frontmatter.link) && " - "}
+            {/* {(frontmatter.github || frontmatter.link) && " - "}
             {frontmatter.github && (
                <div className="inline-flex items-center gap-2">
                   <IconGithub className="text-lg text-gray-800 dark:text-light" />
@@ -52,8 +52,8 @@ const SingleProjectPage = async (props: PageProps) => {
                      Repository
                   </CustomLink>
                </div>
-            )}
-            {frontmatter.link && (
+            )} */}
+            {/* {frontmatter.link && (
                <div className="inline-flex items-center gap-2">
                   <IconLink className="text-lg text-gray-800 dark:text-light" />
                   <CustomLink
@@ -63,7 +63,7 @@ const SingleProjectPage = async (props: PageProps) => {
                      Open Live Site
                   </CustomLink>
                </div>
-            )}
+            )} */}
             
             <hr className="mt-4 dark:border-gray-600" />
             <section className="lg:grid lg:grid-cols-[250px] lg:gap-8">
