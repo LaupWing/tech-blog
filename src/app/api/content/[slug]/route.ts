@@ -1,4 +1,5 @@
 import { getSessionId } from "@/lib/helper.server"
+import { prismaClient } from "@/lib/prisma"
 import { NextRequest, NextResponse } from "next/server"
 
 
@@ -10,12 +11,19 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
    const sessionId = getSessionId(req)
-   
-   try {
-      // const content = await pr
-   } catch(e){
-      console.log(e)
-   }
+   // req.
+   // try {
+   //    // const content = await prismaClient.contentMeta.upsert({
+   //    //    where: {
+   //    //       slug: slug
+   //    //    },
+   //    //    create: {
+   //    //       slug: slug
+   //    //    }
+   //    // })
+   // } catch(e){
+   //    console.log(e)
+   // }
    
    return NextResponse.json({})
 }
