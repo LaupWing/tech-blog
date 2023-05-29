@@ -15,9 +15,18 @@ model ContentMeta {
    slug      String   @unique
    createdAt DateTime @default(now())
    Like      Like[]
+   View      View[]
 }
 
 model Like {
+   id            Int          @id @default(autoincrement())
+   createdAt     DateTime     @default(now())
+   sessionId     String
+   contentMetaId Int?
+   ContentMeta   ContentMeta? @relation(fields: [contentMetaId], references: [id], onDelete: Cascade)
+}
+
+model View {
    id            Int          @id @default(autoincrement())
    createdAt     DateTime     @default(now())
    sessionId     String
