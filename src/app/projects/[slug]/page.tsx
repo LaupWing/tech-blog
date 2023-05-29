@@ -2,6 +2,7 @@ import { IconEye, IconGithub, IconLink } from "@/components/Icons"
 import { CloudinaryImage } from "@/components/images"
 import { CustomLink } from "@/components/links/CustomLink"
 import { Content } from "@/components/sections"
+import { TableContents } from "@/components/sections/TableContents"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter, ProjectFrontmatter } from "@/types/frontmatters"
 
@@ -71,6 +72,13 @@ const SingleProjectPage = async (props: PageProps) => {
                      code={code}
                   />
                </article>
+               <aside className="py-4">
+                  <div className="sticky top-36">
+                     <TableContents
+                        slug={frontmatter.slug}
+                     />
+                  </div>
+               </aside>
             </section>
          </div>
       </section>
