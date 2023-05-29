@@ -1,14 +1,13 @@
 import { getSessionId } from "@/lib/helper.server"
-import { NextApiRequest, NextApiResponse } from "next"
-import { NextRequest } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
 
 export async function GET() {
       
 }
 
-export async function POST() {
-   const sessionId = getSessionId()
-   console.log(sessionId)
-   res.send({})
+export async function POST(req: NextRequest) {
+   const sessionId = getSessionId(req)
+   
+   NextResponse.json({})
 }
