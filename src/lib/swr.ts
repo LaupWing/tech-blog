@@ -5,5 +5,5 @@ export const cacheOnly = {
    revalidateOnReconnect: false,
    refreshWhenOffline: false,
    refreshWhenHidden: false,
-   refreshInterval: false,
+   refreshInterval: 0,
 }

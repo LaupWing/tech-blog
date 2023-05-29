@@ -1,3 +1,4 @@
+import { cacheOnly } from "@/lib/swr"
 import { ContentMeta } from "@/types/meta"
 import useSWR from "swr"
 
@@ -10,7 +11,8 @@ export default function useContentMeta(
       runIncrement?: boolean
    } = {}
 ){ 
-   // const { data: allContentMeta } = useSWR<Array<ContentMeta>>(
-   //    contentMetaFlag
-   // )
+   const { data: allContentMeta } = useSWR<Array<ContentMeta>>(
+      "/api/content",
+      cacheOnly
+   )
 }
