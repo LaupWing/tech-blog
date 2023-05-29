@@ -7,6 +7,7 @@ import { BlogFrontmatter } from "@/types/frontmatters"
 import { format } from "date-fns"
 import { TableContents } from "@/components/sections/TableContents"
 import Content from "./Content"
+import { LikeButton } from "@/components/buttons"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -91,6 +92,9 @@ const SingleBlogPage = async (props: PageProps) => {
                      <TableContents 
                         slug={frontmatter.slug}
                      />
+                     <div className="flex items-center justify-center py-8">
+                        <LikeButton />
+                     </div>
                   </div>
                </aside>
             </section>
