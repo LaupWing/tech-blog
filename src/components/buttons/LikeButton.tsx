@@ -6,7 +6,7 @@ export const LikeButton = () => {
          <button>
             <LikeButtonHeart />
          </button>
-         <div className="text-gray-400 dark:text-gray-500">
+         <div className="text-gray-400 dark:text-gray-500 mt-1 text-lg font-medium">
             <span>100</span>
          </div>
       </div>
@@ -58,6 +58,7 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
             </defs>
             <g clipPath="url(#clip-path)">
                <rect
+                  className="dark:text-gray-600 text-gray-400"
                   width={240}
                   height={360}
                   fill="currentColor"
