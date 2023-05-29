@@ -2,11 +2,13 @@ import { FC } from "react"
 
 export const LikeButton = () => {
    return (
-      <button>LikeButton</button>
+      <button>
+         <LikeButtonHeart />
+      </button>
    )
 }
 
-const LikeButtonHeart:FC<{ likes: number }> = ({ likes = 6}) => {
+const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
    return (
       <div className="relative">
          <div className="absolute w-full text-center text-2xl">
@@ -48,6 +50,13 @@ const LikeButtonHeart:FC<{ likes: number }> = ({ likes = 6}) => {
                   <path d={CHAD_PATH} />
                </clipPath>
             </defs>
+            <g clipPath="url(#clip-path)">
+               <rect
+                  width={350}
+                  height={350}
+                  fill="currentColor"
+               />
+            </g>
          </svg>
       </div>
    )
