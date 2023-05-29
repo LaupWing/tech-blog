@@ -2,7 +2,7 @@ import { FC } from "react"
 
 export const LikeButton = () => {
    return (
-      <div>LikeButton</div>
+      <button>LikeButton</button>
    )
 }
 
@@ -12,6 +12,43 @@ const LikeButtonHeart:FC<{ likes: number }> = ({ likes = 6}) => {
          <div className="absolute w-full text-center text-2xl">
 
          </div>
+         <svg
+            className="w-12"
+            style={{ transformOrigin: "50% 50%" }}
+         >
+            <defs>
+               <linearGradient 
+                  id="gradient" 
+                  x1={"0%"}
+                  y1={"0%"}
+                  x2={"0%"}
+                  y2={"100%"}
+               >
+                  <stop
+                     offset={"0%"}
+                     style={{ stopColor: "currentColor", stopOpacity: 1 }}
+                     className="text-accent-light"
+                  />
+                  <stop
+                     offset={"50%"}
+                     style={{ stopColor: "currentColor", stopOpacity: 1 }}
+                     className="text-accent-light"
+                  />
+                  <stop
+                     offset={"100%"}
+                     style={{ stopColor: "currentColor", stopOpacity: 1 }}
+                     className="text-accent-dark"
+                  />
+
+               </linearGradient>
+               <clipPath
+                  id="clip-path"
+                  clipPathUnits={"userOnSpace"}
+               >
+                  <path d={CHAD_PATH} />
+               </clipPath>
+            </defs>
+         </svg>
       </div>
    )
 }
