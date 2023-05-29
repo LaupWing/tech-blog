@@ -6,7 +6,7 @@ import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
 import { format } from "date-fns"
 import { TableContents } from "@/components/sections/TableContents"
-import { Content } from "@/components/sections"
+import Content from "./Content"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)

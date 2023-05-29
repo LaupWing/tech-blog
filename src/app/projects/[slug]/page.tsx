@@ -1,7 +1,7 @@
 import { IconEye, IconGithub, IconLink } from "@/components/Icons"
 import { CloudinaryImage } from "@/components/images"
 import { CustomLink } from "@/components/links/CustomLink"
-import { Content } from "@/components/sections"
+import Content from "./Content"
 import { TableContents } from "@/components/sections/TableContents"
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { ProjectFrontmatter } from "@/types/frontmatters"
