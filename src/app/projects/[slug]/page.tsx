@@ -65,22 +65,22 @@ const SingleProjectPage = async (props: PageProps) => {
                </div>
             )}
             
-            <hr className="mt-4 dark:border-gray-600" />
-            <section className="lg:grid lg:grid-cols-[250px] lg:gap-8">
-               <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
-                  <Content
-                     code={code}
-                  />
-               </article>
-               <aside className="py-4">
-                  <div className="sticky top-36">
-                     <TableContents
-                        slug={frontmatter.slug}
-                     />
-                  </div>
-               </aside>
-            </section>
          </div>
+         <hr className="mt-4 dark:border-gray-600" />
+         <section className="lg:grid lg:grid-cols-[250px] lg:gap-8">
+            <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
+               <Content
+                  code={code}
+               />
+            </article>
+            <aside className="py-4">
+               <div className="sticky top-36">
+                  <TableContents
+                     slug={frontmatter.slug}
+                  />
+               </div>
+            </aside>
+         </section>
       </section>
    )
 }
