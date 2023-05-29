@@ -61,7 +61,7 @@ export default function RootLayout({
             ))}
          </head>
          <body className={`${inter.className} bg-light dark:bg-dark`}>
-            <AppProvider>
+            <AppProvider>  
                <Header />
                <div id="skip-nav">
                   {children}
