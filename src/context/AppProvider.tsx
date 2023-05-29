@@ -3,7 +3,7 @@ import { ThemeProvider } from "next-themes"
 import { PreloadProvider } from "./PreloadContext"
 import ProgressBar from "next-nprogress-bar"
 import { FC, PropsWithChildren } from "react"
-// import { SWRConfig } from "swr"
+import { SWRConfig } from "swr"
 // import axios from "axios"
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -16,13 +16,13 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
             shallowRouting
          />
          {/* <PreloadProvider> */}
-            {/* <SWRConfig
+            <SWRConfig
                value={{
-                  fetcher: (url) => axios.get(url).then((res) => res.data),
+                  fetcher: (url) => fetch(url).then((res) => res.json()),
                }}
-            > */}
+            >
             {children}
-            {/* </SWRConfig> */}
+            </SWRConfig>
          {/* </PreloadProvider> */}
       </ThemeProvider>
    )
