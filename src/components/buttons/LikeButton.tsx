@@ -15,7 +15,7 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
 
          </div>
          <svg
-            className="w-12"
+            className="w-16"
             style={{ transformOrigin: "50% 50%" }}
          >
             <defs>
@@ -52,8 +52,8 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
             </defs>
             <g clipPath="url(#clip-path)">
                <rect
-                  width={350}
-                  height={350}
+                  width={60}
+                  height={100}
                   fill="currentColor"
                />
             </g>
