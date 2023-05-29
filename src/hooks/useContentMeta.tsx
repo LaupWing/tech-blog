@@ -38,7 +38,15 @@ export default function useContentMeta(
 
    useEffect(() => {
       if (runIncrement){
-         
+
       }
    }, [mutate, runIncrement, slug])
+}
+
+async function incrementViews(slug: string) {
+   const res = await fetch("/api/content" + slug, {
+      method: "POST"
+   })
+   const data = await res.json()
+   return data
 }
