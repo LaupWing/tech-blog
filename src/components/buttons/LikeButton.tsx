@@ -2,9 +2,14 @@ import { FC } from "react"
 
 export const LikeButton = () => {
    return (
-      <button>
-         <LikeButtonHeart />
-      </button>
+      <div className="flex items-center space-x-4">
+         <button>
+            <LikeButtonHeart />
+         </button>
+         <div className="text-gray-400 dark:text-gray-500">
+            <span>100</span>
+         </div>
+      </div>
    )
 }
 
