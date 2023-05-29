@@ -1,6 +1,6 @@
 "use client"
 import { ThemeProvider } from "next-themes"
-import { PreloadProvider } from "./PreloadContext"
+// import { PreloadProvider } from "./PreloadContext"
 import ProgressBar from "next-nprogress-bar"
 import { FC, PropsWithChildren } from "react"
 import { SWRConfig } from "swr"
