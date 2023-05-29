@@ -3,7 +3,9 @@ import { NextRequest, NextResponse } from "next/server"
 
 
 export async function GET(req: Request) {
-   return NextResponse.json({})
+   return NextResponse.json({
+      "test": "test"
+   })
 }
 
 export async function POST(req: Request) {

@@ -28,22 +28,17 @@ export default function useContentMeta(
    //    }
    //    : undefined
    
-   // const {
-   //    data,
-   //    error: isError,
-   //    mutate
-   // } = useSWR<SingleContentMeta>(
-   //    "/api/content/" + slug,
-   //    // {
-   //    //    fallbackData: preloadMeta
-   //    // }
-   // )
-   fetch("/api/content/" + slug)
-      .then((test) => {
-         console.log(test)
-      })
-   
-   // console.log(data)
+   const {
+      data,
+      error: isError,
+      mutate
+   } = useSWR<SingleContentMeta>(
+      "/api/content/" + slug,
+      // {
+      //    fallbackData: preloadMeta
+      // }
+   )
+   console.log(data)
 
    // useEffect(() => {
    //    if (runIncrement){
