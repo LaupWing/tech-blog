@@ -55,3 +55,11 @@ async function incrementViews(slug: string) {
    const data = await res.json()
    return data
 }
+
+async function incrementLikes(slug: string) {
+   const res = await fetch("/api/like/" + slug, {
+      method: "POST"
+   })
+   const data = await res.json()
+   return data
+}
