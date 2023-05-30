@@ -38,18 +38,17 @@ export default function useContentMeta(
          fallbackData: preloadMeta
       }
    )
-   console.log(data)
 
-   useEffect(() => {
-      if (runIncrement){
-         incrementViews(slug)
-            .then(data => {
-               mutate({
-                  ...data
-               })
-            })
-      }
-   }, [mutate, runIncrement, slug])
+   // useEffect(() => {
+   //    if (runIncrement){
+   //       incrementViews(slug)
+   //          .then(data => {
+   //             mutate({
+   //                ...data
+   //             })
+   //          })
+   //    }
+   // }, [mutate, runIncrement, slug])
 
    const addLike = () => {
       if (!data || data.likesByUser >= 5){
