@@ -29,7 +29,8 @@ export default function useContentMeta(
    
    const {
       data,
-      error: isError,
+      error,
+      isLoading,
       mutate
    } = useSWR<SingleContentMeta>(
       "/api/content/" + slug,
@@ -39,45 +40,45 @@ export default function useContentMeta(
    )
    console.log(data)
 
-   // useEffect(() => {
-   //    if (runIncrement){
-   //       incrementViews(slug)
-   //          .then(data => {
-   //             mutate({
-   //                ...data
-   //             })
-   //          })
-   //    }
-   // }, [mutate, runIncrement, slug])
+   useEffect(() => {
+      if (runIncrement){
+         incrementViews(slug)
+            .then(data => {
+               mutate({
+                  ...data
+               })
+            })
+      }
+   }, [mutate, runIncrement, slug])
 
-   // const addLike = () => {
-   //    if (!data || data.likesByUser >= 5){
-   //       return
-   //    }
+   const addLike = () => {
+      if (!data || data.likesByUser >= 5){
+         return
+      }
 
-   //    mutate(
-   //       {
-   //          contentViews: data.contentViews,
-   //          contentLikes: data.contentLikes + 1,
-   //          likesByUser: data.likesByUser + 1
-   //       },
-   //       false
-   //    )
+      mutate(
+         {
+            contentViews: data.contentViews,
+            contentLikes: data.contentLikes + 1,
+            likesByUser: data.likesByUser + 1
+         },
+         false
+      )
 
-   //    incrementLikes(slug).then(() => {
-   //       debounce(() => {
-   //          mutate()
-   //       }, 1000)()
-   //    })
-   // }
+      incrementLikes(slug).then(() => {
+         debounce(() => {
+            mutate()
+         }, 1000)()
+      })
+   }
 
    return {
-      // isLoading: !isError && !data,
-      // isError,
-      // views: data?.contentViews,
-      // contentLikes: data?.contentLikes ?? 0,
-      // likesByUser: data?.likesByUser ?? 0,
-      // addLike
+      isLoading: isLoading,
+      error,
+      views: data?.contentViews,
+      contentLikes: data?.contentLikes ?? 0,
+      likesByUser: data?.likesByUser ?? 0,
+      addLike
    }
 }
 
