@@ -38,7 +38,6 @@ export default function useContentMeta(
    //    //    fallbackData: preloadMeta
    //    // }
    // )
-   incrementViews(slug)
    // console.log(data)
 
    // useEffect(() => {
@@ -88,7 +87,6 @@ async function incrementViews(slug: string) {
       method: "POST"
    })
    const data = await res.json()
-   console.log(data)
    return data
 }
 
