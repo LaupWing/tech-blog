@@ -14,10 +14,12 @@ export default function useContentMeta(
       runIncrement?: boolean
    } = {}
 ){ 
+   console.log("Getting data")
    const { data: allContentMeta } = useSWR<Array<ContentMeta>>(
       "/api/content",
       cacheOnly
    )
+   console.log(allContentMeta)
    const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
    const preloadMeta: SingleContentMeta | undefined = _preloadMeta
       ? {
