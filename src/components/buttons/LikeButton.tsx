@@ -63,13 +63,17 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
                   height={360}
                   fill="currentColor"
                />
-               {/* <rect
+               <rect
                   x={0}
                   y={0}
                   width={240}
                   height={360}
                   fill="url(#gradient)"
-               /> */}
+                  style={{
+                     transform: `translateY(${360 - 3 * 72}px)`,
+                     transition: "transform 150ms cubic-bezier(0.64, 0.57, 0.67, 1.53)"
+                  }}
+               />
             </g>
          </svg>
       </div>
