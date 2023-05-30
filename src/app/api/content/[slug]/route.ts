@@ -4,11 +4,43 @@ import { NextResponse } from "next/server"
 
 
 export async function GET(req: Request) {
-   
+   try{
+      const slug = extractSlug(req)
+      const content = await prismaClient.contentMeta.findFirst({
+         where: {
+            slug: slug
+         },
+         include: {
+            _count: {
+               select: {
+                  View: true,
+                  Like: true
+               }
+            }
+         }
+      })
 
-   return NextResponse.json({
-      "test": "test"
-   })
+      return NextResponse.json({
+         contentViews: content?._count.View ?? 0,
+         contentLikes: content?._count.Like ?? 0
+      }, {
+         status: 200
+      })
+   } catch(e: unknown){
+      if (e instanceof Error) {
+         return NextResponse.json({
+            message: e.message ?? "Internal Server Error"
+         }, {
+            status: 500
+         })
+      } else {
+         return NextResponse.json({
+            message: "Internal Server Error"
+         }, {
+            status: 500
+         })
+      }
+   }
 }
 
 export async function POST(req: Request) {
