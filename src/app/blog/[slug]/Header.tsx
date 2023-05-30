@@ -1,12 +1,20 @@
 "use client"
 import { BlogFrontmatter } from "@/types/frontmatters"
 import { FC } from "react"
+import { IconClock, IconEye, IconHistory } from "@/components/Icons"
+import { Accent } from "@/components/elements/Accent"
+import { CloudinaryImage } from "@/components/images"
+import { UnstyledLink } from "@/components/links"
+import { format } from "date-fns"
 
 interface HeaderProps {
-   fontmatter: BlogFrontmatter
+   frontmatter: BlogFrontmatter
 }
 
-const Header:FC<HeaderProps> = () => {
+const Header:FC<HeaderProps> = ({
+   frontmatter
+}) => {
+   const COMMIT_HISTORY_LINK = `https://github.com/LaupWing/tech-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`
    return (
       <header className="pb-4">
          <CloudinaryImage

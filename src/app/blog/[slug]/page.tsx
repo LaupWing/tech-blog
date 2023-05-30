@@ -1,10 +1,7 @@
-import { IconClock, IconEye, IconHistory } from "@/components/Icons"
-import { Accent } from "@/components/elements/Accent"
-import { CloudinaryImage } from "@/components/images"
-import { UnstyledLink } from "@/components/links"
+
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
-import { format } from "date-fns"
+
 import { TableContents } from "@/components/sections/TableContents"
 import Content from "./Content"
 import { LikeButton } from "@/components/buttons"
@@ -31,7 +28,7 @@ const SingleBlogPage = async (props: PageProps) => {
       code
    } = post
 
-   const COMMIT_HISTORY_LINK = `https://github.com/LaupWing/tech-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`
+
 
    return (
       <main>
