@@ -6,8 +6,6 @@ import { FC } from "react"
 export const LikeButton = () => {
    const params = useParams()
    const { addLike, contentLikes, likesByUser, isLoading } = useContentMeta(params.slug)
-   // const isLoading = false
-   console.log(contentLikes)
    
    return (
       <div className="flex items-center space-x-4">
@@ -19,8 +17,13 @@ export const LikeButton = () => {
                <path d={CHAD_PATH} />
             </svg>
          ) :(
-            <button className="heart-button">
-               <LikeButtonHeart />
+            <button 
+               className="heart-button"
+               onClick={addLike}
+            >
+               <LikeButtonHeart
+                  likes={likesByUser} 
+               />
             </button>
          )}
          <div className="text-gray-400 dark:text-gray-500 mt-1 text-lg font-medium">
