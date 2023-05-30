@@ -22,11 +22,15 @@ const ContentSection:FC<MainProps> = ({
    frontmatter
 }) => {
    const Component = useMemo(() => getMDXComponent(code), [code])
+   const meta = useContentMeta(frontmatter.slug, {
+      runIncrement: true
+   })
 
    return (
       <section className="layout">
          <Header 
-            frontmatter={frontmatter} 
+            frontmatter={frontmatter}
+            views={meta.views}
          />
          <hr className="dark:border-gray-600" />
          <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
@@ -57,16 +61,15 @@ export default ContentSection
 
 interface HeaderProps {
    frontmatter: BlogFrontmatter
+   views?: number
 }
 
 const Header:FC<HeaderProps> = ({
-   frontmatter
+   frontmatter,
+   views
 }) => {
    const COMMIT_HISTORY_LINK = `https://github.com/LaupWing/tech-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`
 
-   const meta = useContentMeta(frontmatter.slug, {
-      runIncrement: true
-   })
 
    return (
       <header className="pb-4">
@@ -109,7 +112,7 @@ const Header:FC<HeaderProps> = ({
             </div>
             <div className="flex items-center gap-1">
                <IconEye className="text-base inline-block" />
-               <Accent>--- views</Accent>
+               <Accent>{views ? views : "---"} views</Accent>
             </div>
          </div>
       </header>
