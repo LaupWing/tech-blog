@@ -3,7 +3,7 @@ import { FC } from "react"
 export const LikeButton = () => {
    return (
       <div className="flex items-center space-x-4">
-         <button>
+         <button className="heart-button">
             <LikeButtonHeart />
          </button>
          <div className="text-gray-400 dark:text-gray-500 mt-1 text-lg font-medium">
@@ -21,7 +21,7 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
          </div>
          <svg
             viewBox="0 0 231.18 354.53"
-            className="w-14"
+            className="heart-animate w-14"
             style={{ transformOrigin: "50% 50%" }}
          >
             <defs>
