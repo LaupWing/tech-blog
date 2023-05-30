@@ -1,7 +1,7 @@
 import { prismaClient } from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
-export async function GET(req: Request) {
+export async function GET() {
    const content = await prismaClient.contentMeta.findMany({
       include: {
          _count: {
@@ -15,9 +15,7 @@ export async function GET(req: Request) {
    // Sort by slug
    content.sort((a, b) => a.slug.localeCompare(b.slug))
 
-   return NextResponse.json({
-      content: content
-   }, {
+   return NextResponse.json(content, {
       status: 200
    })
 }

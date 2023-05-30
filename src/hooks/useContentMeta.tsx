@@ -14,19 +14,19 @@ export default function useContentMeta(
       runIncrement?: boolean
    } = {}
 ){ 
-   // const { data: allContentMeta } = useSWR<Array<ContentMeta>>(
-   //    "/api/content",
-   //    cacheOnly
-   // )
-   // console.log(allContentMeta)
-   // const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
-   // const preloadMeta: SingleContentMeta | undefined = _preloadMeta
-   //    ? {
-   //       contentLikes: _preloadMeta.likes,
-   //       contentViews: _preloadMeta.views,
-   //       likesByUser: _preloadMeta.likesByUser
-   //    }
-   //    : undefined
+   const { data: allContentMeta } = useSWR<Array<ContentMeta>>(
+      "/api/content",
+      cacheOnly
+   )
+   const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
+   const preloadMeta: SingleContentMeta | undefined = _preloadMeta
+      ? {
+         contentLikes: _preloadMeta.likes,
+         contentViews: _preloadMeta.views,
+         likesByUser: _preloadMeta.likesByUser
+      }
+      : undefined
+   console.log(preloadMeta)
    
    // const {
    //    data,
