@@ -8,3 +8,16 @@ export const getSessionId = (req: Request) => {
       .digest("hex")
    return currentUserId
 } 
+
+export const extractSlug = (req: Request) => {
+   const availableContentTypes = ["library", "blog", "projects"]
+   const splitted = req.url.split("/")
+   const contentType = splitted[splitted.length - 2]
+   if(availableContentTypes.includes(contentType)){
+      const slug = splitted[splitted.length - 1]
+      return slug
+   }else {
+      throw new Error("Content type is not available")
+   }
+
+}
