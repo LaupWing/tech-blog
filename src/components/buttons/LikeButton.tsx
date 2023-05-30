@@ -30,9 +30,11 @@ export const LikeButton = () => {
    )
 }
 
+interface LikeBUttonHeartProps {
+   likes?: number
+}
 
-
-const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
+const LikeButtonHeart:FC<LikeBUttonHeartProps> = ({ likes = 6}) => {
    return (
       <div className="relative">
          <div className="absolute w-full text-center text-2xl">
