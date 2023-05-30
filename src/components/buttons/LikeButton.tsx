@@ -1,6 +1,10 @@
+"use client"
+import { useParams } from "next/navigation"
 import { FC } from "react"
 
 export const LikeButton = () => {
+   const params = useParams()
+   console.log(params)
    const isLoading = true
    return (
       <div className="flex items-center space-x-4">
