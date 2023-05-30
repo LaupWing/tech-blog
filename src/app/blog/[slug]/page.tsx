@@ -1,11 +1,7 @@
 
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
-import { TableContents } from "@/components/sections/TableContents"
-import Content from "./Content"
-import { LikeButton } from "@/components/buttons"
-import Header from "./Header"
-import Section from "./Section"
+import ContentSection from "./ContentSection"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -30,7 +26,7 @@ const SingleBlogPage = async (props: PageProps) => {
 
    return (
       <main>
-         <Section 
+         <ContentSection 
             code={code}
             frontmatter={frontmatter}
          />

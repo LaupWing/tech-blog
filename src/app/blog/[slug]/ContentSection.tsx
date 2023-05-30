@@ -1,3 +1,4 @@
+"use client"
 import { LikeButton } from "@/components/buttons"
 import { TableContents } from "@/components/sections/TableContents"
 import { BlogFrontmatter } from "@/types/frontmatters"
@@ -16,7 +17,7 @@ interface MainProps {
    code: string
 }
 
-const Section:FC<MainProps> = ({
+const ContentSection:FC<MainProps> = ({
    code,
    frontmatter
 }) => {
@@ -52,7 +53,7 @@ const Section:FC<MainProps> = ({
       </section>
    )
 }
-export default Section
+export default ContentSection
 
 interface HeaderProps {
    frontmatter: BlogFrontmatter
