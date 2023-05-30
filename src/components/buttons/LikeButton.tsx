@@ -5,8 +5,9 @@ import { FC } from "react"
 
 export const LikeButton = () => {
    const params = useParams()
-   // const { addLike, contentLikes, likesByUser, isLoading } = useContentMeta(params.slug)
-   const isLoading = false
+   const { addLike, contentLikes, likesByUser, isLoading } = useContentMeta(params.slug)
+   // const isLoading = false
+   console.log(contentLikes)
    
    return (
       <div className="flex items-center space-x-4">
@@ -28,6 +29,8 @@ export const LikeButton = () => {
       </div>
    )
 }
+
+
 
 const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
    return (
