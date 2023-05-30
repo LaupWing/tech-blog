@@ -11,14 +11,13 @@ export const getSessionId = (req: Request) => {
 } 
 
 export const extractSlug = (req: Request) => {
-   const availableContentTypes = ["library", "blog", "projects"]
    const splitted = req.url.split("/")
-   const contentType = splitted[splitted.length - 2]
-   if(availableContentTypes.includes(contentType)){
+
+   if(splitted[splitted.length - 2] === "content"){
       const slug = z.string().parse(splitted[splitted.length - 1])
       return slug
    }else {
-      throw new Error("Content type is not available")
+      throw new Error("Not a content API endpoint")
    }
 
 }

@@ -14,12 +14,10 @@ export default function useContentMeta(
       runIncrement?: boolean
    } = {}
 ){ 
-   console.log("Getting data")
    const { data: allContentMeta } = useSWR<Array<ContentMeta>>(
       "/api/content",
       cacheOnly
    )
-   console.log(allContentMeta)
    const _preloadMeta = allContentMeta?.find((meta) => meta.slug === slug)
    const preloadMeta: SingleContentMeta | undefined = _preloadMeta
       ? {
@@ -29,17 +27,17 @@ export default function useContentMeta(
       }
       : undefined
    
-   // const {
-   //    data,
-   //    error: isError,
-   //    mutate
-   // } = useSWR<SingleContentMeta>(
-   //    "/api/content/" + slug,
-   //    // {
-   //    //    fallbackData: preloadMeta
-   //    // }
-   // )
-   // console.log(data)
+   const {
+      data,
+      error: isError,
+      mutate
+   } = useSWR<SingleContentMeta>(
+      "/api/content/" + slug,
+      {
+         fallbackData: preloadMeta
+      }
+   )
+   console.log(data)
 
    // useEffect(() => {
    //    if (runIncrement){
