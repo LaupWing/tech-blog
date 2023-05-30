@@ -15,6 +15,8 @@ export async function POST(req: NextRequest) {
    const slug = splitted[splitted.length - 1]
    
    try {
+      console.log(slug)
+      console.log("Starting push to database")
       const content = await prismaClient.contentMeta.upsert({
          where: {
             slug: slug
@@ -43,7 +45,7 @@ export async function POST(req: NextRequest) {
             }
          }
       })
-
+      console.log("Returning response")
       return NextResponse.json({
          contentViews: content?._count.View ?? 0,
          contentLikes: content?._count.Like ?? 0
