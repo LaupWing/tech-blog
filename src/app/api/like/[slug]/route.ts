@@ -3,6 +3,7 @@ import { prismaClient } from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
+   console.log("update")
    try {
       const sessionId = getSessionId(req)
       const slug = extractSlug(req)
@@ -46,6 +47,7 @@ export async function POST(req: Request) {
          status: 201
       })
    } catch(e: unknown){
+      console.log(e)
       if (e instanceof Error) {
          return NextResponse.json({
             message: e.message ?? "Internal Server Error"
