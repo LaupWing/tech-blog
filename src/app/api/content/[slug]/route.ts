@@ -43,6 +43,13 @@ export async function POST(req: NextRequest) {
             }
          }
       })
+
+      return NextResponse.json({
+         contentViews: content?._count.View ?? 0,
+         contentLikes: content?._count.Like ?? 0
+      }, {
+         status: 201
+      })
    } catch(e){
       console.log(e)
    }

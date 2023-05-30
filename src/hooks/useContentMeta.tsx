@@ -38,7 +38,7 @@ export default function useContentMeta(
    //    //    fallbackData: preloadMeta
    //    // }
    // )
-   // incrementViews(slug)
+   incrementViews(slug)
    // console.log(data)
 
    // useEffect(() => {
