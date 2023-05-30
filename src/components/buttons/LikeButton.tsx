@@ -1,11 +1,12 @@
 "use client"
+import useContentMeta from "@/hooks/useContentMeta"
 import { useParams } from "next/navigation"
 import { FC } from "react"
 
 export const LikeButton = () => {
    const params = useParams()
-   console.log(params)
-   const isLoading = true
+   const { addLike, contentLikes, likesByUser, isLoading } = useContentMeta(params.slug)
+   
    return (
       <div className="flex items-center space-x-4">
          {isLoading ? (
