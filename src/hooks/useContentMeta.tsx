@@ -28,7 +28,6 @@ export default function useContentMeta(
          likesByUser: _preloadMeta.likesByUser
       }
       : undefined
-   console.log(preloadMeta)
    
    // const {
    //    data,
