@@ -1,15 +1,18 @@
 import { getSessionId } from "@/lib/helper.server"
 import { prismaClient } from "@/lib/prisma"
 import { NextRequest, NextResponse } from "next/server"
+import { z } from "zod"
 
 
 export async function GET(req: Request) {
+   const slug = z.string().parse(req)
+
    return NextResponse.json({
       "test": "test"
    })
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
    const sessionId = getSessionId(req)
    const splitted = req.url.split("/")
    const slug = splitted[splitted.length - 1]
@@ -64,6 +67,4 @@ export async function POST(req: NextRequest) {
          })
       }
    }
-   
-   return NextResponse.json({})
 }
