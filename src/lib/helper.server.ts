@@ -13,7 +13,7 @@ export const getSessionId = (req: Request) => {
 
 export const extractSlug = (req: Request) => {
    const splitted = req.url.split("/")
-   
+   // Need to add content and like check
 
    if(splitted[splitted.length - 2] === "content"){
       const slug = z.string().parse(splitted[splitted.length - 1])
