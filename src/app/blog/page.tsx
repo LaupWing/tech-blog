@@ -1,6 +1,6 @@
 import { Accent } from "@/components/elements/Accent"
 import { getAllFilesFrontmatter } from "@/lib/mdx"
-import Main from "./Main"
+import PostsSection from "./PostsSection"
 
 const fetchBlogs = async () => {
    const blogs = await getAllFilesFrontmatter("blog")
@@ -20,7 +20,7 @@ const Blog = async () => {
             <p className="mt-2 text-gray-600 dark:text-gray-300">
                Interesting tech findings.
             </p>
-            <Main 
+            <PostsSection 
                posts={posts}
             />
          </section>

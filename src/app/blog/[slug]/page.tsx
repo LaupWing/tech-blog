@@ -5,6 +5,7 @@ import { TableContents } from "@/components/sections/TableContents"
 import Content from "./Content"
 import { LikeButton } from "@/components/buttons"
 import Header from "./Header"
+import Section from "./Section"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -29,29 +30,10 @@ const SingleBlogPage = async (props: PageProps) => {
 
    return (
       <main>
-         <section className="layout">
-            <Header 
-               frontmatter={frontmatter} 
-            />
-            <hr className="dark:border-gray-600" />
-            <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
-               <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
-                  <Content
-                     code={code}
-                  />
-               </article>
-               <aside className="py-4">
-                  <div className="sticky top-36">
-                     <TableContents 
-                        slug={frontmatter.slug}
-                     />
-                     <div className="flex items-center justify-center py-8">
-                        <LikeButton />
-                     </div>
-                  </div>
-               </aside>
-            </section>
-         </section>
+         <Section 
+            code={code}
+            frontmatter={frontmatter}
+         />
       </main>
    )
 }

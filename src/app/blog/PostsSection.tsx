@@ -9,7 +9,7 @@ import { getTags } from "@/lib/mdx-client"
 import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import { ChangeEvent, FC, useEffect, useState } from "react"
 
-interface MaiProps {
+interface PostsSectionProps {
    posts: Array<BlogFrontmatter>
 }
 
@@ -26,7 +26,7 @@ const sortOptions: Array<SortOption> = [
    }
 ]
 
-const Main:FC<MaiProps> = ({
+const PostsSection:FC<PostsSectionProps> = ({
    posts
 }) => {
    const [sortOrder, setSortOrder] = useState<SortOption>(
@@ -112,4 +112,4 @@ const Main:FC<MaiProps> = ({
       </>
    )
 }
-export default Main
+export default PostsSection
