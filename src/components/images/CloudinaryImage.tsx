@@ -104,6 +104,7 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
                   src={url}
                   alt={alt}
                   title={title || alt}
+                  priority
                />
             </div>
          </div>
