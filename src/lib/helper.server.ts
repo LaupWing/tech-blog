@@ -1,5 +1,6 @@
 import { createHash } from "crypto"
 import { z } from "zod"
+import { prismaClient } from "./prisma"
 
 export const getSessionId = (req: Request) => {
    const ipAddress = req.headers.get("x-forwarded-for") || "0.0.0.0"
@@ -19,5 +20,21 @@ export const extractSlug = (req: Request) => {
    }else {
       throw new Error("Not a content API endpoint")
    }
+}
 
+export const getUserLikeCount = async ({
+   sessionId,
+   slug
+}: {
+   sessionId: string
+   slug: string
+}) => {
+   await prismaClient.like.count({
+      where: {
+         sessionId: sessionId,
+         ContentMeta: {
+            slug: slug
+         }
+      }
+   })
 }
