@@ -6,6 +6,7 @@ import { Accent } from "@/components/elements/Accent"
 import { CloudinaryImage } from "@/components/images"
 import { UnstyledLink } from "@/components/links"
 import { format } from "date-fns"
+import useContentMeta from "@/hooks/useContentMeta"
 
 interface HeaderProps {
    frontmatter: BlogFrontmatter
@@ -15,6 +16,11 @@ const Header:FC<HeaderProps> = ({
    frontmatter
 }) => {
    const COMMIT_HISTORY_LINK = `https://github.com/LaupWing/tech-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`
+
+   const meta = useContentMeta(frontmatter.slug, {
+      runIncrement: true
+   })
+
    return (
       <header className="pb-4">
          <CloudinaryImage

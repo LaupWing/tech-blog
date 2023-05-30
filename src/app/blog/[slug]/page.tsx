@@ -1,11 +1,9 @@
 
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
-
 import { TableContents } from "@/components/sections/TableContents"
 import Content from "./Content"
 import { LikeButton } from "@/components/buttons"
-import useContentMeta from "@/hooks/useContentMeta"
 
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
@@ -28,19 +26,14 @@ const SingleBlogPage = async (props: PageProps) => {
       code
    } = post
 
-
-
    return (
       <main>
          <section className="layout">
-            
-
             <hr className="dark:border-gray-600" />
             <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
                <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
                   <Content
                      code={code}
-                     slug={frontmatter.slug}
                   />
                </article>
                <aside className="py-4">
