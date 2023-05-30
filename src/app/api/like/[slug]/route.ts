@@ -2,7 +2,6 @@ import { extractSlug, getSessionId, getUserLikeCount } from "@/lib/helper.server
 import { prismaClient } from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
-
 export async function POST(req: Request) {
    try {
       const sessionId = getSessionId(req)
@@ -41,7 +40,8 @@ export async function POST(req: Request) {
       })
       return NextResponse.json({
          contentViews: content?._count.View ?? 0,
-         contentLikes: content?._count.Like ?? 0
+         contentLikes: content?._count.Like ?? 0,
+         likesByUser: likeCount + 1
       }, {
          status: 201
       })

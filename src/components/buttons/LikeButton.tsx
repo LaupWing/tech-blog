@@ -34,10 +34,10 @@ export const LikeButton = () => {
 }
 
 interface LikeBUttonHeartProps {
-   likes?: number
+   likes: number
 }
 
-const LikeButtonHeart:FC<LikeBUttonHeartProps> = ({ likes = 6}) => {
+const LikeButtonHeart:FC<LikeBUttonHeartProps> = ({ likes }) => {
    return (
       <div className="relative">
          <div className="absolute w-full text-center text-2xl">
@@ -94,7 +94,7 @@ const LikeButtonHeart:FC<LikeBUttonHeartProps> = ({ likes = 6}) => {
                   height={360}
                   fill="url(#gradient)"
                   style={{
-                     transform: `translateY(${360 - 3 * 72}px)`,
+                     transform: `translateY(${360 - likes * 72}px)`,
                      transition: "transform 150ms cubic-bezier(0.64, 0.57, 0.67, 1.53)"
                   }}
                />
