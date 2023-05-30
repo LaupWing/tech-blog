@@ -35,17 +35,17 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
                   <stop
                      offset={"0%"}
                      style={{ stopColor: "currentColor", stopOpacity: 1 }}
-                     className="text-accent-light"
+                     className="text-[#e6b521]"
                   />
                   <stop
                      offset={"50%"}
                      style={{ stopColor: "currentColor", stopOpacity: 1 }}
-                     className="text-accent-light"
+                     className="text-[#fef485]"
                   />
                   <stop
                      offset={"100%"}
                      style={{ stopColor: "currentColor", stopOpacity: 1 }}
-                     className="text-accent-dark"
+                     className="text-[#ffda4c]"
                   />
 
                </linearGradient>
@@ -63,6 +63,13 @@ const LikeButtonHeart:FC<{ likes?: number }> = ({ likes = 6}) => {
                   height={360}
                   fill="currentColor"
                />
+               {/* <rect
+                  x={0}
+                  y={0}
+                  width={240}
+                  height={360}
+                  fill="url(#gradient)"
+               /> */}
             </g>
          </svg>
       </div>
