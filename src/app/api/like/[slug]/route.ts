@@ -1,4 +1,4 @@
-import { extractSlug, getSessionId } from "@/lib/helper.server"
+import { extractSlug, getSessionId, getUserLikeCount } from "@/lib/helper.server"
 import { prismaClient } from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
@@ -7,6 +7,10 @@ export async function POST(req: Request) {
    try {
       const sessionId = getSessionId(req)
       const slug = extractSlug(req)
+      const likeCount = await getUserLikeCount({ sessionId, slug })
+      if (likeCount >= 5) {
+         throw new Error("Max like count is 5")
+      }
       const content = await prismaClient.contentMeta.upsert({
          where: {
             slug: slug

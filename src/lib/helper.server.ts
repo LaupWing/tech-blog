@@ -29,7 +29,7 @@ export const getUserLikeCount = async ({
    sessionId: string
    slug: string
 }) => {
-   await prismaClient.like.count({
+   return await prismaClient.like.count({
       where: {
          sessionId: sessionId,
          ContentMeta: {
