@@ -6,10 +6,10 @@ import { SortListBox, SortOption } from "@/components/elements/SortListBox"
 import { ContentPlaceholder } from "@/components/sections"
 import { getFromSessionStorage } from "@/lib/helpers"
 import { getTags } from "@/lib/mdx-client"
-import { BlogFrontmatter, FrontmatterWithTags, InjectedMeta } from "@/types/frontmatters"
+import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import { ChangeEvent, FC, useEffect, useState } from "react"
 
-interface BlogsContainerProps {
+interface MaiProps {
    posts: Array<BlogFrontmatter>
 }
 
@@ -26,7 +26,7 @@ const sortOptions: Array<SortOption> = [
    }
 ]
 
-const BlogsContainer:FC<BlogsContainerProps> = ({
+const Main:FC<MaiProps> = ({
    posts
 }) => {
    const [sortOrder, setSortOrder] = useState<SortOption>(
@@ -112,4 +112,4 @@ const BlogsContainer:FC<BlogsContainerProps> = ({
       </>
    )
 }
-export default BlogsContainer
+export default Main
