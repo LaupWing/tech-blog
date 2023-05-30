@@ -16,6 +16,8 @@ export async function GET(req: Request) {
    content.sort((a, b) => a.slug.localeCompare(b.slug))
 
    return NextResponse.json({
-      "test": "test"
+      content: content
+   }, {
+      status: 200
    })
 }
