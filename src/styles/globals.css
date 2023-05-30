@@ -133,13 +133,22 @@
    padding: 0 0.8rem;
 }
 
-/* Example */
-body {
-   color: rgb(var(--foreground-rgb));
-   background: linear-gradient(
-         to bottom,
-         transparent,
-         rgb(var(--background-end-rgb))
-      )
-      rgb(var(--background-start-rgb));
+.heart-animate {
+   transition: transform 80ms cubic-bezier(0.64, 0.57, 0.67, 1.53);
+   transform: scale(1);
+}
+
+.heart-animate:hover,
+.heart-animate:focus,
+.heart-button:hover .heart-animate {
+   transform: scale(1.1);
+}
+
+.heart-button:focus-visible .heart-animate {
+   @apply rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-accent-light;
+}
+
+.heart-animate:active,
+.heart-button:active .heart-animate {
+   transform: scale(1.2);
 }
