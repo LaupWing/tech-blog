@@ -1,4 +1,5 @@
 import { createHash } from "crypto"
+import { z } from "zod"
 
 export const getSessionId = (req: Request) => {
    const ipAddress = req.headers.get("x-forwarded-for") || "0.0.0.0"
@@ -14,7 +15,7 @@ export const extractSlug = (req: Request) => {
    const splitted = req.url.split("/")
    const contentType = splitted[splitted.length - 2]
    if(availableContentTypes.includes(contentType)){
-      const slug = splitted[splitted.length - 1]
+      const slug = z.string().parse(splitted[splitted.length - 1])
       return slug
    }else {
       throw new Error("Content type is not available")

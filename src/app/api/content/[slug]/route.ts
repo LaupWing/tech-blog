@@ -1,11 +1,10 @@
-import { getSessionId } from "@/lib/helper.server"
+import { extractSlug, getSessionId } from "@/lib/helper.server"
 import { prismaClient } from "@/lib/prisma"
-import { NextRequest, NextResponse } from "next/server"
-import { z } from "zod"
+import { NextResponse } from "next/server"
 
 
 export async function GET(req: Request) {
-   const slug = z.string().parse(req)
+   
 
    return NextResponse.json({
       "test": "test"
@@ -13,11 +12,9 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-   const sessionId = getSessionId(req)
-   const splitted = req.url.split("/")
-   const slug = splitted[splitted.length - 1]
-   
    try {
+      const sessionId = getSessionId(req)
+      const slug = extractSlug(req)
       const content = await prismaClient.contentMeta.upsert({
          where: {
             slug: slug
