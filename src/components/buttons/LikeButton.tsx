@@ -5,7 +5,8 @@ import { FC } from "react"
 
 export const LikeButton = () => {
    const params = useParams()
-   const { addLike, contentLikes, likesByUser, isLoading } = useContentMeta(params.slug)
+   // const { addLike, contentLikes, likesByUser, isLoading } = useContentMeta(params.slug)
+   const isLoading = false
    
    return (
       <div className="flex items-center space-x-4">

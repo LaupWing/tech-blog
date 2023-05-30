@@ -22,9 +22,12 @@ const ContentSection:FC<MainProps> = ({
    frontmatter
 }) => {
    const Component = useMemo(() => getMDXComponent(code), [code])
-   const meta = useContentMeta(frontmatter.slug, {
-      runIncrement: true
-   })
+   // const meta = useContentMeta(frontmatter.slug, {
+   //    runIncrement: true
+   // })
+   const meta = {
+      views: 2
+   }
 
    return (
       <section className="layout">
