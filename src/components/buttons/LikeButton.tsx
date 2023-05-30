@@ -1,11 +1,21 @@
 import { FC } from "react"
 
 export const LikeButton = () => {
+   const isLoading = true
    return (
       <div className="flex items-center space-x-4">
-         <button className="heart-button">
-            <LikeButtonHeart />
-         </button>
+         {isLoading ? (
+            <svg
+               viewBox="0 0 231.18 354.53"
+               className="animate-pulse text-gray-500 w-14"
+            >
+               <path d={CHAD_PATH} />
+            </svg>
+         ) :(
+            <button className="heart-button">
+               <LikeButtonHeart />
+            </button>
+         )}
          <div className="text-gray-400 dark:text-gray-500 mt-1 text-lg font-medium">
             <span>100</span>
          </div>
