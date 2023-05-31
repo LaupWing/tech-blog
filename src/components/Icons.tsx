@@ -1,4 +1,7 @@
-
+/**
+ * @see https://github.com/vercel/next.js/issues/46756
+ * Migrated to react-icons to make nextjs run smoother
+ */
 import { IoArrowDownOutline } from "react-icons/io5"
 import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si"
 import { FiClock, FiEye, FiMail, FiMoon, FiSun } from "react-icons/fi"
