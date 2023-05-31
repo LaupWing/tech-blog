@@ -11,12 +11,12 @@ import { format } from "date-fns"
 import { getMDXComponent } from "mdx-bundler/client"
 import { MDXComponents } from "@/components/MDXComponents"
 
-interface MainProps {
+interface ContentSectionProps {
    frontmatter: BlogFrontmatter
    code: string
 }
 
-const ContentSection:FC<MainProps> = ({
+const ContentSection:FC<ContentSectionProps> = ({
    code,
    frontmatter
 }) => {
