@@ -1,8 +1,11 @@
 "use client"
 import { ChadIcon } from "@/components/ChadIcon"
 import { IconSortAscending } from "@/components/Icons"
+import { LibraryCard } from "@/components/cards"
 import { Tag } from "@/components/elements"
-import { SortOption } from "@/components/elements/SortListBox"
+import { SortListBox, SortOption } from "@/components/elements/SortListBox"
+import { ContentPlaceholder } from "@/components/sections"
+import { getFromSessionStorage } from "@/lib/helpers"
 import { getTags } from "@/lib/mdx-client"
 import { InjectedMeta, LibraryFrontmatter } from "@/types/frontmatters"
 import { ChangeEvent, FC, useEffect, useState } from "react"
@@ -27,6 +30,9 @@ const sortOptions: Array<SortOption> = [
 const PostsSection:FC<PostsSectionProps> = ({
    posts
 }) => {
+   const [sortOrder, setSortOrder] = useState<SortOption>(
+      () => sortOptions[0]
+   )
    const [search, setSearch] = useState<string>("")
    const [filteredPosts, setFilteredPosts] = useState<Array<LibraryFrontmatter & InjectedMeta>>(
       () => [...posts]
@@ -82,6 +88,26 @@ const PostsSection:FC<PostsSectionProps> = ({
                </Tag>
             ))}
          </div>
+         <div className="relative z-10 mt-6 flex flex-col items-end gap-4 text-gray-600 dark:text-gray-300 md:flex-row md:items-center md:justify-between">
+            <SortListBox
+               className="ml-auto"
+               selected={sortOrder}
+               setSelected={setSortOrder}
+               options={sortOptions}
+            />
+         </div>
+         <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {filteredPosts.length > 0 ? (
+               filteredPosts.map((post) => (
+                  <LibraryCard 
+                     key={post.slug}
+                     snippet={post}
+                  />
+               ))
+            ): (
+               <ContentPlaceholder />
+            )}
+         </ul>
       </>
    )
 }
