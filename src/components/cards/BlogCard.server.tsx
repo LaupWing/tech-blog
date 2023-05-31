@@ -67,9 +67,9 @@ export const BlogCard:FC<BlogCardProps> = ({
                   </div>
                   <div className="flex items-center gap-1">
                      <IconEye className="inline-block text-base" />
-                     {/* <Suspense fallback={"Loading"}>
+                     <Suspense fallback={"Loading"}>
                         <Views slug={post.slug} />
-                     </Suspense> */}
+                     </Suspense>
                   </div>
                </div>
                <p className="mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
@@ -93,9 +93,9 @@ export const BlogCard:FC<BlogCardProps> = ({
 const Views:FC<{
    slug: string
 }> = async ({ slug }) => {
-   const meta = await fetch(`/api/content/${slug}`)
+   const res = await import("../../app/api/content/route")
+   const meta = await (await res.GET()).json() 
    console.log(meta)
-
    return (
       <Accent>test views</Accent>
    )
