@@ -31,16 +31,12 @@ import { SiMarkdown } from "@react-icons/all-files/si/SiMarkdown"
 import { SiMongodb } from "@react-icons/all-files/si/SiMongodb"
 import { SiNextDotJs } from "@react-icons/all-files/si/SiNextDotJs"
 import { SiNodeDotJs } from "@react-icons/all-files/si/SiNodeDotJs"
-import {
-   SiNextdotjs,
-   SiNodedotjs,
-   SiReact,
-   SiRedux,
-   SiTailwindcss,
-   SiTypescript,
-   SiWordpress,
-} from "react-icons/si"
-import { IoLogoVercel } from "react-icons/io5"
+import { SiReact } from "@react-icons/all-files/si/SiReact"
+import { SiRedux } from "@react-icons/all-files/si/SiRedux"
+import { SiTailwindcss } from "@react-icons/all-files/si/SiTailwindcss"
+import { SiTypescript } from "@react-icons/all-files/si/SiTypescript"
+import { SiWordpress } from "@react-icons/all-files/si/SiWordpress"
+import { IoLogoVercel } from "@react-icons/all-files/io5/IoLogoVercel"
 
 export const IconNewspaper:IconType = (props) => {
    return (
