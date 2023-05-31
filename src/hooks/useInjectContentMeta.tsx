@@ -1,7 +1,15 @@
-// @TODO: For views and likes
-const useInjectContentMeta = () => {
-   return (
-      <div>useInjectContentMeta</div>
+"use client"
+import { ContentType, PickFrontmatter } from "@/types/frontmatters"
+import { ContentMeta } from "@/types/meta"
+import { useMemo } from "react"
+import useSwr from "swr"
+
+export default function useInjectContentMeta<T extends ContentType>(
+   type: T,
+   frontmatter: Array<PickFrontmatter<T>>
+) {
+   const { data, isLoading } = useSwr<Array<ContentMeta>>(
+      "/api/content"
    )
+   const meta = useMemo
 }
-export default useInjectContentMeta

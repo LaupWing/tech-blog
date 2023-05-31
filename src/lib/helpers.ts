@@ -39,3 +39,4 @@ export const getFromSessionStorage = (key: string) => {
    }
    return null
 }
+
