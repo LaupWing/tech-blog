@@ -99,11 +99,6 @@ const Views:FC<{
 })=> {
    const res = await fetch(`http://localhost:3000/api/content/${slug}`)
    const data = await res.json()
-   await new Promise(resolve => {
-      setTimeout(() => {
-         resolve(true)
-      }, 4000)
-   })
    return (
       <Accent>{data.contentViews ?? "---"} views</Accent>
    )

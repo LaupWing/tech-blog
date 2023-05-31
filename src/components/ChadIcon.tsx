@@ -7,7 +7,7 @@ export const ChadIcon:FC<ComponentPropsWithoutRef<"svg">> = ({
    return (
       <svg
          viewBox="0 0 231.18 354.53"
-         className={className}
+         className={className ?? "w-3"}
          {...props}
       >
          <path

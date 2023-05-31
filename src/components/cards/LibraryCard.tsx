@@ -53,11 +53,7 @@ const Likes:FC<{
 }> = async ({
    slug
 })=> {
-   const res = await fetch(`http://localhost:3000/api/content/${slug}`, {
-      next: {
-         revalidate: 60
-      }
-   })
+   const res = await fetch(`http://localhost:3000/api/content/${slug}`)
    const data = await res.json()
    return (
       <div className="flex items-center gap-1">
