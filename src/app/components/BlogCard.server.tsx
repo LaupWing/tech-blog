@@ -1,3 +1,4 @@
+"use server"
 import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import clsx from "clsx"
 import { ComponentPropsWithoutRef, FC, Suspense } from "react"
@@ -7,7 +8,7 @@ import { Tag } from "@/components/elements"
 import { Accent } from "@/components/elements/Accent"
 import { IconClock, IconEye } from "@/components/Icons"
 import { format } from "date-fns"
-import { prismaClient } from "@/lib/prisma"
+import { Views } from "./View"
 
 interface BlogCardProps extends ComponentPropsWithoutRef<"li"> {
    post: BlogFrontmatter & InjectedMeta
@@ -68,7 +69,7 @@ export const BlogCard:FC<BlogCardProps> = ({
                   </div>
                   <div className="flex items-center gap-1">
                      <IconEye className="inline-block text-base" />
-                     <Suspense fallback={<Accent>--- views</Accent>}>
+                     <Suspense fallback={<Accent className="animate-pulse">--- views</Accent>}>
                         <Views slug={post.slug} />
                      </Suspense>
                   </div>
@@ -87,32 +88,5 @@ export const BlogCard:FC<BlogCardProps> = ({
             </div>
          </UnstyledLink>
       </li>
-   )
-}
-
-{/* @ts-expect-error Server Component */}
-const Views:FC<{
-   slug: string
-}> = async ({ slug }) => {
-   const content = await prismaClient.contentMeta.findFirst({
-      where: {
-         slug: slug
-      },
-      include: {
-         _count: {
-            select: {
-               View: true
-            }
-         }
-      }
-   })
-   console.log(content)
-   await new Promise((resolve) => {
-      setTimeout(() => {
-         resolve(true)
-      }, 4000)
-   })
-   return (
-      <Accent>test views</Accent>
    )
 }

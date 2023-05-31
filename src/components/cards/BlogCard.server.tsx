@@ -90,11 +90,8 @@ export const BlogCard:FC<BlogCardProps> = ({
    )
 }
 
-{/* @ts-expect-error Server Component */}
-const Views:FC<{
-   slug: string
-}> = async ({ slug }) => {
-   const content = await prismaClient.contentMeta.findFirst({
+const test = async (slug: string) => {
+   return prismaClient.contentMeta.findFirst({
       where: {
          slug: slug
       },
@@ -106,6 +103,13 @@ const Views:FC<{
          }
       }
    })
+}
+
+{/* @ts-expect-error Server Component */}
+const Views:FC<{
+   slug: string
+}> = async ({ slug }) => {
+   const content = await test(slug)
    console.log(content)
    await new Promise((resolve) => {
       setTimeout(() => {
