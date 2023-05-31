@@ -23,13 +23,15 @@ import { HiClipboard } from "@react-icons/all-files/hi/HiClipboard"
 import { HiLink } from "@react-icons/all-files/hi/HiLink"
 import { HiOutlineStar } from "@react-icons/all-files/hi/HiOutlineStar"
 import { HiSelector } from "@react-icons/all-files/hi/HiSelector"
+import { SiFirebase } from "@react-icons/all-files/si/SiFirebase"
+import { SiGit } from "@react-icons/all-files/si/SiGit"
+import { SiGatsby } from "@react-icons/all-files/si/SiGatsby"
+import { SiJavascript } from "@react-icons/all-files/si/SiJavascript"
+import { SiMarkdown } from "@react-icons/all-files/si/SiMarkdown"
+import { SiMongodb } from "@react-icons/all-files/si/SiMongodb"
+import { SiNextDotJs } from "@react-icons/all-files/si/SiNextDotJs"
+import { SiNodeDotJs } from "@react-icons/all-files/si/SiNodeDotJs"
 import {
-   SiFirebase,
-   SiGit,
-   SiGatsby,
-   SiJavascript,
-   SiMarkdown,
-   SiMongodb,
    SiNextdotjs,
    SiNodedotjs,
    SiReact,
@@ -96,17 +98,17 @@ export const IconReact:IconType = (props) => {
    )
 }
 
-export const IconNodedotjs:IconType = (props) => {
+export const IconNodeDotJs:IconType = (props) => {
    return (
-      <SiNodedotjs
+      <SiNodeDotJs
          {...props}
       />
    )
 }
 
-export const IconNextdotjs:IconType = (props) => {
+export const IconNextDotJs:IconType = (props) => {
    return (
-      <SiNextdotjs 
+      <SiNextDotJs 
          {...props}
       />
    )

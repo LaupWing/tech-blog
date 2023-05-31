@@ -9,8 +9,8 @@ import {
    IconJavascript, 
    IconMarkdown, 
    IconMongodb, 
-   IconNextdotjs, 
-   IconNodedotjs, 
+   IconNextDotJs, 
+   IconNodeDotJs, 
    IconReact, 
    IconRedux, 
    IconTailwindcss, 
@@ -58,7 +58,7 @@ const techList = {
       name: "React"
    },
    nextjs: {
-      icon: IconNextdotjs,
+      icon: IconNextDotJs,
       name: "Next.js"
    },
    tailwindcss: {
@@ -74,7 +74,7 @@ const techList = {
       name: "Typescript"
    },
    nodejs: {
-      icon: IconNodedotjs,
+      icon: IconNodeDotJs,
       name: "Node.js"
    },
    firebase: {
