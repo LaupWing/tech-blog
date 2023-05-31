@@ -105,6 +105,6 @@ const Views:FC<{
       }, 4000)
    })
    return (
-      <Accent>100 views</Accent>
+      <Accent>{data.contentViews ?? "---"} views</Accent>
    )
 }
