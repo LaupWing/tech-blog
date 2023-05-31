@@ -8,7 +8,6 @@ import { Accent } from "@/components/elements/Accent"
 import { CloudinaryImage } from "@/components/images"
 import { UnstyledLink } from "@/components/links"
 import { format } from "date-fns"
-import useContentMeta from "@/hooks/useContentMeta"
 import { getMDXComponent } from "mdx-bundler/client"
 import { MDXComponents } from "@/components/MDXComponents"
 

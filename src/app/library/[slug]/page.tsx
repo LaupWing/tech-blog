@@ -1,6 +1,8 @@
 const SingleLibraryPage = () => {
    return (
-      <div>page</div>
+      <section className="layout">
+         
+      </section>
    )
 }
 export default SingleLibraryPage
