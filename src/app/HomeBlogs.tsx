@@ -1,5 +1,5 @@
 import { Accent } from "@/components/elements/Accent"
-import { BlogCard } from "./components/BlogCard.server"
+import { BlogCard } from "@/components/cards/BlogCard"
 import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
 import { ButtonLink } from "@/components/links"
 

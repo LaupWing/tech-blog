@@ -1,14 +1,12 @@
-"use server"
 import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import clsx from "clsx"
-import { ComponentPropsWithoutRef, FC, Suspense } from "react"
-import { UnstyledLink } from "@/components/links"
-import { CloudinaryImage } from "@/components/images"
-import { Tag } from "@/components/elements"
-import { Accent } from "@/components/elements/Accent"
-import { IconClock, IconEye } from "@/components/Icons"
+import { ComponentPropsWithoutRef, FC } from "react"
+import { UnstyledLink } from "../links"
+import { CloudinaryImage } from "../images"
+import { Tag } from "../elements"
+import { Accent } from "../elements/Accent"
+import { IconClock, IconEye } from "../Icons"
 import { format } from "date-fns"
-import { Views } from "./View"
 
 interface BlogCardProps extends ComponentPropsWithoutRef<"li"> {
    post: BlogFrontmatter & InjectedMeta
@@ -69,9 +67,7 @@ export const BlogCard:FC<BlogCardProps> = ({
                   </div>
                   <div className="flex items-center gap-1">
                      <IconEye className="inline-block text-base" />
-                     <Suspense fallback={<Accent className="animate-pulse">--- views</Accent>}>
-                        <Views slug={post.slug} />
-                     </Suspense>
+                     <Accent>--- views</Accent>
                   </div>
                </div>
                <p className="mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
