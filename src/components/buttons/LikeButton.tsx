@@ -50,7 +50,7 @@ const LikeButtonHeart:FC<LikeBUttonHeartProps> = ({ likes }) => {
             <div
                className={clsx(
                   "absolute w-full opacity-0",
-                  likes === 5 && "emjoi-animate"
+                  likes === 5 && "emoji-animate"
                )}
             >
                🥳
