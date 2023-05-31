@@ -1,5 +1,5 @@
 "use client"
-import { IconType } from "react-icons"
+import { IconType } from "@react-icons/all-files"
 import { Dispatch, FC, SetStateAction, Fragment } from "react"
 import { Listbox, Transition } from "@headlessui/react"
 import { IconCheckmark, IconSelector } from "../Icons"

@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react"
-import { IconType } from "react-icons"
+import { IconType } from "@react-icons/all-files"
 import { IconGithub, IconLinkedin, IconTwitter } from "./Icons"
 import { Accent } from "./elements/Accent"
 import { Tooltip } from "./Tooltip"
