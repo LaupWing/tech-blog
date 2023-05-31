@@ -5,6 +5,7 @@ import { TechIcons, TechListType } from "@/components/TechIcons"
 import { LikeButton } from "@/components/buttons"
 import { Accent } from "@/components/elements/Accent"
 import { TableContents } from "@/components/sections/TableContents"
+import useContentMeta from "@/hooks/useContentMeta"
 import { LibraryFrontmatter } from "@/types/frontmatters"
 import { getMDXComponent } from "mdx-bundler/client"
 import { FC, useMemo } from "react"
@@ -19,6 +20,9 @@ const ContentSection:FC<ContentSectionProps> = ({
    code
 }) => {
    const Component = useMemo(() => getMDXComponent(code), [code])
+   const meta = useContentMeta(frontmatter.slug, {
+      runIncrement: true
+   })
    return (
       <section className="layout">
          <div className="border-b pb-4 dark:border-gray-600">
@@ -29,9 +33,11 @@ const ContentSection:FC<ContentSectionProps> = ({
             <div className="mt-2 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
                <div className="flex items-center gap-1">
                   <IconEye className="inline-block text-base" />
-                  <Accent>
-                     --- views
-                  </Accent>
+                  {meta.isLoading ? (
+                     <Accent className="animate-pulse"> --- views</Accent>
+                  ) :( 
+                     <Accent>{meta.views} views</Accent>
+                  )}
                </div>
                <span>•</span>
                <TechIcons 

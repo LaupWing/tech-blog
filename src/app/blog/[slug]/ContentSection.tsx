@@ -66,7 +66,7 @@ const Header:FC<HeaderProps> = ({
    const meta = useContentMeta(frontmatter.slug, {
       runIncrement: true
    })
-   console.log(meta)
+   
    return (
       <header className="pb-4">
          <CloudinaryImage
