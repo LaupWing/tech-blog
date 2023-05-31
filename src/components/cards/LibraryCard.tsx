@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC } from "react"
+import { ComponentPropsWithoutRef, FC, Suspense } from "react"
 import { InjectedMeta, LibraryFrontmatter } from "@/types/frontmatters"
 import clsx from "clsx"
 import { UnstyledLink } from "../links"
@@ -27,10 +27,14 @@ export const LibraryCard:FC<LibraryCardProps> = ({
             <div className="p-4">
                <h4 className="text-gray-800 dark:text-gray-100">{snippet.title}</h4>
                <div className="mt-1 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
-                  <div className="flex items-center gap-1">
-                     <ChadIcon className="inline-block text-base w-6" />
-                     <Accent>--- likes</Accent>
-                  </div>
+                  <Suspense fallback={
+                     <div className="flex items-center gap-1 animate-pulse">
+                        <ChadIcon className="inline-block text-base w-5" />
+                        <Accent>--- likes</Accent>
+                     </div>
+                  }>
+                     <Likes slug={snippet.slug} />
+                  </Suspense>
                   <span>•</span>
                   <TechIcons techs={snippet.tags.split(",") as Array<TechListType>} />
                </div>
@@ -41,5 +45,26 @@ export const LibraryCard:FC<LibraryCardProps> = ({
             </div>
          </UnstyledLink>
       </li>
+   )
+}
+
+{/* @ts-expect-error Server Component */}
+const Likes:FC<{
+   slug: string
+}> = async ({
+   slug
+})=> {
+   const res = await fetch(`http://localhost:3000/api/content/${slug}`)
+   const data = await res.json()
+   await new Promise(resolve => {
+      setTimeout(() => {
+         resolve(true)
+      }, 4000)
+   })
+   return (
+      <div className="flex items-center gap-1">
+         <ChadIcon className="inline-block text-base w-5" />
+         <Accent>{data.contentLikes} likes</Accent>
+      </div>
    )
 }
