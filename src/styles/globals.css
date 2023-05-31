@@ -16,19 +16,20 @@
       --color-contrast: 255 255 255;
    }
 } */
-html {
-   scroll-behavior: smooth;
-   scroll-padding-top: 80px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-   html {
-      scroll-behavior: auto;
-   }
-}
 @layer base {
+   html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+      html {
+         scroll-behavior: auto;
+      }
+   }
    .layout {
-      @apply container mx-auto;
+      max-width: 68rem;
+      @apply mx-auto w-11/12;
    }
    
    h1,
