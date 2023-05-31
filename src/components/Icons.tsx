@@ -22,6 +22,7 @@ import { HiCheckCircle } from "@react-icons/all-files/hi/HiCheckCircle"
 import { HiClipboard } from "@react-icons/all-files/hi/HiClipboard"
 import { HiLink } from "@react-icons/all-files/hi/HiLink"
 import { HiOutlineStar } from "@react-icons/all-files/hi/HiOutlineStar"
+import { HiSortAscending } from "@react-icons/all-files/hi/HiSortAscending"
 import { HiSelector } from "@react-icons/all-files/hi/HiSelector"
 import { SiFirebase } from "@react-icons/all-files/si/SiFirebase"
 import { SiGit } from "@react-icons/all-files/si/SiGit"
@@ -41,6 +42,14 @@ import { IoLogoVercel } from "@react-icons/all-files/io5/IoLogoVercel"
 export const IconNewspaper:IconType = (props) => {
    return (
       <IoNewspaperSharp 
+         {...props}
+      />
+   )
+}
+
+export const IconSortAscending:IconType = (props) => {
+   return (
+      <HiSortAscending 
          {...props}
       />
    )
