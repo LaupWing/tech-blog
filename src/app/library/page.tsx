@@ -15,6 +15,7 @@ const Library = async () => {
          <h1 className="text-3xl md:text-5xl">
             <Accent>Library</Accent>
          </h1>
+         <p className="mt-2 text-gray-600 dark:text-gray-300">Here's a collection of code snippets from various technologies that I have used before. Feel free to make use of them!</p>
       </section>
    )
 }
