@@ -23,10 +23,138 @@ import { HiClipboard } from "@react-icons/all-files/hi/HiClipboard"
 import { HiLink } from "@react-icons/all-files/hi/HiLink"
 import { HiOutlineStar } from "@react-icons/all-files/hi/HiOutlineStar"
 import { HiSelector } from "@react-icons/all-files/hi/HiSelector"
+import {
+   SiFirebase,
+   SiGit,
+   SiGatsby,
+   SiJavascript,
+   SiMarkdown,
+   SiMongodb,
+   SiNextdotjs,
+   SiNodedotjs,
+   SiReact,
+   SiRedux,
+   SiTailwindcss,
+   SiTypescript,
+   SiWordpress,
+} from "react-icons/si"
+import { IoLogoVercel } from "react-icons/io5"
 
 export const IconNewspaper:IconType = (props) => {
    return (
       <IoNewspaperSharp 
+         {...props}
+      />
+   )
+}
+
+export const IconVercel:IconType = (props) => {
+   return (
+      <IoLogoVercel
+         {...props}
+      />
+   )
+}
+
+export const IconWordpress:IconType = (props) => {
+   return (
+      <SiWordpress
+         {...props}
+      />
+   )
+}
+
+export const IconTypescript:IconType = (props) => {
+   return (
+      <SiTypescript
+         {...props}
+      />
+   )
+}
+
+export const IconTailwindcss:IconType = (props) => {
+   return (
+      <SiTailwindcss
+         {...props}
+      />
+   )
+}
+
+export const IconRedux:IconType = (props) => {
+   return (
+      <SiRedux
+         {...props}
+      />
+   )
+}
+
+export const IconReact:IconType = (props) => {
+   return (
+      <SiReact
+         {...props}
+      />
+   )
+}
+
+export const IconNodedotjs:IconType = (props) => {
+   return (
+      <SiNodedotjs
+         {...props}
+      />
+   )
+}
+
+export const IconNextdotjs:IconType = (props) => {
+   return (
+      <SiNextdotjs 
+         {...props}
+      />
+   )
+}
+
+export const IconMongodb:IconType = (props) => {
+   return (
+      <SiMongodb 
+         {...props}
+      />
+   )
+}
+
+export const IconMarkdown:IconType = (props) => {
+   return (
+      <SiMarkdown 
+         {...props}
+      />
+   )
+}
+
+export const IconJavascript:IconType = (props) => {
+   return (
+      <SiJavascript
+         {...props}
+      />
+   )
+}
+
+export const IconGatsby:IconType = (props) => {
+   return (
+      <SiGatsby 
+         {...props}
+      />
+   )
+}
+
+export const IconGit:IconType = (props) => {
+   return (
+      <SiGit 
+         {...props}
+      />
+   )
+}
+
+export const IconFirebase:IconType = (props) => {
+   return (
+      <SiFirebase
          {...props}
       />
    )
