@@ -3,6 +3,16 @@ import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
 import ContentSection from "./ContentSection"
 
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+   const posts = await getFiles("blog")
+   
+   return posts.map((p) => ({
+      slug: p.replace(/\.mdx/, "")
+   }))
+}
+
 const fetchPost = async (slug: string) => {
    const post = await getFileBySlug("blog", slug)
    return post as {
@@ -35,13 +45,3 @@ const SingleBlogPage = async (props: PageProps) => {
 }
 
 export default SingleBlogPage
-
-export const dynamicParams = false
-
-export async function generateStaticParams() {
-   const posts = await getFiles("blog")
-   
-   return posts.map((p) => ({
-      slug: p.replace(/\.mdx/, "")
-   }))
-}
