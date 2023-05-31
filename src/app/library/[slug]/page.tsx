@@ -1,5 +1,6 @@
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { LibraryFrontmatter } from "@/types/frontmatters"
+import ContentSection from "./ContentSection"
 
 export const dynamicParams = false
 
@@ -27,9 +28,16 @@ interface PageProps {
 
 const SingleLibraryPage = async (props: PageProps) => {
    const post = await fetchPost(props.params.slug)
+   const {
+      frontmatter,
+      code
+   } = post
    return (
       <section className="layout">
-         
+         <ContentSection
+            code={code}
+            frontmatter={frontmatter}
+         />
       </section>
    )
 }
