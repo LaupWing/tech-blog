@@ -4,6 +4,7 @@ import { NextResponse } from "next/server"
 
 
 export async function GET(req: Request) {
+   console.log("getting")
    try{
       const slug = extractSlug(req)
       const sessionId = getSessionId(req)
@@ -33,6 +34,7 @@ export async function GET(req: Request) {
          status: 200
       })
    } catch(e: unknown){
+      console.log(e)
       if (e instanceof Error) {
          return NextResponse.json({
             message: e.message ?? "Internal Server Error"

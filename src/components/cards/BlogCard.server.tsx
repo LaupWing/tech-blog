@@ -1,6 +1,6 @@
 import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import clsx from "clsx"
-import { ComponentPropsWithoutRef, FC } from "react"
+import { ComponentPropsWithoutRef, FC, Suspense } from "react"
 import { UnstyledLink } from "../links"
 import { CloudinaryImage } from "../images"
 import { Tag } from "../elements"
@@ -67,7 +67,9 @@ export const BlogCard:FC<BlogCardProps> = ({
                   </div>
                   <div className="flex items-center gap-1">
                      <IconEye className="inline-block text-base" />
-                     <Accent>--- views</Accent>
+                     {/* <Suspense fallback={"Loading"}>
+                        <Views slug={post.slug} />
+                     </Suspense> */}
                   </div>
                </div>
                <p className="mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
@@ -84,5 +86,17 @@ export const BlogCard:FC<BlogCardProps> = ({
             </div>
          </UnstyledLink>
       </li>
+   )
+}
+
+{/* @ts-expect-error Server Component */}
+const Views:FC<{
+   slug: string
+}> = async ({ slug }) => {
+   const meta = await fetch(`/api/content/${slug}`)
+   console.log(meta)
+
+   return (
+      <Accent>test views</Accent>
    )
 }
