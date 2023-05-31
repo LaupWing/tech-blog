@@ -7,6 +7,7 @@ export async function POST(req: Request) {
       const sessionId = getSessionId(req)
       const slug = extractSlug(req)
       const likeCount = await getUserLikeCount({ sessionId, slug })
+      
       if (likeCount >= 5) {
          throw new Error("Max like count is 5")
       }

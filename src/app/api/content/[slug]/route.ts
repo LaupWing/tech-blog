@@ -1,4 +1,4 @@
-import { extractSlug, getSessionId } from "@/lib/helper.server"
+import { extractSlug, getSessionId, getUserLikeCount } from "@/lib/helper.server"
 import { prismaClient } from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
@@ -6,6 +6,11 @@ import { NextResponse } from "next/server"
 export async function GET(req: Request) {
    try{
       const slug = extractSlug(req)
+      const sessionId = getSessionId(req)
+      const likesByUser = getUserLikeCount({
+         sessionId: sessionId,
+         slug: slug
+      })
       const content = await prismaClient.contentMeta.findFirst({
          where: {
             slug: slug
@@ -22,7 +27,8 @@ export async function GET(req: Request) {
 
       return NextResponse.json({
          contentViews: content?._count.View ?? 0,
-         contentLikes: content?._count.Like ?? 0
+         contentLikes: content?._count.Like ?? 0,
+         likesByUser: likesByUser
       }, {
          status: 200
       })
