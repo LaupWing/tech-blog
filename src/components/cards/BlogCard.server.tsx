@@ -93,9 +93,11 @@ export const BlogCard:FC<BlogCardProps> = ({
 const Views:FC<{
    slug: string
 }> = async ({ slug }) => {
-   const res = await import("../../app/api/content/route")
-   const meta = await (await res.GET()).json() 
-   console.log(meta)
+   await new Promise((resolve) => {
+      setTimeout(() => {
+         resolve(true)
+      }, 4000)
+   })
    return (
       <Accent>test views</Accent>
    )
