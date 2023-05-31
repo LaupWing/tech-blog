@@ -37,7 +37,8 @@ export interface LibraryFrontmatter {
    slug: string
    title: string
    publishedAt: string
-   readTime: ReadTimeResults
+   wordCount?: number
+   readingTime: ReadTimeResults
    description: string
    tags: string
 }
