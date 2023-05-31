@@ -28,7 +28,9 @@ export const LibraryCard:FC<LibraryCardProps> = ({
                <div className="mt-1 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
                   <Suspense fallback={
                      <div className="flex items-center gap-1 animate-pulse">
-                        <ChadIcon className="inline-block text-base w-5 dark:bg-white dark:bg-gradient-to-b dark:from-accent-light dark:to-accent-dark dark:text-transparent dark:bg-clip-text" />
+                        <div className="dark:bg-gradient-to-b dark:from-accent-light dark:to-accent-dark p-1">
+                           <ChadIcon className="inline-block text-base w-5" />
+                        </div>
                         <Accent>--- likes</Accent>
                      </div>
                   }>
@@ -57,7 +59,9 @@ const Likes:FC<{
    const data = await res.json()
    return (
       <div className="flex items-center gap-1">
-         <ChadIcon className="inline-block text-base w-5" />
+         <div className="dark:bg-gradient-to-b dark:from-accent-light dark:to-accent-dark p-1">
+            <ChadIcon className="inline-block text-base w-5" />
+         </div>
          <Accent>{data.contentLikes} likes</Accent>
       </div>
    )
