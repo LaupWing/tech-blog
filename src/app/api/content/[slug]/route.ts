@@ -7,7 +7,7 @@ export async function GET(req: Request) {
    try{
       const slug = extractSlug(req)
       const sessionId = getSessionId(req)
-      const likesByUser = getUserLikeCount({
+      const likesByUser = await getUserLikeCount({
          sessionId: sessionId,
          slug: slug
       })
