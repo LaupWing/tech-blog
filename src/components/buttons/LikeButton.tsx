@@ -1,5 +1,6 @@
 "use client"
 import useContentMeta from "@/hooks/useContentMeta"
+import clsx from "clsx"
 import { useParams } from "next/navigation"
 import { FC } from "react"
 
@@ -26,8 +27,13 @@ export const LikeButton = () => {
                />
             </button>
          )}
-         <div className="text-gray-400 dark:text-gray-500 mt-1 text-lg font-medium">
-            <span>{contentLikes}</span>
+         <div className={clsx(
+            " mt-1 text-lg font-medium",
+            likesByUser === 0 ?
+               "text-gray-400 dark:text-gray-500"
+               : "bg-gradient-to-tr from-[#e6b521] via-[#fef485] to-[#ffda4c] dark:bg-clip-text dark:text-transparent"
+         )}>
+            {isLoading ? <span>...</span> : <span>{contentLikes}</span>}
          </div>
       </div>
    )
