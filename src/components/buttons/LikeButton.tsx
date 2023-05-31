@@ -47,7 +47,14 @@ const LikeButtonHeart:FC<LikeBUttonHeartProps> = ({ likes }) => {
    return (
       <div className="relative">
          <div className="absolute w-full text-center text-2xl">
-
+            <div
+               className={clsx(
+                  "absolute w-full opacity-0",
+                  likes === 5 && "emjoi-animate"
+               )}
+            >
+               🥳
+            </div>
          </div>
          <svg
             viewBox="0 0 231.18 354.53"
