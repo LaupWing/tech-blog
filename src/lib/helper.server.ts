@@ -13,9 +13,9 @@ export const getSessionId = (req: Request) => {
 
 export const extractSlug = (req: Request) => {
    const splitted = req.url.split("/")
-   // Need to add content and like check
+   const availableEndpoints = ["content", "like"]
 
-   if(splitted[splitted.length - 2] === "content"){
+   if(availableEndpoints.includes(splitted[splitted.length - 2])){
       const slug = z.string().parse(splitted[splitted.length - 1])
       return slug
    }else {
