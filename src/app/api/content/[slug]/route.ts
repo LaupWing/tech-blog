@@ -4,7 +4,6 @@ import { NextResponse } from "next/server"
 
 
 export async function GET(req: Request) {
-   console.log("getting")
    try{
       const slug = extractSlug(req)
       const sessionId = getSessionId(req)

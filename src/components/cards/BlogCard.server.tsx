@@ -7,6 +7,7 @@ import { Tag } from "../elements"
 import { Accent } from "../elements/Accent"
 import { IconClock, IconEye } from "../Icons"
 import { format } from "date-fns"
+import { prismaClient } from "@/lib/prisma"
 
 interface BlogCardProps extends ComponentPropsWithoutRef<"li"> {
    post: BlogFrontmatter & InjectedMeta
@@ -67,7 +68,7 @@ export const BlogCard:FC<BlogCardProps> = ({
                   </div>
                   <div className="flex items-center gap-1">
                      <IconEye className="inline-block text-base" />
-                     <Suspense fallback={"Loading"}>
+                     <Suspense fallback={<Accent>--- views</Accent>}>
                         <Views slug={post.slug} />
                      </Suspense>
                   </div>
@@ -93,6 +94,19 @@ export const BlogCard:FC<BlogCardProps> = ({
 const Views:FC<{
    slug: string
 }> = async ({ slug }) => {
+   const content = await prismaClient.contentMeta.findFirst({
+      where: {
+         slug: slug
+      },
+      include: {
+         _count: {
+            select: {
+               View: true
+            }
+         }
+      }
+   })
+   console.log(content)
    await new Promise((resolve) => {
       setTimeout(() => {
          resolve(true)
