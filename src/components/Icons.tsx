@@ -2,23 +2,27 @@
  * @see https://github.com/vercel/next.js/issues/46756
  * Migrated to react-icons to make nextjs run smoother
  */
-import { IoArrowDownOutline } from "react-icons/io5"
-import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si"
-import { FiClock, FiEye, FiMail, FiMoon, FiSun } from "react-icons/fi"
-import { GiTechnoHeart } from "react-icons/gi"
-import { MdHistory } from "react-icons/md"
-import { BiGitRepoForked } from "react-icons/bi"
-import { 
-   HiCalendar, 
-   HiCheck, 
-   HiCheckCircle, 
-   HiClipboard, 
-   HiLink, 
-   HiOutlineStar, 
-   HiSelector 
-} from "react-icons/hi"
-import { IconType } from "react-icons"
+import { IconType } from "@react-icons/all-files"
 import { IoNewspaperSharp } from "@react-icons/all-files/io5/IoNewspaperSharp"
+import { GiTechnoHeart } from "@react-icons/all-files/gi/GiTechnoHeart"
+import { IoArrowDownOutline } from "@react-icons/all-files/io5/IoArrowDownOutline"
+import { SiGithub } from "@react-icons/all-files/si/SiGithub"
+import { SiLinkedin } from "@react-icons/all-files/si/SiLinkedin"
+import { SiTwitter } from "@react-icons/all-files/si/SiTwitter"
+import { FiClock } from "@react-icons/all-files/fi/FiClock"
+import { FiEye } from "@react-icons/all-files/fi/FiEye"
+import { FiMail } from "@react-icons/all-files/fi/FiMail"
+import { FiMoon } from "@react-icons/all-files/fi/FiMoon"
+import { FiSun } from "@react-icons/all-files/fi/FiSun"
+import { MdHistory } from "@react-icons/all-files/md/MdHistory"
+import { BiGitRepoForked } from "@react-icons/all-files/bi/BiGitRepoForked"
+import { HiCalendar } from "@react-icons/all-files/hi/HiCalendar"
+import { HiCheck } from "@react-icons/all-files/hi/HiCheck"
+import { HiCheckCircle } from "@react-icons/all-files/hi/HiCheckCircle"
+import { HiClipboard } from "@react-icons/all-files/hi/HiClipboard"
+import { HiLink } from "@react-icons/all-files/hi/HiLink"
+import { HiOutlineStar } from "@react-icons/all-files/hi/HiOutlineStar"
+import { HiSelector } from "@react-icons/all-files/hi/HiSelector"
 
 export const IconNewspaper:IconType = (props) => {
    return (
