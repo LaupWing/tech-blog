@@ -1,5 +1,8 @@
 "use client"
+import { ChadIcon } from "@/components/ChadIcon"
+import { IconSortAscending } from "@/components/Icons"
 import { Tag } from "@/components/elements"
+import { SortOption } from "@/components/elements/SortListBox"
 import { getTags } from "@/lib/mdx-client"
 import { InjectedMeta, LibraryFrontmatter } from "@/types/frontmatters"
 import { ChangeEvent, FC, useEffect, useState } from "react"
@@ -7,6 +10,19 @@ import { ChangeEvent, FC, useEffect, useState } from "react"
 interface PostsSectionProps {
    posts: Array<LibraryFrontmatter>
 }
+
+const sortOptions: Array<SortOption> = [
+   {
+      id: "name",
+      name: "Sort by name",
+      icon: IconSortAscending
+   },
+   {
+      id: "popular",
+      name: "Sort by popularity",
+      icon: ChadIcon
+   }
+]
 
 const PostsSection:FC<PostsSectionProps> = ({
    posts

@@ -1,6 +1,6 @@
 "use client"
 import { IconType } from "@react-icons/all-files"
-import { Dispatch, FC, SetStateAction, Fragment } from "react"
+import { Dispatch, FC, SetStateAction, Fragment, ComponentPropsWithoutRef } from "react"
 import { Listbox, Transition } from "@headlessui/react"
 import { IconCheckmark, IconSelector } from "../Icons"
 import clsx from "clsx"
@@ -8,7 +8,7 @@ import clsx from "clsx"
 export interface SortOption {
    id: string
    name: string
-   icon: IconType
+   icon: IconType | FC<ComponentPropsWithoutRef<"svg">>
 }
 
 interface SortListboxProps {
