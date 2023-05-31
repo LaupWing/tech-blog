@@ -2,7 +2,9 @@
 import { IconEye } from "@/components/Icons"
 import { MDXComponents } from "@/components/MDXComponents"
 import { TechIcons, TechListType } from "@/components/TechIcons"
+import { LikeButton } from "@/components/buttons"
 import { Accent } from "@/components/elements/Accent"
+import { TableContents } from "@/components/sections/TableContents"
 import { LibraryFrontmatter } from "@/types/frontmatters"
 import { getMDXComponent } from "mdx-bundler/client"
 import { FC, useMemo } from "react"
@@ -48,6 +50,16 @@ const ContentSection:FC<ContentSectionProps> = ({
                   }
                />
             </article>
+            <aside className="py-4">
+               <div className="sticky top-36">
+                  <TableContents
+                     slug={frontmatter.slug}
+                  />
+                  <div className="flex items-center justify-center py-8">
+                     <LikeButton />
+                  </div>
+               </div>
+            </aside>
          </section>
       </section>
    )
