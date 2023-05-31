@@ -1,6 +1,6 @@
 import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import clsx from "clsx"
-import { ComponentPropsWithoutRef, FC } from "react"
+import { ComponentPropsWithoutRef, FC, Suspense } from "react"
 import { UnstyledLink } from "../links"
 import { CloudinaryImage } from "../images"
 import { Tag } from "../elements"
@@ -67,7 +67,11 @@ export const BlogCard:FC<BlogCardProps> = ({
                   </div>
                   <div className="flex items-center gap-1">
                      <IconEye className="inline-block text-base" />
-                     <Accent>--- views</Accent>
+                     <Suspense fallback={<Accent className="animate-pulse">--- views</Accent>}>
+                        <Views 
+                           slug={post.slug}
+                        />
+                     </Suspense>
                   </div>
                </div>
                <p className="mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
@@ -87,4 +91,20 @@ export const BlogCard:FC<BlogCardProps> = ({
    )
 }
 
-
+{/* @ts-expect-error Server Component */}
+const Views:FC<{
+   slug: string
+}> = async ({
+   slug
+})=> {
+   const res = await fetch(`http://localhost:3000/api/content/${slug}`)
+   const data = await res.json()
+   await new Promise(resolve => {
+      setTimeout(() => {
+         resolve(true)
+      }, 4000)
+   })
+   return (
+      <Accent>100 views</Accent>
+   )
+}
