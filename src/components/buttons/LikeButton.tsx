@@ -6,7 +6,8 @@ import { FC } from "react"
 export const LikeButton = () => {
    const params = useParams()
    const { addLike, contentLikes, likesByUser, isLoading } = useContentMeta(params.slug)
-   
+   console.log(contentLikes)
+   console.log(likesByUser)
    return (
       <div className="flex items-center space-x-4">
          {isLoading ? (
