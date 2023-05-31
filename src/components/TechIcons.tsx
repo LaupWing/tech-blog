@@ -1,23 +1,23 @@
 "use client"
-import {
-   SiFirebase,
-   SiGit,
-   SiGatsby,
-   SiJavascript,
-   SiMarkdown,
-   SiMongodb,
-   SiNextdotjs,
-   SiNodedotjs,
-   SiReact,
-   SiRedux,
-   SiTailwindcss,
-   SiTypescript,
-   SiWordpress,
-} from "react-icons/si"
-import { IoLogoVercel } from "react-icons/io5"
 import { ComponentPropsWithoutRef, FC } from "react"
 import clsx from "clsx"
 import { Tooltip } from "./Tooltip"
+import { 
+   IconFirebase, 
+   IconGatsby, 
+   IconGit, 
+   IconJavascript, 
+   IconMarkdown, 
+   IconMongodb, 
+   IconNextdotjs, 
+   IconNodedotjs, 
+   IconReact, 
+   IconRedux, 
+   IconTailwindcss, 
+   IconTypescript, 
+   IconVercel, 
+   IconWordpress 
+} from "./Icons"
 
 export type TechListType = keyof typeof techList
 
@@ -54,59 +54,59 @@ export const TechIcons:FC<TechIconsProps> = ({
 
 const techList = {
    react: {
-      icon: SiReact,
+      icon: IconReact,
       name: "React"
    },
    nextjs: {
-      icon: SiNextdotjs,
+      icon: IconNextdotjs,
       name: "Next.js"
    },
    tailwindcss: {
-      icon: SiTailwindcss,
+      icon: IconTailwindcss,
       name: "Tailwind CSS"
    },
    javascript: {
-      icon: SiJavascript,
+      icon: IconJavascript,
       name: "Javascript"
    },
    typescript: {
-      icon: SiTypescript,
+      icon: IconTypescript,
       name: "Typescript"
    },
    nodejs: {
-      icon: SiNodedotjs,
+      icon: IconNodedotjs,
       name: "Node.js"
    },
    firebase: {
-      icon: SiFirebase,
+      icon: IconFirebase,
       name: "Firebase"
    },
    mongodb: {
-      icon: SiMongodb,
+      icon: IconMongodb,
       name: "MongoDB"
    },
    swr: {
-      icon: IoLogoVercel,
+      icon: IconVercel,
       name: "SWR"
    },
    redux: {
-      icon: SiRedux,
+      icon: IconRedux,
       name: "Redux"
    },
    mdx: {
-      icon: SiMarkdown,
+      icon: IconMarkdown,
       name: "MDX"
    },
    git: {
-      icon: SiGit,
+      icon: IconGit,
       name: "Git"
    },
    gatsby: {
-      icon: SiGatsby,
+      icon: IconGatsby,
       name: "Gatsby"
    },
    wordpress: {
-      icon: SiWordpress,
+      icon: IconWordpress,
       name: "Wordpress"
    },
 }
