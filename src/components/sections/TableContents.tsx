@@ -76,7 +76,7 @@ export const TableContents:FC<TableOfContentsProps> = ({
    return (
       <div
          id="toc-container"
-         className="hidden max-h-[calc(100vh-9rem-113px)] overflow-hidden pb-4 lg:block"
+         className="hidden max-h-[calc(100vh-9rem-113px)] overflow-auto pb-4 lg:block"
       >
          <h3 className="text-gray-900 dark:text-gray-100 md:text-xl">
             Table of Contents

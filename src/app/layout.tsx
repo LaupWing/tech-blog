@@ -1,7 +1,3 @@
-import "@/styles/globals.css"
-import "@/styles/dracula.css"
-import "@/styles/mdx.css"
-import "react-tippy/dist/tippy.css"
 import { Inter } from "next/font/google"
 import clsx from "clsx"
 import { defaultMeta, favicons } from "@/config"
@@ -11,6 +7,11 @@ import { AppProvider } from "@/context/AppProvider"
 import { openGraph } from "@/lib/helpers"
 import { Footer } from "@/components/Footer"
 import NextTopLoader from "nextjs-toploader"
+
+import "@/styles/globals.css"
+import "@/styles/dracula.css"
+import "@/styles/mdx.css"
+import "react-tippy/dist/tippy.css"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400","500","700"] })
 

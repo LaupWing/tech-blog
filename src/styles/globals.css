@@ -16,8 +16,17 @@
       --color-contrast: 255 255 255;
    }
 } */
+html {
+   scroll-behavior: smooth;
+   scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+   html {
+      scroll-behavior: auto;
+   }
+}
 @layer base {
-   
    .layout {
       @apply container mx-auto;
    }
