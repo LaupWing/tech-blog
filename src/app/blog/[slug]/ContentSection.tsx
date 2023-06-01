@@ -30,7 +30,7 @@ const ContentSection:FC<ContentSectionProps> = ({
          />
          <hr className="dark:border-gray-600" />
          <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
-            <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
+            <article className="mdx mt-4 projects prose mx-auto w-full transition-colors dark:prose-invert">
                <Component
                   components={
                      {
