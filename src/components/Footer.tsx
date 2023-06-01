@@ -108,7 +108,7 @@ const footerLinks: Array<{
 }> = [
    {
       href: "https://github.com/LaupWing/tech-blog",
-      text: "Source Code"
+      text: "Source Code",
    },
    {
       href: "/",

@@ -44,3 +44,5 @@ export const Tooltip:FC<TooltipTextProps> = ({
       </TippyTooltip>
    )
 }
+
+export default Tooltip
