@@ -25,13 +25,13 @@ export default function(props: SeoProps){
       title: {
          template: `%s | ${defaultMeta.title}`
       },
-      robots: defaultMeta.robots,
-      description: defaultMeta.description,
+      robots: meta.robots,
+      description: meta.description,
       twitter: {
          card: "summary_large_image",
          site: "@laupwing",
-         title: defaultMeta.title,
-         description: defaultMeta.description,
+         title: meta.title,
+         description: meta.description,
          images: [image]
       },
       openGraph: {
@@ -43,10 +43,10 @@ export default function(props: SeoProps){
                height: 600
             }
          ],
-         type: defaultMeta.type as "website",
-         title: defaultMeta.title,
-         siteName: defaultMeta.siteName,
-         description: defaultMeta.description
+         type: meta.type,
+         title: meta.title,
+         siteName: meta.siteName,
+         description: meta.description
       },
       themeColor: "#ffffff"
    } as Metadata
