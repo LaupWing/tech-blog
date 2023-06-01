@@ -1,7 +1,7 @@
 import { defaultMeta } from "@/config"
 import { openGraph } from "./helpers"
 
-interface SeoProps {
+interface SeoProps extends Partial<typeof defaultMeta> { 
    date?: string
    templateTitle?: string
    isBlog?: boolean
@@ -15,6 +15,10 @@ export default function(props: SeoProps){
       description: defaultMeta.description,
       siteName: defaultMeta.siteName
    })
+   const meta = {
+      ...defaultMeta,
+      ...props,
+   }
 
    return {
       title: defaultMeta.title,
