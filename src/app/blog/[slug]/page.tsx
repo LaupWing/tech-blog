@@ -21,6 +21,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
    return {
       title: `${frontmatter.title} | ${defaultMeta.siteName}`,
       description: frontmatter.description,
+      openGraph: {
+         title: `${frontmatter.title} | ${defaultMeta.siteName}`,
+         publishedTime: new Date(frontmatter.lastUpdated ?? frontmatter.publishedAt).toISOString(),
+         type: "article",
+         authors: ["Laup Wing"],
+         description: frontmatter.description
+      }
    }
 }
 

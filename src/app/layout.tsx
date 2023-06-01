@@ -34,8 +34,8 @@ export async function generateMetadata(): Promise<Metadata> {
       },
       openGraph: {
          url: process.env.SITE_URL,
-         // @ts-ignore
-         type: defaultMeta.type,
+         images: [image],
+         type: defaultMeta.type as "website",
          title: defaultMeta.title,
          siteName: defaultMeta.siteName,
          description: defaultMeta.description
