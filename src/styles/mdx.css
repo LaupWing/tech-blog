@@ -86,6 +86,6 @@
 }
 
 .hash-anchor:after {
-   @apply invisible absolute -right-5 top-1/2 -translate-y-1/2 text-lg text-accent-dark dark:text-accent-light;
+   @apply invisible absolute -right-5 top-[116px] -translate-y-1/2 text-lg text-accent-dark dark:text-accent-light;
    content: "#";
 }
