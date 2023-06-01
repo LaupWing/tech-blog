@@ -7,6 +7,7 @@ interface SeoProps {
    isBlog?: boolean
    banner?: string
    canonical?: string
+   params?: string
 }
 
 export default function(props: SeoProps){
