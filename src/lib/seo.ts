@@ -12,14 +12,14 @@ interface SeoProps extends Partial<typeof defaultMeta> {
 }
 
 export default function(props: SeoProps){
-   const image = openGraph({
-      description: defaultMeta.description,
-      siteName: defaultMeta.siteName
-   })
    const meta = {
       ...defaultMeta,
       ...props,
    }
+   const image = openGraph({
+      description: meta.description,
+      siteName: meta.siteName
+   })
 
    return {
       title: {
@@ -46,8 +46,9 @@ export default function(props: SeoProps){
          type: meta.type,
          title: meta.title,
          siteName: meta.siteName,
-         description: meta.description
+         description: meta.description,
+         ...(props.date ? {} : {})
       },
-      themeColor: "#ffffff"
+      themeColor: "#ffffff",
    } as Metadata
 }
