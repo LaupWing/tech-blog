@@ -1,5 +1,6 @@
 import { defaultMeta } from "@/config"
 import { openGraph } from "./helpers"
+import { Metadata } from "next"
 
 interface SeoProps extends Partial<typeof defaultMeta> { 
    date?: string
@@ -21,7 +22,9 @@ export default function(props: SeoProps){
    }
 
    return {
-      title: defaultMeta.title,
+      title: {
+         template: `%s | ${defaultMeta.title}`
+      },
       robots: defaultMeta.robots,
       description: defaultMeta.description,
       twitter: {
@@ -46,5 +49,5 @@ export default function(props: SeoProps){
          description: defaultMeta.description
       },
       themeColor: "#ffffff"
-   }
+   } as Metadata
 }
