@@ -1,8 +1,15 @@
 import { defaultMeta } from "@/config"
 import { openGraph } from "./helpers"
 
+interface SeoProps {
+   date?: string
+   templateTitle?: string
+   isBlog?: boolean
+   banner?: string
+   canonical?: string
+}
 
-export default function(){
+export default function(props: SeoProps){
    const image = openGraph({
       description: defaultMeta.description,
       siteName: defaultMeta.siteName
