@@ -3,19 +3,39 @@ import { IconType } from "@react-icons/all-files"
 import { IconGithub, IconLinkedin, IconTwitter } from "./Icons"
 import { Accent } from "./elements/Accent"
 import { Tooltip } from "./Tooltip"
+import { UnstyledLink } from "./links"
 
 export const Footer:FC = () => {
    return (
-      <footer className="mt-4 pb-2">
+      <footer className="mt-4 pb-4">
          <main className="layout flex flex-col items-center border-t pt-6 dark:border-gray-600">
+            <FooterLinks />
             <p className="mt-12 font-medium text-gray-600 dark:text-gray-300">
                Reach Out
+            </p>
+
+            <p className="mt-8 text-sm text-gray-600 dark:text-gray-300">
+               © Laup Wing {new Date().getFullYear()}
             </p>
          </main>
       </footer>
    )
 }
 
+const FooterLinks = () => {
+   return (
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+         {footerLinks.map(({ href, text }) => (
+            <UnstyledLink
+               className="animated-underline rounded-sm text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-accent-dark dark:text-gray-200 dark:focus-visible:ring-accent-light"
+               href={href}
+            >
+               {text}
+            </UnstyledLink>
+         ))}
+      </div>
+   )
+}
 
 const SocialLinks = () => {
    return (
@@ -78,5 +98,36 @@ const social: Social[] = [
             For tech tips. Follow me on <Accent className="font-medium">Twitter</Accent>
          </>
       )
+   },
+]
+
+const footerLinks: Array<{
+   href: string
+   text: string
+   tooltip?: ReactNode 
+}> = [
+   {
+      href: "",
+      text: "Source Code"
+   },
+   {
+      href: "/",
+      text: "Home"
+   },
+   {
+      href: "/blog",
+      text: "Blog"
+   },
+   {
+      href: "/projects",
+      text: "Projects"
+   },
+   {
+      href: "/library",
+      text: "Library"
+   },
+   {
+      href: "/about",
+      text: "About"
    },
 ]
