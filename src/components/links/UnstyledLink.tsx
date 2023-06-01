@@ -1,4 +1,5 @@
 "use client"
+import clsx from "clsx"
 import Link, { LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import { ComponentPropsWithRef, FC, ReactNode } from "react"
@@ -44,7 +45,7 @@ export const UnstyledLink:FC<UnstyledLinkProps> = ({
          rel="noopener noreferrer"
          href={href}
          {...props}
-         className={className}
+         className={clsx(className, "cursor-newtab")}
       >
          {children}
       </a>
