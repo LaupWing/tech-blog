@@ -107,7 +107,7 @@ const footerLinks: Array<{
    tooltip?: ReactNode 
 }> = [
    {
-      href: "",
+      href: "https://github.com/LaupWing/tech-blog",
       text: "Source Code"
    },
    {
