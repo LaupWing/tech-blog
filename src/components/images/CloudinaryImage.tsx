@@ -101,6 +101,9 @@ export const CloudinaryImage:FC<CloudinaryImageProps> = ({
                <Image 
                   width={+width}
                   height={+height}
+                  style={{
+                     margin: "auto"
+                  }}
                   src={url}
                   alt={alt}
                   title={title || alt}
