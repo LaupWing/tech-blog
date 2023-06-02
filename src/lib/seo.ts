@@ -47,7 +47,10 @@ export default function(props: SeoProps){
          title: meta.title,
          siteName: meta.siteName,
          description: meta.description,
-         ...(props.date ? {} : {})
+         ...(props.date ? {
+            publishedTime: props.date,
+            authors: ["Laup Wing"],
+         } : {})
       },
       themeColor: "#ffffff",
    } as Metadata
