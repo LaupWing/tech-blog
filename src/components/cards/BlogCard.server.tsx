@@ -99,6 +99,8 @@ const Views:FC<{
 })=> {
    const res = await fetch(`http://localhost:3000/api/content/${slug}`)
    const data = await res.json()
+   console.log(data)
+   console.log(slug)
    return (
       <Accent>{data.contentViews ?? "---"} views</Accent>
    )
