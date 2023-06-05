@@ -1,8 +1,8 @@
 "use client"
 import { BlogCard } from "@/components/cards/BlogCard.client"
 import useInjectContentMeta from "@/hooks/useInjectContentMeta"
-import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
-import { FC, useState } from "react"
+import { BlogFrontmatter } from "@/types/frontmatters"
+import { FC } from "react"
 
 interface BlogCardsContainerProps {
    posts: BlogFrontmatter[]
