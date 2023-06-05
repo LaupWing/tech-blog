@@ -37,7 +37,7 @@ export default function useInjectContentMeta<T extends ContentType>(
          })
          setPopulatedContent(mapped)
       }
-   }, [])
+   }, [meta, isLoading, frontmatter])
 
    return populatedContent
 }

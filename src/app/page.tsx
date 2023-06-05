@@ -6,6 +6,7 @@ import { BlogCard, LibraryCard, ProjectCard } from "@/components/cards"
 import { ButtonLink, UnstyledLink } from "@/components/links"
 import { IconGithub, IconNewspaper, IconTwitter } from "@/components/Icons"
 import { TC } from "@/components/TC"
+import BlogCardsContainer from "./components/home/BlogCardsContainer"
 
 export default async function Home() {
    generateRss()
@@ -45,12 +46,15 @@ const HomeBlogs = async () => {
                <Accent>Recent Blog Posts</Accent>
             </h2>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-               {recentBlogs.map((post, i) => (
+               <BlogCardsContainer 
+                  posts={recentBlogs}
+               />
+               {/* {recentBlogs.map((post, i) => (
                   <BlogCard
                      key={post.slug}
                      post={post}
                   />
-               ))}
+               ))} */}
             </ul>
             <ButtonLink
                className="mt-4"
