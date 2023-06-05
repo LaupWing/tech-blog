@@ -18,11 +18,15 @@ export default function(props: SeoProps){
    }
    const image = openGraph({
       description: meta.description,
-      siteName: meta.siteName
+      siteName: meta.siteName,
+      templateTitle: meta.templateTitle,
+      banner: meta.banner,
+      isBlog: meta.isBlog
    })
 
    return {
       title: {
+         default: defaultMeta.title,
          template: `%s | ${defaultMeta.title}`
       },
       robots: meta.robots,
