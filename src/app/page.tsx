@@ -1,8 +1,11 @@
 import { generateRss } from "@/lib/rss"
-import HomeIntro from "@/app/components/Home/HomeIntro"
-import HomeProjects from "@/app/components/Home/HomeProjects"
 import { Suspense } from "react"
-import HomeLibrary from "@/app/components/Home/HomeLibrary"
+import { Accent } from "@/components/elements/Accent"
+import { getAllFilesFrontmatter, getRecent } from "@/lib/mdx"
+import { BlogCard, LibraryCard, ProjectCard } from "@/components/cards"
+import { ButtonLink, UnstyledLink } from "@/components/links"
+import { IconGithub, IconNewspaper, IconTwitter } from "@/components/Icons"
+import { TC } from "@/components/TC"
 
 export default async function Home() {
    generateRss()
@@ -43,7 +46,7 @@ const HomeBlogs = async () => {
             </h2>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                {recentBlogs.map((post, i) => (
-                  <BlogCard 
+                  <BlogCard
                      key={post.slug}
                      post={post}
                   />
@@ -113,7 +116,7 @@ const HomeIntro = () => {
                </UnstyledLink>
             </div>
          </article>
-         <TC 
+         <TC
             className="absolute bottom-0 right-6 transform-gpu w-[calc(100%-3rem)] md:w-[600px] 2xl:w-[900px] h-[calc(100%-3rem)] md:h-[600px] 2xl:h-[900px] opacity-20 dark:opacity-10 stroke-dark dark:stroke-accent-light"
          />
       </section>
@@ -142,7 +145,7 @@ const HomeLibrary = async () => {
             </p>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                {recentLibrary.map((snippet, i) => (
-                  <LibraryCard 
+                  <LibraryCard
                      key={snippet.slug}
                      snippet={snippet}
                   />
@@ -181,7 +184,7 @@ const HomeProjects = async () => {
             </p>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                {recentProjects.map((project, i) => (
-                  <ProjectCard 
+                  <ProjectCard
                      key={project.slug}
                      project={project}
                   />
