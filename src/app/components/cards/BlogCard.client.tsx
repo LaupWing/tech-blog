@@ -67,7 +67,8 @@ export const BlogCard:FC<BlogCardProps> = ({
                   </div>
                   <div className="flex items-center gap-1">
                      <IconEye className="inline-block text-base" />
-                     <Accent>{post.views ?? "---"} views</Accent>
+                     {/* <Accent>{post.views ?? "---"} views</Accent> */}
+                     <Accent>--- views</Accent>
                   </div>
                </div>
                <p className="mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
