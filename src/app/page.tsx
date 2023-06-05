@@ -1,9 +1,9 @@
 import { generateRss } from "@/lib/rss"
-import HomeIntro from "./HomeIntro"
-import HomeProjects from "./HomeProjects"
-import HomeBlogs from "./HomeBlogs"
+import HomeIntro from "@/app/components/Home/HomeIntro"
+import HomeProjects from "@/app/components/Home/HomeProjects"
+import HomeBlogs from "@/app/components/Home/HomeBlogs"
 import { Suspense } from "react"
-import HomeLibrary from "./HomeLibrary"
+import HomeLibrary from "@/app/components/Home/HomeLibrary"
 
 export default async function Home() {
    generateRss()
