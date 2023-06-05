@@ -7,6 +7,7 @@ import { ButtonLink, UnstyledLink } from "@/components/links"
 import { IconGithub, IconNewspaper, IconTwitter } from "@/components/Icons"
 import { TC } from "@/components/TC"
 import BlogCardsContainer from "./components/home/BlogCardsContainer"
+import LibraryCardsContainer from "./components/home/LibraryCardsContainer"
 
 export default async function Home() {
    generateRss()
@@ -148,12 +149,15 @@ const HomeLibrary = async () => {
                List of code snippets. What is documented is never lost.
             </p>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-               {recentLibrary.map((snippet, i) => (
+               <LibraryCardsContainer 
+                  posts={recentLibrary}
+               />
+               {/* {recentLibrary.map((snippet, i) => (
                   <LibraryCard
                      key={snippet.slug}
                      snippet={snippet}
                   />
-               ))}
+               ))} */}
             </ul>
             <ButtonLink
                className="mt-4"
