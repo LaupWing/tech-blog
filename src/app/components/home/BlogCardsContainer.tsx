@@ -1,5 +1,7 @@
 "use client"
-import { BlogFrontmatter } from "@/types/frontmatters"
+import { BlogCard } from "@/components/cards/BlogCard.client"
+import useInjectContentMeta from "@/hooks/useInjectContentMeta"
+import { BlogFrontmatter, InjectedMeta } from "@/types/frontmatters"
 import { FC, useState } from "react"
 
 interface BlogCardsContainerProps {
@@ -9,11 +11,17 @@ interface BlogCardsContainerProps {
 const BlogCardsContainer:FC<BlogCardsContainerProps> = ({
    posts
 }) => {
-   const [loaded, setLoaded] = useState(false)
-   console.log(posts)
+   const populatedBlogs = useInjectContentMeta(posts)
 
    return (
-      <div>BlogCardContainer</div>
+      <>
+         {populatedBlogs.map(post => (
+            <BlogCard
+               key={post.slug}
+               post={post as BlogFrontmatter}
+            />
+         ))}
+      </>
    )
 }
 export default BlogCardsContainer

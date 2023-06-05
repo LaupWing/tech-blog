@@ -1,7 +1,9 @@
 export interface ContentMeta {
    slug: string
-   views: number
-   likes: number
+   _count: {
+      View: number
+      Like: number
+   }
    likesByUser: number
 }
 
