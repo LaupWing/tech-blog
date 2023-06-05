@@ -5,7 +5,6 @@ import { ButtonLink } from "@/components/links"
 
 const fetchRecentBlogs = async () => {
    const blogs = await getAllFilesFrontmatter("blog")
-
    const recentBlogs = getRecent(blogs)
 
    return recentBlogs
@@ -13,7 +12,6 @@ const fetchRecentBlogs = async () => {
 
 const HomeBlogs = async () => {
    const recentBlogs = await fetchRecentBlogs()
-
 
    return (
       <section className="py-20">
