@@ -8,7 +8,7 @@ interface SeoProps extends Partial<typeof defaultMeta> {
    isBlog?: boolean
    banner?: string
    canonical?: string
-   params?: string
+   asPath?: string
 }
 
 export default function(props: SeoProps){
@@ -39,7 +39,7 @@ export default function(props: SeoProps){
          images: [image]
       },
       openGraph: {
-         url: process.env.SITE_URL,
+         url: meta.asPath ? `${process.env.SITE_URL}/${meta.asPath}` : process.env.SITE_URL,
          images: [
             {
                url: image,
