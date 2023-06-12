@@ -12,42 +12,12 @@ import "@/styles/globals.css"
 import "@/styles/dracula.css"
 import "@/styles/mdx.css"
 import "react-tippy/dist/tippy.css"
+import seo from "@/lib/seo"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400","500","700"] })
 
 export async function generateMetadata(): Promise<Metadata> {
-   const image = openGraph({
-      description: defaultMeta.description,
-      siteName: defaultMeta.siteName
-   })
-
-   return {
-      title: defaultMeta.title,
-      robots: defaultMeta.robots,
-      description: defaultMeta.description,
-      twitter: {
-         card: "summary_large_image",
-         site: "@laupwing",
-         title: defaultMeta.title,
-         description: defaultMeta.description,
-         images: [image]
-      },
-      openGraph: {
-         url: process.env.SITE_URL,
-         images: [
-            {
-               url: image,
-               width: 1200,
-               height: 600
-            }
-         ],
-         type: defaultMeta.type as "website",
-         title: defaultMeta.title,
-         siteName: defaultMeta.siteName,
-         description: defaultMeta.description
-      },
-      themeColor: "#ffffff"
-   }
+   return {...seo({})}
 }
 
 export default function RootLayout({
