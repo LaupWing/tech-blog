@@ -1,11 +1,20 @@
 import { Accent } from "@/components/elements/Accent"
 import { getAllFilesFrontmatter } from "@/lib/mdx"
 import PostsSection from "./PostsSection"
+import { Metadata } from "next"
+import seo from "@/lib/seo"
 
 const fetchBlogs = async () => {
    const blogs = await getAllFilesFrontmatter("blog")
 
    return blogs
+}
+
+export const metadata: Metadata = {
+   ...seo({
+      asPath: "blog",
+      title: "Blog Page"
+   })
 }
 
 const Blog = async () => {
