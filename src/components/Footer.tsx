@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react"
 import { IconType } from "@react-icons/all-files"
 import { IconGithub, IconLinkedin, IconTwitter } from "./Icons"
 import { Accent } from "./elements/Accent"
-import { Tooltip } from "./Tooltip"
+// import { Tooltip } from "./Tooltip"
 import { UnstyledLink } from "./links"
 
 export const Footer:FC = () => {
