@@ -2,7 +2,7 @@
 import { IconEye } from "@/components/Icons"
 import { MDXComponents } from "@/components/MDXComponents"
 import { TechIcons, TechListType } from "@/components/TechIcons"
-import { LikeButton } from "@/components/buttons"
+import { LikeButton } from "@/components/buttons/index.client"
 import { Accent } from "@/components/elements/Accent"
 import { TableContents } from "@/components/sections/TableContents"
 import useContentMeta from "@/hooks/useContentMeta"

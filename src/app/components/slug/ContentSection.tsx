@@ -1,5 +1,5 @@
 "use client"
-import { LikeButton } from "@/components/buttons"
+import { LikeButton } from "@/components/buttons/index.client"
 import { TableContents } from "@/components/sections/TableContents"
 import { BlogFrontmatter } from "@/types/frontmatters"
 import { FC, useMemo } from "react"

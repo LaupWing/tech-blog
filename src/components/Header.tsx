@@ -3,7 +3,7 @@ import { useSelectedLayoutSegment } from "next/navigation"
 import { FC, useEffect, useState } from "react"
 import { UnstyledLink } from "./links"
 import clsx from "clsx"
-import { ThemeButton } from "./buttons"
+import { ThemeButton } from "./buttons/index.client"
 
 interface HeaderProps {
    large?: boolean
