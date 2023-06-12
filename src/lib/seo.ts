@@ -16,7 +16,7 @@ export default function(props: SeoProps){
       ...defaultMeta,
       ...props,
    }
-   console.log(meta)
+   
    const image = openGraph({
       description: meta.description,
       siteName: meta.siteName,
@@ -29,7 +29,7 @@ export default function(props: SeoProps){
 
    return {
       title: {
-         default: defaultMeta.title,
+         default: meta.title,
          template: `%s | ${meta.title}`
       },
       robots: meta.robots,
