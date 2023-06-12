@@ -1,6 +1,6 @@
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { LibraryFrontmatter } from "@/types/frontmatters"
-import ContentSection from "./ContentSection"
+import ContentSection from "../../components/library/ContentSection"
 
 export const dynamicParams = false
 
