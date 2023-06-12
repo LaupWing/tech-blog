@@ -1,10 +1,9 @@
 import { Inter } from "next/font/google"
 import clsx from "clsx"
-import { defaultMeta, favicons } from "@/config"
+import { favicons } from "@/config"
 import { Metadata } from "next"
 import { Header } from "@/components/Header"
 import { AppProvider } from "@/context/AppProvider"
-import { openGraph } from "@/lib/helpers"
 import { Footer } from "@/components/Footer"
 import NextTopLoader from "nextjs-toploader"
 
