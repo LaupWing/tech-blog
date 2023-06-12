@@ -1,7 +1,7 @@
 
 import { getFileBySlug, getFiles } from "@/lib/mdx"
 import { BlogFrontmatter } from "@/types/frontmatters"
-import ContentSection from "./ContentSection"
+import ContentSection from "../../components/slug/ContentSection"
 import { Metadata } from "next"
 import { defaultMeta } from "@/config"
 import { openGraph } from "@/lib/helpers"
