@@ -24,6 +24,8 @@ export default function(props: SeoProps){
       isBlog: meta.isBlog
    })
 
+   const fullUrl = meta.asPath ? `${process.env.SITE_URL}/${meta.asPath}` : process.env.SITE_URL
+
    return {
       title: {
          default: defaultMeta.title,
@@ -39,7 +41,7 @@ export default function(props: SeoProps){
          images: [image]
       },
       openGraph: {
-         url: meta.asPath ? `${process.env.SITE_URL}/${meta.asPath}` : process.env.SITE_URL,
+         url: fullUrl,
          images: [
             {
                url: image,
@@ -55,6 +57,9 @@ export default function(props: SeoProps){
             publishedTime: props.date,
             authors: ["Laup Wing"],
          } : {})
+      },
+      alternates:{
+         canonical: meta.canonical ? meta.canonical : fullUrl
       },
       themeColor: "#ffffff",
    } as Metadata
