@@ -13,7 +13,8 @@ const fetchBlogs = async () => {
 export const metadata: Metadata = {
    ...seo({
       asPath: "blog",
-      title: "Blog Page"
+      title: "Blog Page",
+      description: "Everything you related to web development regarding the technologies often used nowadays. Each week minimal 1 blog!"
    })
 }
 
