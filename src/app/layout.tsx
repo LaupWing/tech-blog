@@ -15,8 +15,8 @@ import seo from "@/lib/seo"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400","500","700"] })
 
-export async function generateMetadata(): Promise<Metadata> {
-   return {...seo({})}
+export const metadata: Metadata = {
+   ...seo({})
 }
 
 export default function RootLayout({
